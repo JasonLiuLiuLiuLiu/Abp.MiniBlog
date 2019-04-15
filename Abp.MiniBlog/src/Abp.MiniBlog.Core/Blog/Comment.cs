@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Abp.Domain.Entities.Auditing;
 
-namespace Abp.MiniBlog.Comment
+namespace Abp.MiniBlog.Blog
 {
     [Table("Comments")]
     public class Comment:CreationAuditedEntity
@@ -20,7 +20,7 @@ namespace Abp.MiniBlog.Comment
 
         public bool IsAdmin { get; set; }
 
-        public virtual Blog.Blog  Blog{ get; protected set; }
+        public virtual Blog  Blog{ get; protected set; }
 
         public virtual Guid BlogId { get; protected set; }
 

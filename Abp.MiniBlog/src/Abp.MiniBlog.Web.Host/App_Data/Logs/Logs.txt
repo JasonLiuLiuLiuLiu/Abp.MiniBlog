@@ -82,3 +82,7 @@ DEBUG 2019-04-15 22:38:21,553 [1    ] Abp.AutoMapper.AbpAutoMapperModule       -
 DEBUG 2019-04-15 22:38:21,553 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.RoleDto
 DEBUG 2019-04-15 22:38:21,554 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.CreateTenantDto
 DEBUG 2019-04-15 22:38:21,554 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.TenantDto
+DEBUG 2019-04-15 23:19:20,499 [34   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-04-15 23:19:20,506 [34   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-15 23:19:20,507 [34   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-15 23:19:20,507 [34   ] Abp.Modules.AbpModuleManager             - Shutting down completed.

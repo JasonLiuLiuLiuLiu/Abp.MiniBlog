@@ -1016,3 +1016,9 @@ INFO  2019-04-15 22:47:48,636 [30   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2019-04-15 22:47:48,644 [40   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Users/_EditUserModal.js?v=FQ_J4Lm8wwLxCRPPs-_i6Ij2IQ8e0wcfk-WdyQiTJsM  
 INFO  2019-04-15 22:47:48,646 [40   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Users/_EditUserModal.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Users\_EditUserModal.js'
 INFO  2019-04-15 22:47:48,646 [40   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8307ms 200 application/javascript
+DEBUG 2019-04-15 23:19:29,182 [68   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-04-15 23:19:29,197 [68   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-15 23:19:29,198 [68   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-15 23:19:29,198 [68   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2019-04-15 23:19:29,228 [67   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 1JvVGYFMl5YWneQGnoiB8g
+INFO  2019-04-15 23:19:29,229 [67   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1920273.8268ms 101 

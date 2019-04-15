@@ -26,7 +26,7 @@ namespace Abp.MiniBlog.Blog
         public bool IsPublished { get; set; } = true;
 
         [ForeignKey("BlogId")]
-        public IList<Comment.Comment> Comments { get; } = new List<Comment.Comment>();
+        public IList<Comment> Comments { get; } = new List<Comment>();
 
         public bool AreCommentsOpen(int commentsCloseAfterDays)
         {

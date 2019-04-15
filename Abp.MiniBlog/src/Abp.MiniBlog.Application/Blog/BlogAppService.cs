@@ -47,14 +47,14 @@ namespace Abp.MiniBlog.Blog
 
         public async Task CreateAsync(CreateBlogInput input)
         {
-            var @blog = new Blog
+            var blog = new Blog
             {
                 Title = input.Title,
                 Slug = input.Slug,
                 Excerpt = input.Excerpt,
                 Content = input.Content
             };
-            await _blogManager.CreateAsync(@blog);
+            await _blogManager.CreateAsync(blog);
         }
     }
 }

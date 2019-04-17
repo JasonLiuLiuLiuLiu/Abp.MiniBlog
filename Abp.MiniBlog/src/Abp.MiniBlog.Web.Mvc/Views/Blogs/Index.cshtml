@@ -6,11 +6,11 @@
 @section scripts
 {
     <environment names="Development">
-        <script src="~/view-resources/Views/Users/Index.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Blogs/Index.js" asp-append-version="true"></script>
     </environment>
 
     <environment names="Staging,Production">
-        <script src="~/view-resources/Views/Users/Index.min.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Blogs/Index.min.js" asp-append-version="true"></script>
     </environment>
 }
 <div class="row clearfix">
@@ -52,8 +52,8 @@
                                     <i class="material-icons">menu</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a href="#" class="waves-effect waves-block edit-user" data-user-id="@blog.Id" data-toggle="modal" data-target="#UserEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
-                                    <li><a href="#" class="waves-effect waves-block delete-user" data-user-id="@blog.Id" data-user-name="@blog.Title"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block edit-blog" data-blog-id="@blog.Id" data-toggle="modal" data-target="#UserEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                    <li><a href="#" class="waves-effect waves-block delete-blog" data-blog-id="@blog.Id" data-blog-name="@blog.Title"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
                                 </ul>
                             </td>
                         </tr>
@@ -116,7 +116,7 @@
                                 <div class="col-sm-12">
                                     <div class="checkbox">
                                         <input type="checkbox" name="IsPublished" value="true" id="CreateBlogIsPublished" class="filled-in" checked />
-                                        <label for="CreateUserIsActive">@L("IsPublished")</label>
+                                        <label for="CreateBlogIsPublished">@L("IsPublished")</label>
                                     </div>
                                 </div>
                             </div>

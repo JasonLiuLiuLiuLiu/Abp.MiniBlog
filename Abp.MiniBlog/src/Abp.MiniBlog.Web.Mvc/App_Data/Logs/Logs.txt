@@ -6615,3 +6615,310 @@ WARN  2019-04-17 21:20:33,627 [14   ] Mvc.ExceptionHandling.AbpExceptionFilter -
 INFO  2019-04-17 21:20:33,675 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
 INFO  2019-04-17 21:20:33,695 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Users.UserAppService.Create (Abp.MiniBlog.Application) in 226.7182ms
 INFO  2019-04-17 21:20:33,697 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 258.1335ms 400 application/json; charset=utf-8
+INFO  2019-04-17 21:34:27,166 [42   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/api/services/app/User/Create application/json 92
+INFO  2019-04-17 21:34:27,182 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Create", controller = "User"}. Executing action Abp.MiniBlog.Users.UserAppService.Create (Abp.MiniBlog.Application)
+WARN  2019-04-17 21:34:27,213 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 118
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 89
+   at Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Validation\AbpValidationActionFilter.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+WARN  2019-04-17 21:34:27,214 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - There are 5 validation errors:
+WARN  2019-04-17 21:34:27,214 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The Name field is required. (Name)
+WARN  2019-04-17 21:34:27,214 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The Surname field is required. (Surname)
+WARN  2019-04-17 21:34:27,214 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The Password field is required. (Password)
+WARN  2019-04-17 21:34:27,214 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The UserName field is required. (UserName)
+WARN  2019-04-17 21:34:27,214 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The EmailAddress field is required. (EmailAddress)
+INFO  2019-04-17 21:34:27,214 [49   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-04-17 21:34:27,215 [49   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Users.UserAppService.Create (Abp.MiniBlog.Application) in 32.768ms
+INFO  2019-04-17 21:34:27,215 [49   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 48.8693ms 400 application/json; charset=utf-8
+INFO  2019-04-17 21:34:32,259 [41   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/api/services/app/User/Create application/json 92
+INFO  2019-04-17 21:34:32,273 [41   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "Create", controller = "User"}. Executing action Abp.MiniBlog.Users.UserAppService.Create (Abp.MiniBlog.Application)
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 118
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate() in D:\Github\aspnetboilerplate\src\Abp\Runtime\Validation\Interception\MethodInvocationValidator.cs:line 89
+   at Abp.AspNetCore.Mvc.Validation.AbpValidationActionFilter.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Validation\AbpValidationActionFilter.cs:line 35
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - There are 5 validation errors:
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The Name field is required. (Name)
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The Surname field is required. (Surname)
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The Password field is required. (Password)
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The UserName field is required. (UserName)
+WARN  2019-04-17 21:34:32,296 [49   ] Mvc.ExceptionHandling.AbpExceptionFilter - The EmailAddress field is required. (EmailAddress)
+INFO  2019-04-17 21:34:32,297 [49   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-04-17 21:34:32,297 [49   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Users.UserAppService.Create (Abp.MiniBlog.Application) in 24.2147ms
+INFO  2019-04-17 21:34:32,297 [49   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 38.8526ms 400 application/json; charset=utf-8
+INFO  2019-04-17 21:34:39,945 [41   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Tenants  
+INFO  2019-04-17 21:34:39,970 [41   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Tenants", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.TenantsController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-17 21:34:39,972 [41   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-17 21:34:40,062 [41   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.TenantsController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-17 21:34:40,256 [43   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.TenantsController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 193.2463ms.
+INFO  2019-04-17 21:34:40,277 [45   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-17 21:34:40,309 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:40,317 [45   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 42.549ms.
+INFO  2019-04-17 21:34:40,317 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.TenantsController.Index (Abp.MiniBlog.Web.Mvc) in 346.8555ms
+INFO  2019-04-17 21:34:40,318 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 372.8573ms 200 text/html; charset=utf-8
+DEBUG 2019-04-17 21:34:40,331 [44   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: lQS6I3IJqaUxF6yYF3a5DA
+INFO  2019-04-17 21:34:40,331 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 864395.8931ms 101 
+INFO  2019-04-17 21:34:40,408 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636911327916205441  
+INFO  2019-04-17 21:34:40,408 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636911327916205441  
+INFO  2019-04-17 21:34:40,414 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-17 21:34:40,415 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-17 21:34:40,415 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-17 21:34:40,417 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-17 21:34:40,428 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 10.5998ms.
+INFO  2019-04-17 21:34:40,428 [44   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-17 21:34:40,428 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 13.3254ms
+INFO  2019-04-17 21:34:40,429 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.0239ms 200 application/x-javascript
+WARN  2019-04-17 21:34:40,437 [54   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:40,439 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 24.4857ms.
+INFO  2019-04-17 21:34:40,440 [54   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-17 21:34:40,440 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 25.9027ms
+INFO  2019-04-17 21:34:40,440 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 31.9486ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-17 21:34:40,601 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-17 21:34:40,614 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.167ms 200 application/json
+INFO  2019-04-17 21:34:40,656 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=FAbUPNfWrbBiIZk7vZs4dg  
+INFO  2019-04-17 21:34:40,682 [53   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-17 21:34:40,693 [53   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"FAbUPNfWrbBiIZk7vZs4dg","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-17T21:34:40.6833423+08:00","Properties":{}}
+DEBUG 2019-04-17 21:34:40,695 [53   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: FAbUPNfWrbBiIZk7vZs4dg
+INFO  2019-04-17 21:34:41,939 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Users  
+INFO  2019-04-17 21:34:41,957 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.UsersController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-17 21:34:41,958 [54   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-17 21:34:41,960 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.UsersController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-17 21:34:42,162 [53   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.UsersController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 201.8525ms.
+INFO  2019-04-17 21:34:42,183 [45   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-17 21:34:42,215 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:42,223 [45   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 42.6074ms.
+INFO  2019-04-17 21:34:42,223 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.UsersController.Index (Abp.MiniBlog.Web.Mvc) in 265.3405ms
+INFO  2019-04-17 21:34:42,223 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 284.0698ms 200 text/html; charset=utf-8
+DEBUG 2019-04-17 21:34:42,233 [54   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: FAbUPNfWrbBiIZk7vZs4dg
+INFO  2019-04-17 21:34:42,233 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1576.7305ms 101 
+INFO  2019-04-17 21:34:42,279 [43   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636911327916205441  
+INFO  2019-04-17 21:34:42,279 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636911327916205441  
+INFO  2019-04-17 21:34:42,285 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-17 21:34:42,287 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-17 21:34:42,297 [43   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-17 21:34:42,300 [43   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+WARN  2019-04-17 21:34:42,307 [54   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:42,309 [43   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.9092ms.
+INFO  2019-04-17 21:34:42,309 [43   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-17 21:34:42,309 [43   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 12.1148ms
+INFO  2019-04-17 21:34:42,309 [43   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.8244ms 200 application/x-javascript
+INFO  2019-04-17 21:34:42,310 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 21.4152ms.
+INFO  2019-04-17 21:34:42,310 [54   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-17 21:34:42,310 [54   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 24.4144ms
+INFO  2019-04-17 21:34:42,310 [54   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 31.4172ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-17 21:34:42,372 [43   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-17 21:34:42,376 [43   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.9854ms 200 application/json
+INFO  2019-04-17 21:34:42,426 [43   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=CTWOhCRLmdmkbTo30TCs6A  
+INFO  2019-04-17 21:34:42,472 [43   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-17 21:34:42,478 [43   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"CTWOhCRLmdmkbTo30TCs6A","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-17T21:34:42.4729587+08:00","Properties":{}}
+DEBUG 2019-04-17 21:34:42,479 [43   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: CTWOhCRLmdmkbTo30TCs6A
+INFO  2019-04-17 21:34:44,383 [42   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Roles  
+INFO  2019-04-17 21:34:44,412 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Roles", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.RolesController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-17 21:34:44,413 [42   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-17 21:34:44,502 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.RolesController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+WARN  2019-04-17 21:34:44,547 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:44,560 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.RolesController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 57.8425ms.
+INFO  2019-04-17 21:34:44,576 [45   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-17 21:34:44,604 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:44,613 [45   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 41.7824ms.
+INFO  2019-04-17 21:34:44,613 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.RolesController.Index (Abp.MiniBlog.Web.Mvc) in 200.8106ms
+INFO  2019-04-17 21:34:44,613 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 230.7905ms 200 text/html; charset=utf-8
+DEBUG 2019-04-17 21:34:44,625 [50   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: CTWOhCRLmdmkbTo30TCs6A
+INFO  2019-04-17 21:34:44,625 [50   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2198.7692ms 101 
+INFO  2019-04-17 21:34:44,668 [42   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636911327916205441  
+INFO  2019-04-17 21:34:44,668 [50   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636911327916205441  
+INFO  2019-04-17 21:34:44,678 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-17 21:34:44,679 [50   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-17 21:34:44,680 [50   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-17 21:34:44,681 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-17 21:34:44,690 [50   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 10.1752ms.
+INFO  2019-04-17 21:34:44,690 [50   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-17 21:34:44,691 [50   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 11.9252ms
+INFO  2019-04-17 21:34:44,691 [50   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.9345ms 200 application/x-javascript
+WARN  2019-04-17 21:34:44,711 [42   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 21:34:44,714 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 32.6162ms.
+INFO  2019-04-17 21:34:44,714 [42   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-17 21:34:44,714 [42   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 35.8622ms
+INFO  2019-04-17 21:34:44,715 [42   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 46.8447ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-17 21:34:44,810 [50   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-17 21:34:44,816 [50   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.5886ms 200 application/json
+INFO  2019-04-17 21:34:44,844 [50   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=LcyLpZxLM4pE9DCCsd5EJw  
+INFO  2019-04-17 21:34:44,860 [42   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-17 21:34:44,869 [42   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"LcyLpZxLM4pE9DCCsd5EJw","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-17T21:34:44.8612077+08:00","Properties":{}}
+DEBUG 2019-04-17 21:34:44,869 [42   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: LcyLpZxLM4pE9DCCsd5EJw
+DEBUG 2019-04-17 21:50:02,208 [39   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: LcyLpZxLM4pE9DCCsd5EJw
+INFO  2019-04-17 21:50:02,209 [39   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 917364.3335ms 101 
+DEBUG 2019-04-17 22:20:46,071 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-04-17 22:20:46,108 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-04-17 22:20:46,146 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.Web.Startup.MiniBlogWebMvcModule, Abp.MiniBlog.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogWebCoreModule, Abp.MiniBlog.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,152 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogApplicationModule, Abp.MiniBlog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,152 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogCoreModule, Abp.MiniBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,152 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,153 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,153 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,154 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,154 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.EntityFrameworkCore.MiniBlogEntityFrameworkModule, Abp.MiniBlog.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,155 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,155 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,156 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,156 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,156 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,157 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:46,162 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-04-17 22:20:46,260 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:20:46,260 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:20:46,260 [1    ] o.Configuration.LanguageManagementConfig - Converted MiniBlog (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:20:46,260 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:20:46,705 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Abp.MiniBlog.EntityFrameworkCore.MiniBlogDbContext, Abp.MiniBlog.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:20:47,361 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-04-17 22:20:47,448 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-04-17 22:20:47,519 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-04-17 22:20:47,549 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MiniBlog
+DEBUG 2019-04-17 22:20:47,591 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-04-17 22:20:47,695 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-17 22:20:47,767 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2019-04-17 22:20:47,768 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-04-17 22:20:47,778 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Users.Dto.CreateUserDto
+DEBUG 2019-04-17 22:20:47,779 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Users.Dto.UserDto
+DEBUG 2019-04-17 22:20:47,780 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-04-17 22:20:47,780 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-04-17 22:20:47,780 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.CreateRoleDto
+DEBUG 2019-04-17 22:20:47,780 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.PermissionDto
+DEBUG 2019-04-17 22:20:47,780 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.RoleDto
+DEBUG 2019-04-17 22:20:47,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-04-17 22:20:47,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.TenantDto
+DEBUG 2019-04-17 22:20:47,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-04-17 22:20:47,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-04-17 22:20:53,523 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  2019-04-17 22:20:56,287 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-17 22:20:56,370 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-17 22:20:56,431 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-17 22:20:56,440 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.3056ms.
+INFO  2019-04-17 22:20:56,922 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-17 22:20:58,368 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 22:20:58,739 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1934.08ms.
+INFO  2019-04-17 22:20:58,793 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/robots.txt  
+INFO  2019-04-17 22:20:58,801 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) in 2509.9817ms
+INFO  2019-04-17 22:20:58,854 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5339.962ms 200 text/html; charset=utf-8
+INFO  2019-04-17 22:20:58,885 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 91.7624ms 404 
+INFO  2019-04-17 22:20:59,067 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636911364476974260  
+INFO  2019-04-17 22:20:59,073 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636911364476974260  
+INFO  2019-04-17 22:20:59,132 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-17 22:20:59,136 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-17 22:20:59,205 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-17 22:20:59,254 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+WARN  2019-04-17 22:20:59,462 [11   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 22:20:59,504 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 299.0969ms.
+INFO  2019-04-17 22:20:59,517 [11   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-17 22:20:59,520 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 385.621ms
+INFO  2019-04-17 22:20:59,520 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 447.6065ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-17 22:20:59,555 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 300.8809ms.
+INFO  2019-04-17 22:20:59,556 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-17 22:20:59,557 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 420.7476ms
+INFO  2019-04-17 22:20:59,557 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 490.214ms 200 application/x-javascript
+INFO  2019-04-17 22:20:59,576 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-17 22:20:59,646 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 70.6709ms 200 application/json
+INFO  2019-04-17 22:20:59,782 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=UBo5O5ODjgAD4_behCF3MQ  
+INFO  2019-04-17 22:21:00,165 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-17 22:21:00,222 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"UBo5O5ODjgAD4_behCF3MQ","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-17T22:21:00.2057311+08:00","Properties":{}}
+DEBUG 2019-04-17 22:21:00,291 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: UBo5O5ODjgAD4_behCF3MQ
+INFO  2019-04-17 22:21:21,629 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/AbpServiceProxies/GetAll  
+INFO  2019-04-17 22:21:21,651 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.2487ms 404 
+DEBUG 2019-04-17 22:21:21,741 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: UBo5O5ODjgAD4_behCF3MQ
+INFO  2019-04-17 22:21:21,755 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21973.3254ms 101 
+INFO  2019-04-17 22:21:24,629 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/AbpServiceProxies/GetAll  
+INFO  2019-04-17 22:21:24,646 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.1577ms 404 
+INFO  2019-04-17 22:21:25,678 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/api/AbpServiceProxies/GetAll  
+INFO  2019-04-17 22:21:25,692 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.4877ms 404 
+INFO  2019-04-17 22:23:04,238 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll  
+INFO  2019-04-17 22:23:04,261 [21   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-17 22:23:04,269 [21   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-17 22:23:04,274 [21   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 4.8599ms.
+INFO  2019-04-17 22:23:04,274 [21   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-17 22:23:04,275 [21   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 13.4579ms
+INFO  2019-04-17 22:23:04,275 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.6544ms 200 application/x-javascript
+DEBUG 2019-04-17 22:37:14,101 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-04-17 22:37:14,260 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-04-17 22:37:14,281 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.Web.Startup.MiniBlogWebMvcModule, Abp.MiniBlog.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogWebCoreModule, Abp.MiniBlog.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogApplicationModule, Abp.MiniBlog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogCoreModule, Abp.MiniBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,285 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,285 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,285 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.EntityFrameworkCore.MiniBlogEntityFrameworkModule, Abp.MiniBlog.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,286 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,287 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:14,290 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-04-17 22:37:14,390 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:37:14,391 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:37:14,391 [1    ] o.Configuration.LanguageManagementConfig - Converted MiniBlog (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:37:14,391 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-17 22:37:14,910 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Abp.MiniBlog.EntityFrameworkCore.MiniBlogDbContext, Abp.MiniBlog.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-17 22:37:17,130 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-04-17 22:37:17,219 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-04-17 22:37:17,296 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-04-17 22:37:17,338 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MiniBlog
+DEBUG 2019-04-17 22:37:17,383 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-04-17 22:37:17,632 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-17 22:37:17,701 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2019-04-17 22:37:17,701 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-04-17 22:37:17,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Users.Dto.CreateUserDto
+DEBUG 2019-04-17 22:37:17,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Users.Dto.UserDto
+DEBUG 2019-04-17 22:37:17,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-04-17 22:37:17,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-04-17 22:37:17,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.CreateRoleDto
+DEBUG 2019-04-17 22:37:17,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.PermissionDto
+DEBUG 2019-04-17 22:37:17,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.RoleDto
+DEBUG 2019-04-17 22:37:17,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-04-17 22:37:17,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.TenantDto
+DEBUG 2019-04-17 22:37:17,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-04-17 22:37:17,715 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-04-17 22:37:24,768 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  2019-04-17 22:37:37,453 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-17 22:37:37,519 [9    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-17 22:37:37,647 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-17 22:37:37,658 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.0852ms.
+INFO  2019-04-17 22:37:38,078 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-17 22:37:40,377 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 22:37:40,715 [9    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 2695.6578ms.
+INFO  2019-04-17 22:37:40,823 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) in 3326.9167ms
+INFO  2019-04-17 22:37:40,880 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16111.6516ms 200 text/html; charset=utf-8
+INFO  2019-04-17 22:37:41,062 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636911374376357390  
+INFO  2019-04-17 22:37:41,082 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636911374376357390  
+INFO  2019-04-17 22:37:41,133 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-17 22:37:41,142 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-17 22:37:41,247 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-17 22:37:41,364 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+WARN  2019-04-17 22:37:41,563 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-17 22:37:41,622 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 368.0911ms.
+INFO  2019-04-17 22:37:41,651 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-17 22:37:41,665 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 522.5181ms
+INFO  2019-04-17 22:37:41,672 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 617.3656ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-17 22:37:41,713 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 343.2156ms.
+INFO  2019-04-17 22:37:41,718 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-17 22:37:41,735 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 577.5591ms
+INFO  2019-04-17 22:37:41,739 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 677.6633ms 200 application/x-javascript
+INFO  2019-04-17 22:37:41,746 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-17 22:37:41,841 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 79.4414ms 200 application/json
+INFO  2019-04-17 22:37:41,994 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=STgVAvUHjKCHgPQ535RnbQ  
+INFO  2019-04-17 22:37:42,556 [5    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-17 22:37:42,592 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"STgVAvUHjKCHgPQ535RnbQ","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-17T22:37:42.5832568+08:00","Properties":{}}
+DEBUG 2019-04-17 22:37:42,657 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: STgVAvUHjKCHgPQ535RnbQ

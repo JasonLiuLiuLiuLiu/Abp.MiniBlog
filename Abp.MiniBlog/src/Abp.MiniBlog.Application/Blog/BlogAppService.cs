@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
+using Abp.MiniBlog.Authorization.Users;
 using Abp.MiniBlog.Blog.Dtos;
+using Abp.MiniBlog.Users.Dto;
 using Abp.UI;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,11 +24,11 @@ namespace Abp.MiniBlog.Blog
             _blogManager = blogManager;
         }
 
-        public async Task<ListResultDto<BlogListDto>> GetListAsync(GetBlogListInput input)
+        public async Task<ListResultDto<BlogDto>> GetListAsync(GetBlogListInput input)
         {
             var blogs = await _blogRepository.GetAll().Include(e => e.Comments).OrderByDescending(e => e.CreationTime)
                 .Take(64).ToListAsync();
-            return new ListResultDto<BlogListDto>(blogs.MapTo<List<BlogListDto>>());
+            return new ListResultDto<BlogDto>(blogs.MapTo<List<BlogDto>>());
         }
 
         public async Task<BlogDetailOutput> GetDetailAsync(EntityDto<Guid> input)
@@ -55,6 +57,19 @@ namespace Abp.MiniBlog.Blog
                 Content = input.Content
             };
             await _blogManager.CreateAsync(blog);
+        }
+
+        public async Task<BlogDto> Update(BlogDto input)
+        {
+            var blog = await _blogManager.GetAsync(input.Id);
+            MapToEntity(input,blog);
+            _blogRepository.Update(blog);
+            return input;
+        }
+
+        private void MapToEntity(BlogDto input, Blog user)
+        {
+            ObjectMapper.Map(input, user);
         }
     }
 }

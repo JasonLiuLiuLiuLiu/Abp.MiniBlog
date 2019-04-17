@@ -42,18 +42,10 @@
                 return;
             }
 
-            var user = _$form.serializeFormToObject(); //serializeFormToObject is defined in main.js
-            user.roleNames = [];
-            var _$roleCheckboxes = $("input[name='role']:checked");
-            if (_$roleCheckboxes) {
-                for (var roleIndex = 0; roleIndex < _$roleCheckboxes.length; roleIndex++) {
-                    var _$roleCheckbox = $(_$roleCheckboxes[roleIndex]);
-                    user.roleNames.push(_$roleCheckbox.val());
-                }
-            }
-
+            var blog = _$form.serializeFormToObject(); //serializeFormToObject is defined in main.js
+            
             abp.ui.setBusy(_$modal);
-            _blogService.create(user).done(function () {
+            _blogService.create(blog).done(function () {
                 _$modal.modal('hide');
                 location.reload(true); //reload page to see new user!
             }).always(function () {
@@ -69,9 +61,9 @@
             location.reload(true); //reload page to see new user!
         }
 
-        function deleteBlog(userId, userName) {
+        function deleteBlog(blogId,blogName) {
             abp.message.confirm(
-                abp.utils.formatString(abp.localization.localize('AreYouSureWantToDelete', 'MiniBlog'), userName),
+                abp.utils.formatString(abp.localization.localize('AreYouSureWantToDelete', 'MiniBlog'), blogName),
                 function (isConfirmed) {
                     if (isConfirmed) {
                         _blogService.delete({

@@ -5,7 +5,7 @@ using Abp.Application.Services.Dto;
 
 namespace Abp.MiniBlog.Blog.Dtos
 {
-    public class BlogListDto : FullAuditedEntityDto<Guid>
+    public class BlogDto : FullAuditedEntityDto<Guid>
     {
         public string Title { get; set; }
 

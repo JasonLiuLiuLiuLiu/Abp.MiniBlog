@@ -1,4 +1,7 @@
-﻿using Abp.AspNetCore.Mvc.Authorization;
+﻿using System;
+using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
+using Abp.AspNetCore.Mvc.Authorization;
 using Abp.MiniBlog.Authorization;
 using Abp.MiniBlog.Blog;
 using Abp.MiniBlog.Blog.Dtos;
@@ -26,6 +29,12 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
             {
                 Blogs = allBlogs.Items
             });
+        }
+
+        public async Task<ActionResult> EditUserModal(Guid blogId)
+        {
+            var model = _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId));
+            return View("Index");
         }
 
     }

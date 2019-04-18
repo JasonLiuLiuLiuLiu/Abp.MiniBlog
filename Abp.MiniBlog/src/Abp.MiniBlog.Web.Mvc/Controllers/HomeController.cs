@@ -4,7 +4,7 @@ using Abp.MiniBlog.Controllers;
 
 namespace Abp.MiniBlog.Web.Controllers
 {
-    [AbpMvcAuthorize]
+    //[AbpMvcAuthorize]
     public class HomeController : MiniBlogControllerBase
     {
         public ActionResult Index()

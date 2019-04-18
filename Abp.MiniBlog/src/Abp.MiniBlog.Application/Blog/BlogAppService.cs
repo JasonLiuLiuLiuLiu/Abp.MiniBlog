@@ -67,6 +67,12 @@ namespace Abp.MiniBlog.Blog
             return input;
         }
 
+        public async Task DeleteAsync(EntityDto<Guid> input)
+        {
+            var blog = await _blogManager.GetAsync(input.Id);
+            await _blogRepository.DeleteAsync(blog);
+        }
+
         private void MapToEntity(BlogDto input, Blog user)
         {
             ObjectMapper.Map(input, user);

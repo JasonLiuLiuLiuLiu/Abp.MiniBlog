@@ -25,11 +25,11 @@
 
             e.preventDefault();
             $.ajax({
-                url: abp.appPath + 'Users/EditUserModal?blogId=' + blogId,
+                url: abp.appPath + 'Blogs/EditBlogModal?blogId=' + blogId,
                 type: 'POST',
                 contentType: 'application/html',
                 success: function (content) {
-                    $('#UserEditModal div.modal-content').html(content);
+                    $('#BlogEditModal div.modal-content').html(content);
                 },
                 error: function (e) { }
             });
@@ -67,7 +67,7 @@
                 function (isConfirmed) {
                     if (isConfirmed) {
                         _blogService.delete({
-                            id: userId
+                            id: blogId
                         }).done(function () {
                             refreshBlogList();
                         });

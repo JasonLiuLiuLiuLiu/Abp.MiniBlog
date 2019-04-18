@@ -11,5 +11,6 @@ namespace Abp.MiniBlog.Blog
         Task<BlogDetailOutput> GetDetailAsync(EntityDto<Guid> input);
         Task CreateAsync(CreateBlogInput input);
         Task<BlogDto> Update(BlogDto input);
+        Task DeleteAsync(EntityDto<Guid> input);
     }
 }

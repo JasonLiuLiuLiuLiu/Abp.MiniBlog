@@ -31,10 +31,14 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
             });
         }
 
-        public async Task<ActionResult> EditUserModal(Guid blogId)
+        public async Task<ActionResult> EditBlogModal(Guid blogId)
         {
-            var model = _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId));
-            return View("Index");
+            var blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId));
+
+            return View("_EditBlogModal",new EditBlogModalViewModel
+            {
+                Blog = blog
+            });
         }
 
     }

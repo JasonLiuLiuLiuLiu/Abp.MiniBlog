@@ -183,10 +183,14 @@
         <script src="~/view-resources/Views/_Bundles/shared-layout.min.js" asp-append-version="true"></script>
     </environment>
 
-    <script>
+<script>
     // Localizing momentjs
     moment.locale('@CultureInfo.CurrentUICulture.Name');
-    </script>
+</script>
+<style>
+    section.content {
+        margin-left: 15px; }
+</style>
 
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/AbpServiceProxies/GetAll?v=@(AppTimes.StartupTime.Ticks)" type="text/javascript"></script>

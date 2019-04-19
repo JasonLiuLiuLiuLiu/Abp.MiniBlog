@@ -127,21 +127,21 @@
         <div class="container-fluid">
             @if (AlertManager.Alerts.Any())
             {
-            <div id="AbpPageAlerts">
-                @foreach (var alertMessage in AlertManager.Alerts)
+                <div id="AbpPageAlerts">
+                    @foreach (var alertMessage in AlertManager.Alerts)
                     {
-                <div class="alert alert-@alertMessage.Type.ToString().ToLower() @(alertMessage.Dismissible ? "alert-dismisable" : "")" role="alert">
-                    <h4 class="alert-heading">
-                        @alertMessage.Title
-                        @if (alertMessage.Dismissible)
+                        <div class="alert alert-@alertMessage.Type.ToString().ToLower() @(alertMessage.Dismissible ? "alert-dismisable" : "")" role="alert">
+                            <h4 class="alert-heading">
+                                @alertMessage.Title
+                                @if (alertMessage.Dismissible)
                                 {
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 }
-                    </h4>
-                    <p>@alertMessage.Text</p>
-                </div>
+                            </h4>
+                            <p>@alertMessage.Text</p>
+                        </div>
                     }
-            </div>
+                </div>
             }
 
             @RenderBody()
@@ -175,7 +175,7 @@
 
         @if (CultureInfo.CurrentUICulture.Name != "en")
         {
-        <script src="~/lib/jquery-validation/src/localization/messages_@Html.Raw(CultureInfo.CurrentUICulture.Name.Replace("-", "_") + ".js")" asp-append-version="true"></script>
+            <script src="~/lib/jquery-validation/src/localization/messages_@Html.Raw(CultureInfo.CurrentUICulture.Name.Replace("-", "_") + ".js")" asp-append-version="true"></script>
         }
     </environment>
 
@@ -183,14 +183,11 @@
         <script src="~/view-resources/Views/_Bundles/shared-layout.min.js" asp-append-version="true"></script>
     </environment>
 
-<script>
+    <script>
     // Localizing momentjs
     moment.locale('@CultureInfo.CurrentUICulture.Name');
-</script>
-<style>
-    section.content {
-        margin-left: 15px; }
-</style>
+    </script>
+
 
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/AbpServiceProxies/GetAll?v=@(AppTimes.StartupTime.Ticks)" type="text/javascript"></script>

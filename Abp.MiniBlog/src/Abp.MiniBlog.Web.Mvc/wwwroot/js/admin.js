@@ -144,15 +144,8 @@ $.AdminBSB.leftSideBar = {
                 $(this).removeClass('no-animate').dequeue();
             });
         }
-
-        if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
-            $body.addClass('ls-closed');
-            $openCloseBar.fadeIn();
-        }
-        else {
-            $body.removeClass('ls-closed');
-            $openCloseBar.fadeOut();
-        }
+        $body.addClass('ls-closed');
+        $openCloseBar.fadeIn();
     },
     isOpen: function () {
         return $('body').hasClass('overlay-open');

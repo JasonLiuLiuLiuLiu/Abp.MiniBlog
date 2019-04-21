@@ -10,7 +10,7 @@ namespace Abp.MiniBlog.Blog
     {
         Task<List<BlogDto>> GetListAsync(GetBlogListInput input);
         Task<BlogDetailOutput> GetDetailAsync(EntityDto<Guid> input);
-        Task CreateAsync(CreateBlogInput input);
+        Task<Guid> CreateAsync(CreateBlogInput input);
         Task<BlogDto> Update(BlogDto input);
         Task DeleteAsync(EntityDto<Guid> input);
     }

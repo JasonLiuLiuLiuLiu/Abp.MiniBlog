@@ -41,7 +41,7 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
             return View("Edit", blog);
         }
 
-        public async Task Update(BlogDetailOutput input)
+        public async Task<ActionResult> Update(BlogDetailOutput input)
         {
             if (!string.IsNullOrEmpty(input.Content))
                 await _blogAppService.Update(new BlogDto
@@ -52,7 +52,7 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
                     Tags = input.Categories,
                     Content = input.Content
                 });
-            return;
+            return Redirect("Index");
         }
 
         public async Task<ActionResult> EditBlogModal(Guid blogId)

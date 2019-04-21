@@ -22,17 +22,20 @@
 
         $('.edit-blog').click(function (e) {
             var blogId = $(this).attr("data-blog-id");
-
-            e.preventDefault();
-            $.ajax({
-                url: abp.appPath + 'Blogs/EditBlogModal?blogId=' + blogId,
-                type: 'POST',
-                contentType: 'application/html',
-                success: function (content) {
-                    $('#BlogEditModal div.modal-content').html(content);
-                },
-                error: function (e) { }
-            });
+            window.location.href = "/blogs/edit?blogid=" + blogId;  
+            //e.preventDefault();
+            //$.ajax({
+            //    url: abp.appPath + 'Blogs/EditBlogModal?blogId=' + blogId,
+            //    type: 'POST',
+            //    contentType: 'application/html',
+            //    success: function (content) {
+            //        $('#BlogEditModal div.modal-content').html(content);
+            //    },
+            //    error: function (e) { }
+            //});
+        });
+        $('.add-button').click(function (e) {
+	        window.location.href = "/blogs/edit";
         });
 
         _$form.find('button[type="submit"]').click(function (e) {

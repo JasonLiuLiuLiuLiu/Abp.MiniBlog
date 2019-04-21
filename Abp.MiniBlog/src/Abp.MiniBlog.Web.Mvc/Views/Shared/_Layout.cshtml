@@ -5,6 +5,7 @@
 @using Abp.Web.Security.AntiForgery
 @using Abp.MiniBlog
 @using Abp.MiniBlog.Configuration
+@using Abp.MiniBlog.Sessions
 @using Abp.MiniBlog.Web.Resources
 @using Abp.MiniBlog.Web.Views.Shared.Components.LeftSideBar
 @using Abp.MiniBlog.Web.Views.Shared.Components.SideBarNav
@@ -17,6 +18,7 @@
 @inject IWebResourceManager WebResourceManager
 @inject ISettingManager SettingManager
 @inject IAlertManager AlertManager
+@inject ISessionAppService SessionAppService
 @{
     Layout = null;
     AbpAntiForgeryManager.SetCookie(Context);
@@ -90,7 +92,7 @@
                 <ul id="navList">
                     <li><a id="blog_nav_myhome" class="menu" asp-controller="Home" asp-action="Index">首页</a></li>
                     <li>
-                        <a id="blog_nav_newpost" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">新随笔</a>
+                        <a id="blog_nav_newpost" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Edit">新随笔</a>
                     </li>
                     <li>
                         <a id="blog_nav_contact" class="menu" rel="nofollow" asp-controller="About" asp-action="Index">关于</a>
@@ -99,7 +101,22 @@
                         <a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CoderAyu/rss">订阅</a>
                         <!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/CoderAyu/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>-->
                     </li>
-                    <li><a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">管理</a></li>
+                    <li>
+                        <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">管理</a>
+                    </li>
+                    @if (SessionAppService.GetCurrentLoginInformations().IsCompletedSuccessfully)
+                    {
+                        <li>
+                            <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Account" asp-action="Login">Log in</a>
+                        </li>
+                        
+                    }
+                    else
+                    {
+                        <li>
+                            <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Account" asp-action="Logout">Log out</a>
+                        </li>
+                    }
                 </ul>
                 <div class="blogStats">
 

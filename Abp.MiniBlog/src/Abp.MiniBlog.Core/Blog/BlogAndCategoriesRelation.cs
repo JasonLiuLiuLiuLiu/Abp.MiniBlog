@@ -10,7 +10,6 @@ namespace Abp.MiniBlog.Blog
     {
         public Guid BlogId { get; set; }
         public int CategoriesId { get; set; }
-        [ForeignKey("Id")]
         public Categories Categories { get; set; }
     }
 }

@@ -11,5 +11,10 @@ namespace Abp.MiniBlog.Web.Controllers
         {
             return View();
         }
-	}
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
+    }
 }

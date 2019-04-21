@@ -1,0 +1,730 @@
+﻿@using Abp.MiniBlog.Web.Startup
+@{
+    ViewBag.CurrentPageName = PageNames.Home; // The menu item will be active for this page.
+}
+@section styles {
+    <link href="~/lib/morris.js/morris.css" rel="stylesheet" asp-append-version="true" />
+}
+<!--done-->
+<div id="main">
+    <div id="mainContent">
+        <div class="forFlow">
+
+            <div id="post_detail">
+                <!--done-->
+                <div id="topics">
+                    <div class="post">
+                        <h1 class="postTitle">
+                            <a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/CoderAyu/p/10680805.html">聊一聊C# 8.0中的await foreach</a>
+                        </h1>
+                        <div class="clear"></div>
+                        <div class="postBody">
+                            <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+                                <h1 id="asyncstreamsincshaper8.0">AsyncStreamsInCShaper8.0</h1>
+                                <p>
+                                    很开心今天能与大家一起聊聊C# 8.0中的新特性-<code>Async Streams</code>,一般人通常看到这个词表情是这样.<br>
+                                    <img src="https://raw.githubusercontent.com/liuzhenyulive/AsyncStreamsInCShaper8.0/master/Pic/mengbi.jpg" width="100" height="100"><br>
+                                    简单说,其实就是C# 8.0中支持<code>await foreach</code>.<br>
+                                    <img src="https://raw.githubusercontent.com/liuzhenyulive/AsyncStreamsInCShaper8.0/master/Pic/mengbi2.jpg" width="100" height="100"><br>
+                                    或者说,C# 8.0中支持异步返回枚举类型<code>async Task&lt;IEnumerable&lt;T&gt;&gt;</code>.<br>
+                                    <img src="https://raw.githubusercontent.com/liuzhenyulive/AsyncStreamsInCShaper8.0/master/Pic/mengbi3.jpeg" width="100" height="100"><br>
+                                    好吧,还不懂?Good,这篇文章就是为你写的,看完这篇文章,你就能明白它的神奇之处了.
+                                </p>
+                                <h2 id="idx_0"><span>为什么写这篇文章</span><a href="#idx_0" class="esa-anchor">#</a></h2>
+                                <p>
+                                    <code>Async Streams</code>这个功能已经发布很久了,在去年的<a href="https://channel9.msdn.com/Events/Build/2018/BRK2155">Build 2018 The future of C#</a>就有演示,最近VS 2019发布,在该版本的<a href="https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes">Release Notes</a>中,我再次看到了这个新特性,因为对异步编程不太熟悉,所以借着这个机会,学习新特性的同时,把异步编程重温一遍.<br>
+                                    本文内容,参考了<code>Bassam Alugili</code>在InfoQ中发表的<a href="https://www.infoq.com/articles/Async-Streams">Async Streams in C# 8</a>,撰写本博客前我已联系上该作者并得到他支持.
+                                </p>
+                                <h2 id="idx_1"><span>Async / Await</span><a href="#idx_1" class="esa-anchor">#</a></h2>
+                                <p>C# 5 引入了 Async/Await，用以提高用户界面响应能力和对 Web 资源的访问能力。换句话说，异步方法用于执行不阻塞线程并返回一个标量结果的异步操作。</p>
+                                <p>微软多次尝试简化异步操作，因为 Async/Await 模式易于理解，所以在开发人员当中获得了良好的认可。</p>
+                                <p>详见<a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">The Task asynchronous programming model in C#</a></p>
+                                <h2 id="idx_2"><span>常规示例</span><a href="#idx_2" class="esa-anchor">#</a></h2>
+                                <p>要了解问什么需要<code>Async Streams</code>,我们先来看看这样的一个示例,求出5以内的整数的和.</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_0" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_0"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">SumFromOneToCount</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> count</span>)
+        </span>{
+            ConsoleExt.WriteLine(<span class="hljs-string">"SumFromOneToCount called!"</span>);
+
+                                <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+                                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt;= count; i++)
+            {
+                sum = sum + i;
+            }
+                                <span class="hljs-keyword">return</span> sum;
+        }</code></pre>
+                                <p>调用方法.</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_1" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_1"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+        </span>{
+                                <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">5</span>;
+            ConsoleExt.WriteLine(<span class="hljs-string">$"Starting the application with count: <span class="hljs-subst">{count}</span>!"</span>);
+            ConsoleExt.WriteLine(<span class="hljs-string">"Classic sum starting."</span>);
+            ConsoleExt.WriteLine(<span class="hljs-string">$"Classic sum result: <span class="hljs-subst">{SumFromOneToCount(count)}</span>"</span>);
+            ConsoleExt.WriteLine(<span class="hljs-string">"Classic sum completed."</span>);
+            ConsoleExt.WriteLine(<span class="hljs-string">"################################################"</span>);
+        }</code></pre>
+                                <p>输出结果.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/base.png" width="1000" height="200"></p>
+                                <p>可以看到,整个过程就一个线程Id为1的线程自上而下执行,这是最基础的做法.</p>
+                                <h2 id="idx_3"><span>Yield Return</span><a href="#idx_3" class="esa-anchor" style="opacity: 0;">#</a></h2>
+                                <p>接下来,我们使用<a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield">yield</a>运算符使得这个方法编程延迟加载,如下所示.</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_2" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_2"><span class="hljs-function"><span class="hljs-keyword">static</span> IEnumerable&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">SumFromOneToCountYield</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> count</span>)
+        </span>{
+            ConsoleExt.WriteLine(<span class="hljs-string">"SumFromOneToCountYield called!"</span>);
+
+                                <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+                                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt;= count; i++)
+            {
+                sum = sum + i;
+
+                                <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> sum;
+            }
+        }</code></pre>
+                                <p>主函数</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_3" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_3"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+        </span>{
+                                <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">5</span>;
+            ConsoleExt.WriteLine(<span class="hljs-string">"Sum with yield starting."</span>);
+                                <span class="hljs-keyword">foreach</span> (<span class="hljs-function"><span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> <span class="hljs-title">SumFromOneToCountYield</span>(<span class="hljs-params">count</span>))
+            </span>{
+                ConsoleExt.WriteLine(<span class="hljs-string">$"Yield sum: <span class="hljs-subst">{i}</span>"</span>);
+            }
+            ConsoleExt.WriteLine(<span class="hljs-string">"Sum with yield completed."</span>);
+
+            ConsoleExt.WriteLine(<span class="hljs-string">"################################################"</span>);
+            ConsoleExt.WriteLine(Environment.NewLine);
+        }</code></pre>
+                                <p>运行结果如下.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/YeildReturn.png" width="1000" height="200"></p>
+                                <p>正如你在输出窗口中看到的那样，结果被分成几个部分返回，而不是作为一个值返回。以上显示的累积结果被称为惰性枚举。但是，仍然存在一个问题，即 sum 方法阻塞了代码的执行。如果你查看线程ID，可以看到所有东西都在主线程1中运行,这显然不完美,继续改造.</p>
+                                <h2 id="idx_4"><span>Async Return</span><a href="#idx_4" class="esa-anchor">#</a></h2>
+                                <p>我们试着将async用于SumFromOneToCount方法(没有yield关键字).</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_4" title="复制代码">Copy</div><code class="hljs dart" id="copy_target_4"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task&lt;<span class="hljs-built_in">int</span>&gt; SumFromOneToCountAsync(<span class="hljs-built_in">int</span> count)
+        {
+            ConsoleExt.WriteLine(<span class="hljs-string">"SumFromOneToCountAsync called!"</span>);
+
+                                <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">await</span> Task.Run(() =&gt;
+            {
+                                <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+
+                                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt;= count; i++)
+                {
+                    sum = sum + i;
+                }
+                                <span class="hljs-keyword">return</span> sum;
+            });
+
+                                <span class="hljs-keyword">return</span> result;
+        }</code></pre>
+                                <p>主函数.</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_5" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_5"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+        </span>{
+                                <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">5</span>;
+            ConsoleExt.WriteLine(<span class="hljs-string">"async example starting."</span>);
+                                <span class="hljs-comment">// Sum runs asynchronously! Not enough. We need sum to be async with lazy behavior.</span>
+                                <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">await</span> SumFromOneToCountAsync(count);
+            ConsoleExt.WriteLine(<span class="hljs-string">"async Result: "</span> + result);
+            ConsoleExt.WriteLine(<span class="hljs-string">"async completed."</span>);
+
+            ConsoleExt.WriteLine(<span class="hljs-string">"################################################"</span>);
+            ConsoleExt.WriteLine(Environment.NewLine);
+        }</code></pre>
+                                <p>运行结果.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/AsyncReturn.png" width="1000" height="200"></p>
+                                <p>我们可以看到计算过程是在另一个线程中运行，但结果仍然是作为一个值返回！任然不完美.</p>
+                                <p>如果我们想把惰性枚举（yield return）与异步方法结合起来,即返回Task&lt;IEnumerable<t>,这怎么实现呢?</t></p>
+                                <h2 id="idx_5"><span>Task&lt;IEnumerable<t>&gt;</t></span><a href="#idx_5" class="esa-anchor">#</a></h2>
+                                <p>我们根据假设把代码改造一遍,使用<code>Task&lt;IEnumerable&lt;T&gt;&gt;</code>来进行计算.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/NotSupportError.png" width="1470" height="560"></p>
+                                <p>可以看到,直接出现错误.</p>
+                                <h2 id="idx_6"><span>IAsyncEnumerable</span><a href="#idx_6" class="esa-anchor">#</a></h2>
+                                <p>其实,在C# 8.0中Task&lt;IEnumerable<t>&gt;这种组合称为IAsyncEnumerable<t>。这个新功能为我们提供了一种很好的技术来解决拉异步延迟加载的问题，例如从网站下载数据或从文件或数据库中读取记录,与 IEnumerable<t> 和 IEnumerator<t> 类似，Async Streams 提供了两个新接口 IAsyncEnumerable<t> 和 IAsyncEnumerator<t>，定义如下：</t></t></t></t></t></t></p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_6" title="复制代码">Copy</div><code class="hljs dart" id="copy_target_6">public <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IAsyncEnumerable</span>&lt;<span class="hljs-title">out</span> <span class="hljs-title">T</span>&gt;
+    </span>{
+        IAsyncEnumerator&lt;T&gt; GetAsyncEnumerator();
+    }
+
+    public <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IAsyncEnumerator</span>&lt;<span class="hljs-title">out</span> <span class="hljs-title">T</span>&gt; : <span class="hljs-title">IAsyncDisposable</span>
+    </span>{
+        Task&lt;<span class="hljs-built_in">bool</span>&gt; MoveNextAsync();
+        T Current { <span class="hljs-keyword">get</span>; }
+    }
+
+                                <span class="hljs-comment">// Async Streams Feature 可以被异步销毁 </span>
+   public <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IAsyncDisposable</span>
+   </span>{
+      Task DiskposeAsync();
+   }</code></pre>
+                                <h2 id="idx_7"><span>AsyncStream</span><a href="#idx_7" class="esa-anchor">#</a></h2>
+                                <p>下面,我们就来见识一下AsyncStrema的威力,我们使用IAsyncEnumerable来对函数进行改造,如下.</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_7" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_7"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">ConsumeAsyncSumSeqeunc</span>(<span class="hljs-params">IAsyncEnumerable&lt;<span class="hljs-keyword">int</span>&gt; sequence</span>)
+        </span>{
+            ConsoleExt.WriteLineAsync(<span class="hljs-string">"ConsumeAsyncSumSeqeunc Called"</span>);
+
+                                <span class="hljs-keyword">await</span> <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> <span class="hljs-keyword">value</span> <span class="hljs-keyword">in</span> sequence)
+            {
+                ConsoleExt.WriteLineAsync(<span class="hljs-string">$"Consuming the value: <span class="hljs-subst">{<span class="hljs-keyword">value</span>}</span>"</span>);
+
+                                <span class="hljs-comment">// simulate some delay!</span>
+                                <span class="hljs-keyword">await</span> Task.Delay(TimeSpan.FromSeconds(<span class="hljs-number">1</span>));
+            };
+        }
+
+                                <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> IAsyncEnumerable&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">ProduceAsyncSumSeqeunc</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> count</span>)
+        </span>{
+            ConsoleExt.WriteLineAsync(<span class="hljs-string">"ProduceAsyncSumSeqeunc Called"</span>);
+                                <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+
+                                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt;= count; i++)
+            {
+                sum = sum + i;
+
+                                <span class="hljs-comment">// simulate some delay!</span>
+                                <span class="hljs-keyword">await</span> Task.Delay(TimeSpan.FromSeconds(<span class="hljs-number">0.5</span>));
+
+                                <span class="hljs-keyword">yield</span> <span class="hljs-keyword">return</span> sum;
+            }
+        }</code></pre>
+                                <p>主函数.</p>
+<pre class="c#"><div class="esa-clipboard-button" data-clipboard-target="#copy_target_8" title="复制代码">Copy</div><code class="hljs cs" id="copy_target_8"> <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">async</span> Task <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+        </span>{
+                                <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">5</span>;
+            ConsoleExt.WriteLine(<span class="hljs-string">"Starting Async Streams Demo!"</span>);
+
+                                <span class="hljs-comment">// Start a new task. Used to produce async sequence of data!</span>
+            IAsyncEnumerable&lt;<span class="hljs-keyword">int</span>&gt; pullBasedAsyncSequence = ProduceAsyncSumSeqeunc(count);
+
+                                <span class="hljs-comment">// Start another task; Used to consume the async data sequence!</span>
+                                <span class="hljs-keyword">var</span> consumingTask = Task.Run(() =&gt; ConsumeAsyncSumSeqeunc(pullBasedAsyncSequence));
+
+                                <span class="hljs-keyword">await</span> Task.Delay(TimeSpan.FromSeconds(<span class="hljs-number">3</span>));
+
+            ConsoleExt.WriteLineAsync(<span class="hljs-string">"X#X#X#X#X#X#X#X#X#X# Doing some other work X#X#X#X#X#X#X#X#X#X#"</span>);
+
+                                <span class="hljs-comment">// Just for demo! Wait until the task is finished!</span>
+                                <span class="hljs-keyword">await</span> consumingTask;
+
+            ConsoleExt.WriteLineAsync(<span class="hljs-string">"Async Streams Demo Done!"</span>);
+        }</code></pre>
+                                <p>如果一切顺利,那么就能看到这样的运行结果了.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/AsyncStream.png" width="1000" height="300"></p>
+                                <p>
+                                    最后,看到这就是我们想要的结果,在枚举的基础上,进行了异步迭代.<br>
+                                    可以看到,整个计算过程并没有造成主线程的阻塞,其中,值得重点关注的是红色方框区域的<code>线程5</code>!<code>线程5</code>!<code>线程5</code>!线程5在请求下一个结果后,并没有等待结果返回,而是去了Main()函数中做了别的事情,等待请求的结果返回后,线程5又接着执行foreach中任务.
+                                </p>
+                                <h2 id="idx_8"><span>Client/Server的异步拉取</span><a href="#idx_8" class="esa-anchor">#</a></h2>
+                                <p>如果还没有理解<code>Async Streams</code>的好处,那么我借助客户端 / 服务器端架构是演示这一功能优势的绝佳方法。</p>
+                                <h3 id="idx_9"><span>同步调用</span><a href="#idx_9" class="esa-anchor">#</a></h3>
+                                <p>客户端向服务器端发送请求，客户端必须等待（客户端被阻塞），直到服务器端做出响应.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/Synchronous-Data-Pull.jpg" width="407" height="566"></p>
+                                <p>示例中Yield Return就是以这种方式执行的,所以整个过程只有一个线程即线程1在处理.</p>
+                                <h3 id="idx_10"><span>异步调用</span><a href="#idx_10" class="esa-anchor">#</a></h3>
+                                <p>客户端发出数据块请求，然后继续执行其他操作。一旦数据块到达，客户端就处理接收到的数据块并询问下一个数据块，依此类推，直到达到最后一个数据块为止。这正是 Async Streams 想法的来源。</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/Asynchronous-Sequence-Data-Pull-large.jpg" width="1000" height="882"></p>
+                                <p>最后一个示例就是以这种方式执行的,<code>线程5</code>询问下一个数据后并没有等待结果返回,而是去做了Main()函数中的别的事情,数据到达后,<code>线程5</code>又继续处理foreach中的任务.</p>
+                                <h2 id="idx_11"><span>Tips</span><a href="#idx_11" class="esa-anchor">#</a></h2>
+                                <p>如果你使用的是<code>.net core 2.2</code>及以下版本,会遇到这样的报错.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/NotSupportAsyncStream2.2.png" width="1000" height="300"></p>
+                                <p>需要安装<code>.net core 3.0 preview</code>的SDK(截至至博客撰写日期4月9日,<code>.net core SDK</code>最新版本为<code>3.0.100-preview3-010431</code>),安装好SDK后,如果你是VS 2019正式版,可能无法选择<code>.net core 3.0</code>,vs 2019 正式版默认情况下没有开启对预览版<code>.net core 3.0</code>的支持.</p>
+                                <p><img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/TheSupportToCore3.0PreView.png" width="1000" height="300"></p>
+                                <p>
+                                    根据网友补充,需要在VS 2019正式版本中需要开启<code>使用 .Net core SDK 预览版</code>,才能创建3.0的项目.<br>
+                                    工具 &gt; 选项 &gt; 项目和解决方案 &gt; .Net Core &gt; 使用 .Net core SDK 预览版<br>
+                                    <img src="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0/raw/master/Pic/UsePreView.png" width="737" height="434">
+                                </p>
+                                <p>总结</p>
+                                <p>我们已经讨论过 <code>Async Streams</code>，它是一种出色的异步拉取技术，可用于进行生成多个值的异步计算。</p>
+                                <p><code>Async Streams</code> 背后的编程概念是异步拉取模型。我们请求获取序列的下一个元素，并最终得到答复。Async Streams 提供了一种处理异步数据源的绝佳方法，希望对大家能够有所帮助。</p>
+                                <p>
+                                    文章中涉及的所有代码已保存在我的GitHub中,请尽情享用!<br>
+                                    <a href="https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0" class="uri">https://github.com/liuzhenyulive/AsyncStreamsInCShaper8.0</a>
+                                </p>
+                                <p>致谢</p>
+                                <p>
+                                    之前一直感觉国外的大师级开发者遥不可及甚至高高在上,在遇到<code>Bassam Alugili</code>之后,我才真正感受到技术交流没有高低贵贱,正如他对我说的 <code>The most important thing in this world is sharing the knowledge!</code><br>
+                                    Thank you,I will keep going!!
+                                </p>
+                                <p>参考文献: Async Streams in C# 8 <a href="https://www.infoq.com/articles/Async-Streams" class="uri">https://www.infoq.com/articles/Async-Streams</a></p>
+                            </div><div id="MySignature" style="display: block;">
+                                <div class="esa-post-signature">
+                                    <p>作者：<a href="https://www.cnblogs.com/CoderAyu">码农阿宇</a></p>
+                                    <p>出处：<a href="https://www.cnblogs.com/CoderAyu/p/10680805.html">https://www.cnblogs.com/CoderAyu/p/10680805.html</a></p>
+                                    <p>本站使用「<a href="https://creativecommons.org/licenses/by/4.0" target="_blank">署名 4.0 国际</a>」创作共享协议，转载请在文章明显位置注明作者及出处。</p>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="blog_post_info_block">
+                                <div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/CoderAyu/category/1171907.html" target="_blank">C#高级</a></div>
+                                <div id="EntryTag">标签: <a href="https://www.cnblogs.com/CoderAyu/tag/await%20foreach/">await foreach</a>, <a href="https://www.cnblogs.com/CoderAyu/tag/async%20streams/">async streams</a>, <a href="https://www.cnblogs.com/CoderAyu/tag/IAsyncEnumerable/">IAsyncEnumerable</a></div>
+                                <div id="blog_post_info">
+                                    <div id="green_channel">
+                                        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(10680805,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+                                        <a id="green_channel_follow" onclick="follow('f15f21cd-47e0-4e59-3d59-08d52fc34315');" href="javascript:void(0);">关注我</a>
+                                        <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+                                        <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="//common.cnblogs.com/images/icon_weibo_24.png" alt=""></a>
+                                        <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="//common.cnblogs.com/images/wechat.png" alt=""></a>
+                                    </div>
+                                    <div id="author_profile">
+                                        <div id="author_profile_info" class="author_profile_info">
+                                            <a href="http://home.cnblogs.com/u/CoderAyu/" target="_blank"><img src="//pic.cnblogs.com/face/1293736/20181223224228.png" class="author_avatar" alt=""></a>
+                                            <div id="author_profile_detail" class="author_profile_info">
+                                                <a href="http://home.cnblogs.com/u/CoderAyu/">码农阿宇</a><br>
+                                                <a href="http://home.cnblogs.com/u/CoderAyu/followees">关注 - 40</a><br>
+                                                <a href="http://home.cnblogs.com/u/CoderAyu/followers">粉丝 - 88</a>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div id="author_profile_honor"></div>
+                                        <div id="author_profile_follow">
+                                        </div>
+                                    </div>
+                                    <div id="div_digg">
+                                        <div class="reward"><span class="rewardnum" id="reward_count"></span></div><div class="favorite" onclick="AddToWz(cb_entryId);return false;"><span class="favoritenum" id="favorite_count"></span></div>
+                                        <div class="diggit" onclick="votePost(10680805,'Digg')">
+                                            <span class="diggnum" id="digg_count">12</span>
+                                        </div>
+                                        <div class="buryit" onclick="votePost(10680805,'Bury')">
+                                            <span class="burynum" id="bury_count">0</span>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="diggword" id="digg_tips">
+                                        </div>
+                                    </div>
+                                    <script type="text/javascript">
+                                        currentDiggType = 0;
+                                    </script>
+                                </div>
+                                <div class="clear"></div>
+                                <div id="post_next_prev"><a href="https://www.cnblogs.com/CoderAyu/p/10549409.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/CoderAyu/p/10549409.html" title="发布于2019-03-17 22:31">ConcurrentDictionary并发字典知多少?</a><br></div>
+                            </div>
+
+
+                        </div>
+                        <div class="postDesc">posted @@ <span id="post-date">2019-04-10 00:41</span> <a href="https://www.cnblogs.com/CoderAyu/">码农阿宇</a> 阅读(<span id="post_view_count">1374</span>) 评论(<span id="post_comment_count">18</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=10680805" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(10680805);return false;">收藏</a></div>
+                    </div>
+                    <script src="//common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+                    <script>markdown_highlight();</script>
+                    <script type="text/javascript">var allowComments = true, cb_blogId = 413735, cb_entryId = 10680805, cb_blogApp = currentBlogApp, cb_blogUserGuid = 'f15f21cd-47e0-4e59-3d59-08d52fc34315', cb_entryCreatedDate = '2019/4/10 0:41:00'; loadViewCount(cb_entryId); var cb_postType = 1; var isMarkdown = true;</script>
+
+                </div><!--end: topics 文章、评论容器-->
+            </div><a name="!comments"></a><div id="blog-comments-placeholder">
+                <div id="comments_pager_top"></div>
+                <br>
+                <div class="feedback_area_title">评论列表</div>
+                <div class="feedbackNoItems"></div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226866,'yyc48r0/YP8e4TUiJTWfF+YWxi2113GqgSUb+D2YuUwyRNJPnbuGZA==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226866,'yyc48r0/YP8e4TUiJTWfF+YWxi2113GqgSUb+D2YuUwyRNJPnbuGZA==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226866,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4226866" class="layer">#1楼</a><a name="4226866" id="comment_anchor_4226866"></a>  <span class="comment_date">2019-04-10 03:00</span> <a id="a_comment_author_4226866" href="https://www.cnblogs.com/Moen/" target="_blank">神樹桜乃</a> <a href="http://msg.cnblogs.com/send/%E7%A5%9E%E6%A8%B9%E6%A1%9C%E4%B9%83" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/Moen/"><img src="//pic.cnblogs.com/face/238163/20130205160500.png"></a></div><div id="comment_body_4226866" class="blog_comment_body">无法选择 .Net Core 3.0 是因为正式版默认没有开启使用预览版 SDK 的选项。去设置开启一下就行</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226866,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226866,'Bury',this)">反对(0)</a></div><span id="comment_4226866_avatar" style="display:none;">http://pic.cnblogs.com/face/238163/20130205160500.png</span>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return GetCommentBody(4226874)">修改</a><a href="javascript:void(0);" onclick="return DelComment(4226874,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4226874" class="layer">#2楼</a><a name="4226874" id="comment_anchor_4226874"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2019-04-10 08:07</span> <a id="a_comment_author_4226874" href="https://www.cnblogs.com/CoderAyu/" target="_blank">码农阿宇</a> <a href="http://msg.cnblogs.com/send/%E7%A0%81%E5%86%9C%E9%98%BF%E5%AE%87" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/CoderAyu/"><img src="//pic.cnblogs.com/face/1293736/20181223224228.png"></a></div><div id="comment_body_4226874" class="blog_comment_body">
+                            <a href="#4226866" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4226866);">@@</a>
+                            神樹桜乃<br>嗯，我也听说了是要开启什么，但是不知道在哪里开启，方便告知吗？
+                        </div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226874,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226874,'Bury',this)">反对(0)</a></div><span id="comment_4226874_avatar" style="display:none;">http://pic.cnblogs.com/face/1293736/20181223224228.png</span>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226948,'3ByZyZPqdtTefn0Qz8+bZ9vvZI2BI0wgkEi48/LFS1W6HZegyXzKpQ==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226948,'3ByZyZPqdtTefn0Qz8+bZ9vvZI2BI0wgkEi48/LFS1W6HZegyXzKpQ==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226948,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4226948" class="layer">#3楼</a><a name="4226948" id="comment_anchor_4226948"></a>  <span class="comment_date">2019-04-10 09:20</span> <a id="a_comment_author_4226948" href="https://www.cnblogs.com/zengande/" target="_blank">zengande</a> <a href="http://msg.cnblogs.com/send/zengande" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/zengande/"><img src="//pic.cnblogs.com/face/1032272/20161022194719.png"></a></div><div id="comment_body_4226948" class="blog_comment_body">工具 &gt; 选项 &gt; 项目和解决方案 &gt; .Net Core &gt; 使用 .Net core SDK 预览版</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226948,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226948,'Bury',this)">反对(0)</a></div><span id="comment_4226948_avatar" style="display:none;">http://pic.cnblogs.com/face/1032272/20161022194719.png</span>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226949,'mpri5HwusoWZHcKkd1bsCBfGA3UYRbWyiqnVxxQDQNRnOtmi+9FemA==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226949,'mpri5HwusoWZHcKkd1bsCBfGA3UYRbWyiqnVxxQDQNRnOtmi+9FemA==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226949,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4226949" class="layer">#4楼</a><a name="4226949" id="comment_anchor_4226949"></a>  <span class="comment_date">2019-04-10 09:21</span> <a id="a_comment_author_4226949" href="https://www.cnblogs.com/laosandegudai/" target="_blank">老三的古代</a> <a href="http://msg.cnblogs.com/send/%E8%80%81%E4%B8%89%E7%9A%84%E5%8F%A4%E4%BB%A3" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/laosandegudai/"><img src="//pic.cnblogs.com/face/627017/20160517173538.png"></a></div><div id="comment_body_4226949" class="blog_comment_body">
+                            <a href="#4226874" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4226874);">@@</a>
+                            码农阿宇<br>vs设置里面。
+                        </div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226949,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226949,'Bury',this)">反对(0)</a></div><span id="comment_4226949_avatar" style="display:none;">http://pic.cnblogs.com/face/627017/20160517173538.png</span>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226950,'Ec9LijazHPJmRa/85zpC0qumGP9GpNaGiZc5nZJarcbszKWgLSerXw==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226950,'Ec9LijazHPJmRa/85zpC0qumGP9GpNaGiZc5nZJarcbszKWgLSerXw==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226950,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4226950" class="layer">#5楼</a><a name="4226950" id="comment_anchor_4226950"></a>  <span class="comment_date">2019-04-10 09:21</span> <a id="a_comment_author_4226950" href="https://www.cnblogs.com/sundayisblue/" target="_blank">Sunday*</a> <a href="http://msg.cnblogs.com/send/Sunday%2A" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/sundayisblue/"><img src="//pic.cnblogs.com/face/65429/20170703102044.png"></a></div><div id="comment_body_4226950" class="blog_comment_body">
+                            <a href="#4226874" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4226874);">@@</a>
+                            码农阿宇<br>参考：<br><a href="https://www.cnblogs.com/yilezhu/p/10649327.html" target="_blank">https://www.cnblogs.com/yilezhu/p/10649327.html</a><br><a href="https://www.cnblogs.com/yilezhu/p/10661161.html" target="_blank">https://www.cnblogs.com/yilezhu/p/10661161.html</a>
+                        </div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226950,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226950,'Bury',this)">反对(0)</a></div><span id="comment_4226950_avatar" style="display:none;">http://pic.cnblogs.com/face/65429/20170703102044.png</span>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4227035,'LHs137F6eyoe65rgz3RzwDsj7NxSVQlGdFW7jU3WCnJvHXVf2PDK5w==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4227035,'LHs137F6eyoe65rgz3RzwDsj7NxSVQlGdFW7jU3WCnJvHXVf2PDK5w==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4227035,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4227035" class="layer">#6楼</a><a name="4227035" id="comment_anchor_4227035"></a>  <span class="comment_date">2019-04-10 10:27</span> <a id="a_comment_author_4227035" href="http://home.cnblogs.com/u/1634983/" target="_blank">cr编辑</a> <a href="http://msg.cnblogs.com/send/cr%E7%BC%96%E8%BE%91" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="http://home.cnblogs.com/u/1634983/"><img src="https://pic.cnblogs.com/face/sample_face.gif"></a></div><div id="comment_body_4227035" class="blog_comment_body">您好，想邀您写书，关于计算机技能方面，不知道您有这方面的想法吗？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4227035,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4227035,'Bury',this)">反对(0)</a></div>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4227093,'BxxllDOu0qZlGhgXPZD2S912iSzBrarHuxDJNSkU9SWZcOPoMPLMdw==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4227093,'BxxllDOu0qZlGhgXPZD2S912iSzBrarHuxDJNSkU9SWZcOPoMPLMdw==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4227093,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4227093" class="layer">#7楼</a><a name="4227093" id="comment_anchor_4227093"></a>  <span class="comment_date">2019-04-10 11:13</span> <a id="a_comment_author_4227093" href="https://www.cnblogs.com/lwqlun/" target="_blank">LamondLu</a> <a href="http://msg.cnblogs.com/send/LamondLu" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/lwqlun/"><img src="//pic.cnblogs.com/face/65831/20180909170519.png"></a></div><div id="comment_body_4227093" class="blog_comment_body">帅哥，我把这篇文章转载到了我的公众号了，标明了出处。<br><br><img src="//img2018.cnblogs.com/blog/65831/201904/65831-20190410111345188-1575109106.png" alt="" border="0" "\=" "></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4227093,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4227093,'Bury',this)">反对(0)</a></div><span id="comment_4227093_avatar" style="display:none;">http://pic.cnblogs.com/face/65831/20180909170519.png</span>
+                    </div>
+                </div>
+
+                <div class="feedbackItem">
+                    <div class="feedbackListSubtitle">
+                        <div class="feedbackManage">
+                            &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4227146,'8L498g0Y5mSo/v+sDw8yeQQmPInhrA3ftj1iiJ9YFg004zj6kONQAw==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4227146,'8L498g0Y5mSo/v+sDw8yeQQmPInhrA3ftj1iiJ9YFg004zj6kONQAw==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4227146,this, 10680805)">删除</a></span>
+                        </div>
+                        <a href="#4227146" class="layer">#8楼</a><a name="4227146" id="comment_anchor_4227146"></a>  <span class="comment_date">2019-04-10 11:50</span> <a id="a_comment_author_4227146" href="https://www.cnblogs.com/LCHL/" target="_blank">疯狂的懒羊羊</a> <a href="http://msg.cnblogs.com/send/%E7%96%AF%E7%8B%82%E7%9A%84%E6%87%92%E7%BE%8A%E7%BE%8A" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    </div>
+                    <div class="feedbackCon">
+                        <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/LCHL/"><img src="//pic.cnblogs.com/face/399698/20160526093606.png"></a></div><div id="comment_body_4227146" class="blog_comment_body">看了2遍，大概看明白了，但还是搞不懂这玩意儿能做啥？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4227146,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4227146,'Bury',this)">反对(0)</a></div><span id="comment_4227146_avatar" style="display:none;">http://pic.cnblogs.com/face/399698/20160526093606.png</span>
+                    </div>
+                </div>
+                <div id="comments_pager_bottom"></div>
+            </div>
+            <script type="text/javascript">var commentManager = new blogCommentManager(); commentManager.renderComments(0);</script>
+            <div id="comment_form" class="commentform">
+                <a name="commentform"></a>
+                <div id="divCommentShow"></div>
+                <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+                <div id="comment_form_container">
+                    <script type="text/javascript" src="//mention.cnblogs.com/bundles/mention.js?id=20160615"></script>
+                    <div id="commentform_title">发表评论</div>
+                    <span id="tip_comment" style="color:Red"></span>
+                    <p>
+                        昵称：<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50" value="码农阿宇">
+                    </p>
+                    <div class="commentbox_main">
+                        <div class="commentbox_title">
+                            <div class="commentbox_title_left">评论内容：</div>
+                            <div class="commentbox_title_right">
+                                <img id="ubb_quote" class="comment_icon" src="//static.cnblogs.com/images/ubb/quote.gif" alt="引用" title="添加引用" onclick="insertUBB('tbCommentBody','quote')">
+                                <img id="ubb_bold" class="comment_icon" src="//static.cnblogs.com/images/ubb/b.png" alt="粗体" title="添加粗体" onclick="insertUBB('tbCommentBody','b')">
+                                <img id="ubb_url" class="comment_icon" src="//static.cnblogs.com/images/ubb/lk.png" alt="链接" title="添加链接" onclick="insertUbbUrl('tbCommentBody')">
+                                <img id="ubb_indent" class="comment_icon" src="//static.cnblogs.com/images/ubb/indent.png" alt="缩进" title="添加首行缩进" onclick="insertIndent('tbCommentBody')">
+                                <img id="ubb_code" class="comment_icon" src="//static.cnblogs.com/images/ubb/InsertCode.gif" alt="代码" title="添加代码" onclick="insertUbbCode()">
+                                <img id="ubb_img" class="comment_icon" src="//static.cnblogs.com/images/ubb/img.gif" alt="图片" title="上传图片" onclick="OpenImageUploadWindow();">
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+<textarea id="tbCommentBody" class="comment_textarea"></textarea>
+                    </div>
+                    <p id="commentbox_opt">
+                        <input id="btn_comment_submit" type="button" class="comment_btn" value="提交评论">
+                        <span id="span_comment_canceledit" style="display:none"><a href="javascript:void(0);" onclick="return CancelCommentEdit()">不改了</a></span>
+                        <a href="javascript:void(0);" onclick="return logout();">退出</a>
+                    </p>
+                    <div id="tip_comment2" style="color:Red"></div>
+                    <p>
+                        [Ctrl+Enter快捷键提交]
+                    </p>
+                    <div style="display:none">
+                        <span id="comment_edit_id"></span><span id="span_parentcomment_id"></span>
+                        <span id="span_parent_id"></span>
+                        <span id="span_comment_replyto"></span>
+                        <span id="span_comment_posted"></span>
+                    </div>
+                </div>
+                <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+                <div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'T2-工控')">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="https://gitee.com/enterprises?from=bky-2" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'T2-gitee')">【推荐】专业便捷的企业级代码托管服务 - Gitee 码云</a><br><a href="https://cloud.tencent.com/redirect.php?redirect=1025&amp;cps_key=285f996e1cd76decfb796e3eb6d1723b&amp;from=console" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'T2-腾讯云')">【推荐】腾讯云新客户无门槛领取总价值高达2860元代金券</a><br></div>
+                <div id="opt_under_post"></div>
+                <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+                <script>
+                    var googletag = googletag || {};
+                    googletag.cmd = googletag.cmd || [];
+                </script>
+                <script>
+                    googletag.cmd.push(function () {
+                        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+                        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+                        googletag.pubads().enableSingleRequest();
+                        googletag.enableServices();
+                    });
+                </script>
+                <div id="cnblogs_c1" class="c_ad_block" style="">
+                    <div id="div-gpt-ad-1546353474406-0" style="height: 250px; width: 300px;"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none; width: 300px; height: 250px;"></div></div>
+                </div>
+                <div id="under_post_news"></div>
+                <div id="cnblogs_c2" class="c_ad_block" style="">
+                    <div id="div-gpt-ad-1539008685004-0" style="height: 60px; width: 468px;"><div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none; width: 468px; height: 60px;"></div></div>
+                </div>
+                <div id="under_post_kb"></div>
+                <div id="HistoryToday" class="c_ad_block"></div>
+                <script type="text/javascript">
+                    if (enablePostBottom()) {
+                        codeHighlight();
+                        fixPostBody();
+                        setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+                        deliverT2();
+                        deliverC1();
+                        deliverC2();
+                        loadNewsAndKb();
+                        loadBlogSignature();
+                        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+                        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+                        loadOptUnderPost();
+                        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+                    }
+                </script>
+            </div>
+
+
+        </div><!--end: forFlow -->
+    </div><!--end: mainContent 主体内容容器-->
+
+    <div id="sideBar">
+        <div id="sideBarMain">
+
+            <!--done-->
+            <div class="newsItem">
+                <h3 class="catListTitle">公告</h3>
+                <div id="blog-news">
+                    <script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script>
+                    <script type="text/javascript">window['__document_write_ajax_callbacks__']['5']();</script>
+                    <script>window['__document_write_ajax_callbacks__']['1']();</script>
+                    <script type="text/javascript">window['__document_write_ajax_callbacks__']['6']();</script>
+                    <script type="text/javascript">window['__document_write_ajax_callbacks__']['2']();</script><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/CoderAyu/">码农阿宇</a><br>园龄：<a href="https://home.cnblogs.com/u/CoderAyu/" title="入园时间：2017-12-05">1年4个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/CoderAyu/followers/">88</a><br>关注：<a href="https://home.cnblogs.com/u/CoderAyu/followees/">40</a><div id="p_b_follow"></div>
+                    <script type="text/javascript">window['__document_write_ajax_callbacks__']['7']();</script>
+                    <script>window['__document_write_ajax_callbacks__']['3']();</script></div>
+                </div>
+                <script type="text/javascript">loadBlogNews();</script>
+            </div>
+
+            <div id="blog-calendar" style="display:none"></div>
+            <script type="text/javascript">loadBlogDefaultCalendar();</script>
+
+            <div id="leftcontentcontainer">
+                <div id="blog-sidecolumn">
+                    <div id="sidebar_search" class="sidebar-block"></div><div id="sidebar_recentposts" class="sidebar-block">
+                        <div class="catListEssay">
+                            <h3 class="catListTitle">最新随笔</h3>
+                            <ul>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/10680805.html">1. 聊一聊C# 8.0中的await foreach</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/10549409.html">2. ConcurrentDictionary并发字典知多少?</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/10360608.html">3. 你真的了解字典(Dictionary)吗?</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/10269610.html">4. 轻量级.Net Core服务注册工具CodeDi发布啦</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/10242230.html">5. C# Memory Cache 踩坑记录</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/10177753.html">6. .Net小白离开校园的第一年</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/9906349.html">7. 国内开源社区巨作AspectCore-Framework入门</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/9757389.html">8. .Net Core中利用TPL（任务并行库）构建Pipeline处理Dataflow</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/9601991.html">9. ElasticSearch入门 附.Net Core例子</a></li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/p/9564977.html">10. Asp.net Core 2.1新功能Generic Host(通用主机)，了解一下</a></li>
+                            </ul>
+                        </div>
+                    </div><div id="sidebar_toptags" class="sidebar-block">
+                        <div class="catListTag">
+                            <h3 class="catListTitle">我的标签</h3>
+                            <ul>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/EF%20Core/">EF Core</a>(4)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/dictionary/">dictionary</a>(2)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/hash%20function/">hash function</a>(2)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/IAsyncEnumerable/">IAsyncEnumerable</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/IOC/">IOC</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/Join/">Join</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/MySql/">MySql</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/NopCommerce/">NopCommerce</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/RabbitMQ/">RabbitMQ</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/Scaffold/">Scaffold</a>(1)</li>
+                                <li><a href="https://www.cnblogs.com/CoderAyu/tag/">更多</a></li>
+                            </ul>
+                        </div>
+                    </div><div id="sidebar_categories">
+                        <div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+                            <h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(78)</span></h3>
+
+                            <ul>
+
+                                <li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/CoderAyu/category/1171903.html">.Net Core跨平台(15)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/CoderAyu/category/1171904.html">Asp.Net(2)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/CoderAyu/category/1171914.html">Asp.Net Core(10)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/CoderAyu/category/1171910.html">BUG解决(4)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/CoderAyu/category/1171907.html">C#高级(10)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/CoderAyu/category/1171901.html">C#基础(3)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/CoderAyu/category/1171909.html">HTML/CSS(5)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_7" href="https://www.cnblogs.com/CoderAyu/category/1171912.html">Linux学习(2)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_8" href="https://www.cnblogs.com/CoderAyu/category/1171902.html">WinForm知识(2)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_9" href="https://www.cnblogs.com/CoderAyu/category/1171926.html">程序人生(4)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_10" href="https://www.cnblogs.com/CoderAyu/category/1221114.html">分布式(1)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_11" href="https://www.cnblogs.com/CoderAyu/category/1171913.html">工具使用(9)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_12" href="https://www.cnblogs.com/CoderAyu/category/1171911.html">建站相关</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_13" href="https://www.cnblogs.com/CoderAyu/category/1171905.html">设计模式(2)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_14" href="https://www.cnblogs.com/CoderAyu/category/1171906.html">数据库(8)</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_15" href="https://www.cnblogs.com/CoderAyu/category/1171908.html">网络编程</a> </li>
+
+                                <li><a id="CatList_LinkList_0_Link_16" href="https://www.cnblogs.com/CoderAyu/category/1171915.html">源码学习(1)</a> </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+                            <h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(83)</span></h3>
+
+                            <ul>
+
+                                <li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/CoderAyu/archive/2019/04.html">2019年4月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/CoderAyu/archive/2019/03.html">2019年3月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/CoderAyu/archive/2019/02.html">2019年2月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/CoderAyu/archive/2019/01.html">2019年1月 (2)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/CoderAyu/archive/2018/12.html">2018年12月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/CoderAyu/archive/2018/11.html">2018年11月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/CoderAyu/archive/2018/10.html">2018年10月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/CoderAyu/archive/2018/09.html">2018年9月 (1)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/CoderAyu/archive/2018/08.html">2018年8月 (4)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/CoderAyu/archive/2018/05.html">2018年5月 (4)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/CoderAyu/archive/2018/04.html">2018年4月 (3)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/CoderAyu/archive/2018/03.html">2018年3月 (7)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/CoderAyu/archive/2018/02.html">2018年2月 (5)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/CoderAyu/archive/2018/01.html">2018年1月 (7)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_14" href="https://www.cnblogs.com/CoderAyu/archive/2017/12.html">2017年12月 (25)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_15" href="https://www.cnblogs.com/CoderAyu/archive/2017/11.html">2017年11月 (3)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_16" href="https://www.cnblogs.com/CoderAyu/archive/2017/10.html">2017年10月 (2)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_17" href="https://www.cnblogs.com/CoderAyu/archive/2017/08.html">2017年8月 (2)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_18" href="https://www.cnblogs.com/CoderAyu/archive/2017/04.html">2017年4月 (2)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_19" href="https://www.cnblogs.com/CoderAyu/archive/2016/12.html">2016年12月 (4)</a> </li>
+
+                                <li><a id="CatList_LinkList_1_Link_20" href="https://www.cnblogs.com/CoderAyu/archive/2016/11.html">2016年11月 (6)</a> </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div id="sidebar_links1169970" class="catList sidebar-block">
+                            <h3 class="catListTitle">个人链接</h3>
+
+                        </div>
+
+                    </div><div id="sidebar_scorerank" class="sidebar-block">
+                        <div class="catListBlogRank">
+                            <h3 class="catListTitle">积分与排名</h3>
+                            <ul>
+                                <li class="liScore">
+                                    积分 -	53988
+                                </li>
+                                <li class="liRank">
+                                    排名 -	10072
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div><div id="sidebar_recentcomments" class="sidebar-block">
+                        <div id="recent_comments_wrap">
+                            <div class="catListComment">
+                                <h3 class="catListTitle">最新评论</h3>
+
+                                <div id="RecentCommentsBlock">
+                                    <ul>
+                                        <li class="recent_comment_title"><a href="https://www.cnblogs.com/CoderAyu/p/8490115.html#4236410">1. Re:ASP.NET WebAPI String 传值问题</a></li>
+                                        <li class="recent_comment_body">沙发</li>
+                                        <li class="recent_comment_author">--码农阿宇</li>
+                                        <li class="recent_comment_title"><a href="https://www.cnblogs.com/CoderAyu/p/10680805.html#4228854">2. Re:聊一聊C# 8.0中的await foreach</a></li>
+                                        <li class="recent_comment_body">@@cr编辑感觉自己能力还不够 好好学习学习 以后再考虑...</li>
+                                        <li class="recent_comment_author">--码农阿宇</li>
+                                        <li class="recent_comment_title"><a href="https://www.cnblogs.com/CoderAyu/p/10680805.html#4227889">3. Re:聊一聊C# 8.0中的await foreach</a></li>
+                                        <li class="recent_comment_body">@@五行缺猫哈哈 刚刚去github上看了一下 确实如此 不好意思 大意了...</li>
+                                        <li class="recent_comment_author">--码农阿宇</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div id="sidebar_topviewedposts" class="sidebar-block">
+                        <div id="topview_posts_wrap">
+                            <div class="catListView">
+                                <h3 class="catListTitle">阅读排行榜</h3>
+                                <div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/CoderAyu/p/9906349.html">1. 国内开源社区巨作AspectCore-Framework入门(4611)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/9564977.html">2. Asp.net Core 2.1新功能Generic Host(通用主机)，了解一下(2896)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/9416376.html">3. 基于Win10极简SonarQube C#代码质量分析(2825)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/10360608.html">4. 你真的了解字典(Dictionary)吗?(2786)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/8576822.html">5. 利用EF Core的Join进行多表查询(2779)</a></li></ul></div>
+                            </div>
+                        </div>
+                    </div><div id="sidebar_topcommentedposts" class="sidebar-block">
+                        <div id="topfeedback_posts_wrap">
+                            <div class="catListFeedback">
+                                <h3 class="catListTitle">评论排行榜</h3>
+                                <div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/CoderAyu/p/10360608.html">1. 你真的了解字典(Dictionary)吗?(32)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/9906349.html">2. 国内开源社区巨作AspectCore-Framework入门(28)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/9564977.html">3. Asp.net Core 2.1新功能Generic Host(通用主机)，了解一下(26)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/8627584.html">4. .Net小白的大学四年，内含面经(25)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/10549409.html">5. ConcurrentDictionary并发字典知多少?(23)</a></li></ul></div>
+                            </div>
+                        </div>
+                    </div><div id="sidebar_topdiggedposts" class="sidebar-block">
+                        <div id="topdigg_posts_wrap">
+                            <div class="catListView">
+                                <h3 class="catListTitle">推荐排行榜</h3>
+                                <div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/CoderAyu/p/9906349.html">1. 国内开源社区巨作AspectCore-Framework入门(48)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/9564977.html">2. Asp.net Core 2.1新功能Generic Host(通用主机)，了解一下(26)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/10360608.html">3. 你真的了解字典(Dictionary)吗?(26)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/10549409.html">4. ConcurrentDictionary并发字典知多少?(22)</a></li><li><a href="https://www.cnblogs.com/CoderAyu/p/8982842.html">5. NopCommerce开源项目中很基础但是很实用的C# Helper方法(22)</a></li></ul></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">loadBlogSideColumn();</script>
+            </div>
+
+        </div><!--end: sideBarMain -->
+    </div><!--end: sideBar 侧边栏容器 -->
+    <div class="clear"></div>
+</div>

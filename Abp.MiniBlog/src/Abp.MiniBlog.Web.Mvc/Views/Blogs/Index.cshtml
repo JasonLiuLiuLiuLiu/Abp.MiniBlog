@@ -13,6 +13,7 @@
         <script src="~/view-resources/Views/Blogs/Index.min.js" asp-append-version="true"></script>
     </environment>
 }
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -22,26 +23,21 @@
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
-                        </ul>
+                        <a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i></a>
                     </li>
                 </ul>
             </div>
             <div class="body table-responsive">
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>@L("Title")</th>
-                        <th>@L("Excerpt")</th>
-                        <th>@L("Is Published")</th>
-                    </tr>
+                        <tr>
+                            <th>@L("Title")</th>
+                            <th>@L("Excerpt")</th>
+                            <th>@L("Is Published")</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    @foreach (var blog in Model.Blogs)
+                        @foreach (var blog in Model.Blogs)
                     {
                         <tr>
                             <td>@blog.Title</td>
@@ -60,7 +56,7 @@
                     }
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#BlogCreateModal">
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right add-button" data-toggle="modal" data-target="#BlogCreateModal">
                     <i class="material-icons">add</i>
                 </button>
             </div>
@@ -139,3 +135,4 @@
         </div>
     </div>
 </div>
+

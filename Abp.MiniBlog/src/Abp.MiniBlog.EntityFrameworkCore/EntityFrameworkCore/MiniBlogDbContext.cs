@@ -13,6 +13,10 @@ namespace Abp.MiniBlog.EntityFrameworkCore
 
         public virtual DbSet<Comment> Comments { get; set; }
 
+        public virtual DbSet<Categories> Categories { get; set; }
+
+        public virtual DbSet<BlogAndCategoriesRelation> BlogAndCategoriesRelations{ get; set; }
+
         public MiniBlogDbContext(DbContextOptions<MiniBlogDbContext> options)
             : base(options)
         {

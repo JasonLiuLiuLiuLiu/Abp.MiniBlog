@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
@@ -16,38 +17,61 @@ namespace Abp.MiniBlog.Blog
     public class BlogAppService : MiniBlogAppServiceBase, IBlogAppService
     {
         private readonly IRepository<Blog, Guid> _blogRepository;
+        private readonly IRepository<Categories, int> _cateRepository;
+        private readonly IRepository<BlogAndCategoriesRelation, int> _relationRepository;
         private readonly IBlogManager _blogManager;
 
-        public BlogAppService(IRepository<Blog, Guid> blogRepository, IBlogManager blogManager)
+        public BlogAppService(IRepository<Blog, Guid> blogRepository, IBlogManager blogManager, IRepository<Categories, int> cateRepository, IRepository<BlogAndCategoriesRelation, int> relationRepository)
         {
             _blogRepository = blogRepository;
             _blogManager = blogManager;
+            _cateRepository = cateRepository;
+            _relationRepository = relationRepository;
         }
 
-        public async Task<ListResultDto<BlogDto>> GetListAsync(GetBlogListInput input)
+        public async Task<List<BlogDto>> GetListAsync(GetBlogListInput input)
         {
             var blogs = await _blogRepository.GetAll().Include(e => e.Comments).OrderByDescending(e => e.CreationTime)
                 .Take(64).ToListAsync();
-            return new ListResultDto<BlogDto>(blogs.MapTo<List<BlogDto>>());
+            return blogs.Select(u => new BlogDto
+            {
+                Id = u.Id,
+                Title = u.Title,
+                Excerpt = u.Excerpt,
+                Content = u.Content
+            }).ToList();
         }
 
         public async Task<BlogDetailOutput> GetDetailAsync(EntityDto<Guid> input)
         {
-            var @event = await _blogRepository
+            var blog = await _blogRepository
                 .GetAll()
                 .Include(e => e.Comments)
                 .Where(e => e.Id == input.Id)
                 .FirstOrDefaultAsync();
 
-            if (@event == null)
+            if (blog == null)
             {
                 throw new UserFriendlyException("Could not found the event, maybe it's deleted.");
             }
 
-            return @event.MapTo<BlogDetailOutput>();
+            StringBuilder sb = new StringBuilder();
+            await _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == input.Id).ForEachAsync(u => sb.Append(u.Categories.Tag+','));
+
+            if (sb.Length > 0)
+                sb.Remove(sb.Length - 1, 1);
+
+            return new BlogDetailOutput
+            {
+                Id = blog.Id,
+                Title = blog.Title,
+                Excerpt = blog.Excerpt,
+                Content = blog.Content,
+                Categories = sb.ToString()
+            };
         }
 
-        public async Task CreateAsync(CreateBlogInput input)
+        public async Task<Guid> CreateAsync(CreateBlogInput input)
         {
             var blog = new Blog
             {
@@ -57,13 +81,48 @@ namespace Abp.MiniBlog.Blog
                 Content = input.Content
             };
             await _blogManager.CreateAsync(blog);
+            return blog.Id;
         }
 
         public async Task<BlogDto> Update(BlogDto input)
         {
-            var blog = await _blogManager.GetAsync(input.Id);
-            MapToEntity(input,blog);
-            _blogRepository.Update(blog);
+            if (input.Id == Guid.Empty)
+                input.Id = await CreateAsync(new CreateBlogInput()
+                {
+                    Title = input.Title,
+                    Excerpt = input.Excerpt,
+                    Content = input.Content
+                });
+            else
+            {
+                var blog = await _blogManager.GetAsync(input.Id);
+                blog.Title = input.Title;
+                blog.Excerpt = input.Excerpt;
+                blog.Content = input.Content;
+                _blogRepository.Update(blog);
+            }
+
+            if (!string.IsNullOrEmpty(input.Tags))
+            {
+                var tags = input.Tags.Split(',');
+                if (tags == null)
+                    return input;
+
+                var allTags = _cateRepository.GetAll().Where(u => tags.Contains(u.Tag)).ToList();
+
+                var tagNotIn = tags.Where(t => allTags.All(all => all.Tag != t));
+
+                foreach (var tag in tagNotIn)
+                {
+                    var tagEntity = new Categories
+                    {
+                        Tag = tag
+                    };
+                    _cateRepository.Insert(tagEntity);
+                    allTags.Add(tagEntity);
+                }
+                await UpdateTagReation(input.Id, allTags);
+            }
             return input;
         }
 
@@ -73,9 +132,24 @@ namespace Abp.MiniBlog.Blog
             await _blogRepository.DeleteAsync(blog);
         }
 
-        private void MapToEntity(BlogDto input, Blog user)
+        private async Task UpdateTagReation(Guid blogId, List<Categories> tags)
         {
-            ObjectMapper.Map(input, user);
+            var allRelation = _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == blogId);
+            var needInsert = tags.Where(u => allRelation.All(r => r.CategoriesId != u.Id));
+            foreach (var tag in needInsert)
+            {
+                await _relationRepository.InsertAsync(new BlogAndCategoriesRelation
+                {
+                    BlogId = blogId,
+                    CategoriesId = tag.Id
+                });
+            }
+
+            var needDelete = allRelation.Where(r => tags.All(u => u.Id != r.CategoriesId));
+            foreach (var tag in needDelete)
+            {
+                await _relationRepository.DeleteAsync(tag.Id);
+            }
         }
     }
 }

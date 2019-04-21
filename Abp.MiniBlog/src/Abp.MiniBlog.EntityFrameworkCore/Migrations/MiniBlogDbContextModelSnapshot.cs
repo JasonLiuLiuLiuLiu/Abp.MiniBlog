@@ -840,7 +840,44 @@ namespace Abp.MiniBlog.Migrations
                     b.ToTable("Blogs");
                 });
 
-            modelBuilder.Entity("Abp.MiniBlog.Comment.Comment", b =>
+            modelBuilder.Entity("Abp.MiniBlog.Blog.BlogAndCategoriesRelation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<Guid>("BlogId");
+
+                    b.Property<int>("CategoriesId");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriesId");
+
+                    b.ToTable("BlogAndCategoriesRelations");
+                });
+
+            modelBuilder.Entity("Abp.MiniBlog.Blog.Categories", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<long?>("CreatorUserId");
+
+                    b.Property<string>("Tag")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Abp.MiniBlog.Blog.Comment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -1266,7 +1303,15 @@ namespace Abp.MiniBlog.Migrations
                         .HasForeignKey("LastModifierUserId");
                 });
 
-            modelBuilder.Entity("Abp.MiniBlog.Comment.Comment", b =>
+            modelBuilder.Entity("Abp.MiniBlog.Blog.BlogAndCategoriesRelation", b =>
+                {
+                    b.HasOne("Abp.MiniBlog.Blog.Categories", "Categories")
+                        .WithMany()
+                        .HasForeignKey("CategoriesId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Abp.MiniBlog.Blog.Comment", b =>
                 {
                     b.HasOne("Abp.MiniBlog.Blog.Blog", "Blog")
                         .WithMany("Comments")

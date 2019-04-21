@@ -332,3 +332,4 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+Abp.MiniBlog/src/Abp.MiniBlog.Web.Mvc/App_Data/Logs/Logs.txt

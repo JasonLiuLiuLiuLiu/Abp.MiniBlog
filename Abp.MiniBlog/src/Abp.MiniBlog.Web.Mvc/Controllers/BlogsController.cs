@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
@@ -31,11 +32,28 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
             });
         }
 
+        public async Task<ActionResult> Edit(Guid? blogId = null)
+        {
+            BlogDetailOutput blog = new BlogDetailOutput
+            {
+                Categories = new List<string>()
+            };
+            if (blogId != null)
+                blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId.Value));
+
+            return View("Edit", blog);
+        }
+
+        public async Task Update(BlogDetailOutput input)
+        {
+            
+        }
+
         public async Task<ActionResult> EditBlogModal(Guid blogId)
         {
             var blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId));
 
-            return View("_EditBlogModal",new EditBlogModalViewModel
+            return View("_EditBlogModal", new EditBlogModalViewModel
             {
                 Blog = blog
             });

@@ -30,7 +30,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="origin" />
-    <title>码农阿宇 - 博客园</title>
+    <title>@ViewData["Title"]</title>
     <environment names="Development">
         <link href="~/fonts/roboto/roboto.css" rel="stylesheet" asp-append-version="true" />
         <link href="~/fonts/material-icons/materialicons.css" rel="stylesheet" asp-append-version="true" />
@@ -50,13 +50,14 @@
     <environment names="Staging,Production">
         <link href="~/view-resources/Views/_Bundles/shared-layout.min.css" rel="stylesheet" asp-append-version="true" />
     </environment>
-    <link type="text/css" rel="stylesheet" href="~/css/blog-common.css" asp-append-version="true"/>
-    <link id="MainCss" type="text/css" rel="stylesheet" href="~/css/bundle-Custom.css" asp-append-version="true"/>
-    <link type="text/css" rel="stylesheet" href="~/css/413735.css" asp-append-version="true"/>
-    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="~/css/bundle-Custom-mobile.css" asp-append-version="true"/>
+    <link type="text/css" rel="stylesheet" href="~/css/blog-common.css" asp-append-version="true" />
+    <link id="MainCss" type="text/css" rel="stylesheet" href="~/css/bundle-Custom.css" asp-append-version="true" />
+    <link type="text/css" rel="stylesheet" href="~/css/413735.css" asp-append-version="true" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="~/css/bundle-Custom-mobile.css" asp-append-version="true" />
     <script src="~/js/jquery-2.2.0.min.js" asp-append-version="true"></script>
     <script src="~/js/blog-common.js" type="text/javascript" asp-append-version="true"></script>
 
+    @RenderSection("Head", required: false)
     <!-- View specific styles -->
     @RenderSection("styles", required: false)
 
@@ -89,21 +90,18 @@
             <div id="navigator">
 
                 <ul id="navList">
-                    <li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
-                    <li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/CoderAyu/">首页</a></li>
+                    <li><a id="blog_nav_myhome" class="menu" asp-controller="Home" asp-action="Index">首页</a></li>
                     <li>
-                        <a id="blog_nav_newpost" class="menu" rel="nofollow"
-                           href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a>
+                        <a id="blog_nav_newpost" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">新随笔</a>
                     </li>
                     <li>
-                        <a id="blog_nav_contact" class="menu" rel="nofollow"
-                           href="https://msg.cnblogs.com/send/%E7%A0%81%E5%86%9C%E9%98%BF%E5%AE%87">联系</a>
+                        <a id="blog_nav_contact" class="menu" rel="nofollow" asp-controller="About" asp-action="Index">关于</a>
                     </li>
                     <li>
                         <a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CoderAyu/rss">订阅</a>
                         <!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/CoderAyu/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>-->
                     </li>
-                    <li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+                    <li><a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">管理</a></li>
                 </ul>
                 <div class="blogStats">
 

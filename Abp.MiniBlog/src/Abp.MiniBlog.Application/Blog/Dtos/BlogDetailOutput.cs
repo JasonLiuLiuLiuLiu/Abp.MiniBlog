@@ -15,6 +15,8 @@ namespace Abp.MiniBlog.Blog.Dtos
 
         public string Content { get; set; }
 
+        public IList<string> Categories { get; set; } = new List<string>();
+
         public bool IsPublished { get; set; } = true;
 
         public IList<Comment> Comments { get; } = new List<Comment>();

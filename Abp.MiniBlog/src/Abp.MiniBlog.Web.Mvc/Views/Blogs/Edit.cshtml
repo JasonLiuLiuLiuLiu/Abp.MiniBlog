@@ -1,1 +1,96 @@
-﻿
+﻿@using Abp.MiniBlog.Web.Startup
+@model Abp.MiniBlog.Blog.Dtos.BlogDetailOutput
+@{
+    ViewBag.CurrentPageName = PageNames.Blogs; // The menu item will be active for this page.
+    bool isNew = string.IsNullOrEmpty(Model.Title);
+    ViewData["Title"] = "Edit " + (Model.Title ?? "new post");
+    var host = Context.Request.Host.ToString();
+    List<string> allCats = ViewData["AllCats"] as List<string> ?? new List<string>();
+    allCats.Sort();
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Blogs/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Blogs/Index.min.js" asp-append-version="true"></script>
+    </environment>
+    <script src="~/lib/tinymce/tinymce.min.js" asp-append-version="true"></script>
+    <script src="~/js/BlogEdit.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
+    <link href="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput-angular.min.js"></script>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card" id="BlogCreateModal">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("Add new blog")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="userCreateForm" role="form" novalidate class="form-validation">
+                    <div role="tabpanel" class="tab-pane animated fadeIn active" id="create-blog-details">
+                        <div class="row clearfix" style="margin-top:10px;">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input class="form-control" type="text" name="Title" required minlength="2" value="@Model.Title">
+                                        <label class="form-label">@L("Title")</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label class="form-label">@L("Tags")</label>
+                                        <br />
+                                        <input type="text" value="@Model.Categories" data-role="tagsinput" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label for="Excerpt">@L("Excerpt")</label>
+                                        <textarea class="form-control" id="Excerpt" rows="3" value="@Model.Excerpt"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <label class="form-label">@L("Content")</label>
+                                    <textarea asp-for="@Model.Content" rows="20" aria-label="Content" value="@Model.Content">@Model.Content</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="IsPublished" value="true" id="CreateBlogIsPublished" class="filled-in" checked />
+                                    <label for="CreateBlogIsPublished">@L("IsPublished")</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="button" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

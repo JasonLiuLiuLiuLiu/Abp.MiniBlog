@@ -50,7 +50,7 @@
     // Setup editor
     var editPost = document.getElementById("Content");
 
-    if (edit && editPost) {
+    if (editPost) {
 
         if (typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1) {
             tinymce.init({
@@ -95,14 +95,14 @@
         }
 
         // Delete post
-        var deleteButton = edit.querySelector(".delete");
-        if (deleteButton) {
-            deleteButton.addEventListener("click", function (e) {
-                if (!confirm("Are you sure you want to delete the post?")) {
-                    e.preventDefault();
-                }
-            });
-        }
+        //var deleteButton = edit.querySelector(".delete");
+        //if (deleteButton) {
+        //    deleteButton.addEventListener("click", function (e) {
+        //        if (!confirm("Are you sure you want to delete the post?")) {
+        //            e.preventDefault();
+        //        }
+        //    });
+        //}
     }
 
     // Delete comments

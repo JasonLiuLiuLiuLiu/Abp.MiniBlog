@@ -28,16 +28,13 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
             var allBlogs = _blogAppService.GetListAsync(new GetBlogListInput()).Result;
             return View(new BlogsListViewModel
             {
-                Blogs = allBlogs.Items
+                Blogs = allBlogs
             });
         }
 
         public async Task<ActionResult> Edit(Guid? blogId = null)
         {
-            BlogDetailOutput blog = new BlogDetailOutput
-            {
-                Categories = new List<string>()
-            };
+            BlogDetailOutput blog = new BlogDetailOutput();
             if (blogId != null)
                 blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId.Value));
 
@@ -46,7 +43,16 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
 
         public async Task Update(BlogDetailOutput input)
         {
-            
+            if (!string.IsNullOrEmpty(input.Content))
+                await _blogAppService.Update(new BlogDto
+                {
+                    Id = input.Id,
+                    Title = input.Title,
+                    Excerpt = input.Excerpt,
+                    Tags = input.Categories,
+                    Content = input.Content
+                });
+            return;
         }
 
         public async Task<ActionResult> EditBlogModal(Guid blogId)

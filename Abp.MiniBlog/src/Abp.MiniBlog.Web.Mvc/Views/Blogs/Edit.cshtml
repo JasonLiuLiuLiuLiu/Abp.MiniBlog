@@ -11,17 +11,16 @@
 @section scripts
 {
     <environment names="Development">
-        <script src="~/view-resources/Views/Blogs/Index.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Blogs/Edit.js" asp-append-version="true"></script>
     </environment>
 
     <environment names="Staging,Production">
-        <script src="~/view-resources/Views/Blogs/Index.min.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Blogs/Edit.js" asp-append-version="true"></script>
     </environment>
     <script src="~/lib/tinymce/tinymce.min.js" asp-append-version="true"></script>
     <script src="~/js/BlogEdit.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
     <link href="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
-    <script src="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput-angular.min.js"></script>
 }
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -32,14 +31,14 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <form name="userCreateForm" role="form" novalidate class="form-validation">
+                <form name="userCreateForm" role="form" id="form"  novalidate class="form-validation" asp-controller="Blogs" asp-action="Update">
                     <div role="tabpanel" class="tab-pane animated fadeIn active" id="create-blog-details">
                         <div class="row clearfix" style="margin-top:10px;">
                             <div class="col-sm-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input class="form-control" type="text" name="Title" required minlength="2" value="@Model.Title">
-                                        <label class="form-label">@L("Title")</label>
+                                        <input class="form-control" type="text" name="Title" required minlength="2" asp-for="Title">
+                                        <label class="form-label" asp-for="Title">@L("Title")</label>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +49,7 @@
                                     <div class="form-line">
                                         <label class="form-label">@L("Tags")</label>
                                         <br />
-                                        <input type="text" value="@Model.Categories" data-role="tagsinput" />
+                                        <input type="text" value="@Model.Categories" class="Categories" id="Categories" data-role="tagsinput" asp-for="Categories" onkeydown="if(event.keyCode==13)return false;"/>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +59,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <label for="Excerpt">@L("Excerpt")</label>
-                                        <textarea class="form-control" id="Excerpt" rows="3" value="@Model.Excerpt"></textarea>
+                                        <textarea class="form-control" id="Excerpt" rows="3" asp-for="Excerpt">@Model.Excerpt</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +69,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group form-float">
                                     <label class="form-label">@L("Content")</label>
-                                    <textarea asp-for="@Model.Content" rows="20" aria-label="Content" value="@Model.Content">@Model.Content</textarea>
+                                    <textarea asp-for="@Model.Content" rows="20" aria-label="Content">@Model.Content</textarea>
                                 </div>
                             </div>
                         </div>
@@ -82,6 +81,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" asp-for="@Model.Id" />
                     </div>
 
                     <div class="modal-footer">

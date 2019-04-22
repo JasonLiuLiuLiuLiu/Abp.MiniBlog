@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
-using Abp.MiniBlog.Authorization;
 using Abp.MiniBlog.Blog;
 using Abp.MiniBlog.Blog.Dtos;
 using Abp.MiniBlog.Controllers;
@@ -12,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Abp.MiniBlog.Web.Mvc.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages_Blogs)]
+    [AbpMvcAuthorize]
     public class BlogsController : MiniBlogControllerBase
     {
         private readonly IBlogAppService _blogAppService;

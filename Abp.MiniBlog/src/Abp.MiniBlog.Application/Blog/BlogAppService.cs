@@ -4,11 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
 using Abp.Domain.Repositories;
-using Abp.MiniBlog.Authorization.Users;
 using Abp.MiniBlog.Blog.Dtos;
-using Abp.MiniBlog.Users.Dto;
 using Abp.UI;
 using Microsoft.EntityFrameworkCore;
 
@@ -121,7 +118,7 @@ namespace Abp.MiniBlog.Blog
                     _cateRepository.Insert(tagEntity);
                     allTags.Add(tagEntity);
                 }
-                await UpdateTagReation(input.Id, allTags);
+                await UpdateTagRelation(input.Id, allTags);
             }
             return input;
         }
@@ -132,7 +129,7 @@ namespace Abp.MiniBlog.Blog
             await _blogRepository.DeleteAsync(blog);
         }
 
-        private async Task UpdateTagReation(Guid blogId, List<Categories> tags)
+        private async Task UpdateTagRelation(Guid blogId, List<Categories> tags)
         {
             var allRelation = _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == blogId);
             var needInsert = tags.Where(u => allRelation.All(r => r.CategoriesId != u.Id));

@@ -8,7 +8,7 @@ using Abp.MiniBlog.Controllers;
 using Abp.MiniBlog.Web.Models.Blogs;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Abp.MiniBlog.Web.Mvc.Controllers
+namespace Abp.MiniBlog.Web.Controllers
 {
     [AbpMvcAuthorize]
     public class BlogsController : MiniBlogControllerBase

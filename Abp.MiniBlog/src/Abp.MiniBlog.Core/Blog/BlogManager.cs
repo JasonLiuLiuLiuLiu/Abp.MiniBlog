@@ -16,13 +16,12 @@ namespace Abp.MiniBlog.Blog
 
         public async Task<Blog> GetAsync(Guid id)
         {
-            var @blog = await _blogRepository.FirstOrDefaultAsync(id);
-            if (@blog == null)
+            var blog = await _blogRepository.FirstOrDefaultAsync(id);
+            if (blog == null)
             {
                 throw new UserFriendlyException("Could not found the blog, maybe it's deleted!");
             }
-
-            return @blog;
+            return blog;
         }
 
         public async Task CreateAsync(Blog @blog)

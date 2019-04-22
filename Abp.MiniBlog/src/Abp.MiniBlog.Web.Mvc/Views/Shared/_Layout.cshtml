@@ -77,8 +77,7 @@
             <div id="blogTitle">
                 <!--done-->
                 <h1>
-                    <a id="Header1_HeaderTitle" class="headermaintitle"
-                       href="https://www.cnblogs.com/CoderAyu/">码农阿宇</a>
+                    <a id="Header1_HeaderTitle" class="headermaintitle" asp-controller="Home" asp-action="Index">码农阿宇</a>
                 </h1>
                 <h2>Coding Life</h2>
 
@@ -97,10 +96,9 @@
                     <li>
                         <a id="blog_nav_contact" class="menu" rel="nofollow" asp-controller="About" asp-action="Index">关于</a>
                     </li>
-                    <li>
+                    @*<li>
                         <a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CoderAyu/rss">订阅</a>
-                        <!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/CoderAyu/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>-->
-                    </li>
+                    </li>*@
                     <li>
                         <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">管理</a>
                     </li>
@@ -118,15 +116,6 @@
                         </li>
                     }
                 </ul>
-                <div class="blogStats">
-
-                    <div id="blog_stats">
-                        <span id="stats_post_count">随笔 - 83&nbsp; </span>
-                        <span id="stats_article_count">文章 - 0&nbsp; </span>
-                        <span id="stats-comment_count">评论 - 356</span>
-                    </div>
-
-                </div>
                 <!--end: blogStats -->
             </div>
             <!--end: navigator 博客导航栏 -->

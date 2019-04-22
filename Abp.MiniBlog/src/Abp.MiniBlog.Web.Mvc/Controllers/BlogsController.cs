@@ -54,16 +54,5 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
                 });
             return Redirect("Index");
         }
-
-        public async Task<ActionResult> EditBlogModal(Guid blogId)
-        {
-            var blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId));
-
-            return View("_EditBlogModal", new EditBlogModalViewModel
-            {
-                Blog = blog
-            });
-        }
-
     }
 }

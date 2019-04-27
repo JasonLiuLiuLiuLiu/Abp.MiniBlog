@@ -3,15 +3,8 @@
 @using Abp.Configuration.Startup
 @using Abp.Web.Mvc.Alerts
 @using Abp.Web.Security.AntiForgery
-@using Abp.MiniBlog
-@using Abp.MiniBlog.Configuration
 @using Abp.MiniBlog.Sessions
 @using Abp.MiniBlog.Web.Resources
-@using Abp.MiniBlog.Web.Views.Shared.Components.LeftSideBar
-@using Abp.MiniBlog.Web.Views.Shared.Components.SideBarNav
-@using Abp.MiniBlog.Web.Views.Shared.Components.SideBarUserArea
-@using Abp.MiniBlog.Web.Views.Shared.Components.TopBarLanguageSwitch
-@using Abp.MiniBlog.Web.Views.Shared.Components.RightSideBar
 @inject Abp.MiniBlog.Timing.AppTimes AppTimes
 @inject IAbpAntiForgeryManager AbpAntiForgeryManager
 @inject IMultiTenancyConfig MultiTenancyConfig
@@ -22,7 +15,6 @@
 @{
     Layout = null;
     AbpAntiForgeryManager.SetCookie(Context);
-    var uiTheme = await SettingManager.GetSettingValueAsync(AppSettingNames.UiTheme);
 }
 <!DOCTYPE html>
 <html>
@@ -77,14 +69,9 @@
             <div id="blogTitle">
                 <!--done-->
                 <h1>
-                    <a id="Header1_HeaderTitle" class="headermaintitle"
-                       href="https://www.cnblogs.com/CoderAyu/">码农阿宇</a>
+                    <a id="Header1_HeaderTitle" class="headermaintitle" asp-controller="Home" asp-action="Index">码农阿宇</a>
                 </h1>
                 <h2>Coding Life</h2>
-
-
-
-
             </div>
             <!--end: blogTitle 博客的标题和副标题 -->
             <div id="navigator">
@@ -98,35 +85,21 @@
                         <a id="blog_nav_contact" class="menu" rel="nofollow" asp-controller="About" asp-action="Index">关于</a>
                     </li>
                     <li>
-                        <a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CoderAyu/rss">订阅</a>
-                        <!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/CoderAyu/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>-->
-                    </li>
-                    <li>
                         <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Blogs" asp-action="Index">管理</a>
                     </li>
                     @if (SessionAppService.GetCurrentLoginInformations().IsCompletedSuccessfully)
                     {
-                        <li>
-                            <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Account" asp-action="Login">Log in</a>
-                        </li>
-                        
+                    <li>
+                        <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Account" asp-action="Login">Log in</a>
+                    </li>
                     }
                     else
                     {
-                        <li>
-                            <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Account" asp-action="Logout">Log out</a>
-                        </li>
+                    <li>
+                        <a id="blog_nav_admin" class="menu" rel="nofollow" asp-controller="Account" asp-action="Logout">Log out</a>
+                    </li>
                     }
                 </ul>
-                <div class="blogStats">
-
-                    <div id="blog_stats">
-                        <span id="stats_post_count">随笔 - 83&nbsp; </span>
-                        <span id="stats_article_count">文章 - 0&nbsp; </span>
-                        <span id="stats-comment_count">评论 - 356</span>
-                    </div>
-
-                </div>
                 <!--end: blogStats -->
             </div>
             <!--end: navigator 博客导航栏 -->
@@ -156,10 +129,9 @@
         <div id="footer">
 
             <!--done-->
-            Copyright ©2019 码农阿宇
+            Copyright ©@DateTime.Now.Year 码农阿宇
             <div>
-                Powered By <a href="https://www.cnblogs.com" target="_blank">Cnblogs</a> |
-                Theme <a href="https://github.com/esofar/cnblogs-theme-silence" target="_blank">Silence v1.1.2</a>
+                Powered By <a href="https://github.com/liuzhenyulive/Abp.MiniBlog" target="_blank">Abp.MiniBlog</a>|Theme <a href="https://github.com/esofar/cnblogs-theme-silence" target="_blank">Silence</a>
             </div>
         </div>
         <!--end: footer -->
@@ -199,7 +171,7 @@
 
         @if (CultureInfo.CurrentUICulture.Name != "en")
         {
-            <script src="~/lib/jquery-validation/src/localization/messages_@Html.Raw(CultureInfo.CurrentUICulture.Name.Replace(" -", "_" ) + ".js" )" asp-append-version="true"></script>
+        <script src="~/lib/jquery-validation/src/localization/messages_@Html.Raw(CultureInfo.CurrentUICulture.Name.Replace(" -", "_" ) + ".js" )" asp-append-version="true"></script>
         }
     </environment>
 

@@ -1,20 +1,45 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
+using Microsoft.AspNetCore.Mvc;
 using Abp.AspNetCore.Mvc.Authorization;
+using Abp.MiniBlog.Blog;
+using Abp.MiniBlog.Blog.Dtos;
 using Abp.MiniBlog.Controllers;
+using Abp.MiniBlog.Web.Models.Blogs;
 
 namespace Abp.MiniBlog.Web.Controllers
 {
     //[AbpMvcAuthorize]
     public class HomeController : MiniBlogControllerBase
     {
-        public ActionResult Index()
+        private readonly IBlogAppService _blogAppService;
+
+        public HomeController(IBlogAppService blogAppService)
         {
-            return View();
+            _blogAppService = blogAppService;
         }
 
-        public ActionResult Detail()
+        public ActionResult Index()
         {
-            return View();
+            var allBlogs = _blogAppService.GetListAsync(new GetBlogListInput()).Result;
+            allBlogs.ForEach(u =>
+            {
+                if (u.Excerpt.Length > 50)
+                    u.Excerpt = u.Excerpt.Substring(0, 50);
+            });
+            return View(new BlogsListViewModel
+            {
+                Blogs = allBlogs
+            });
+        }
+
+        public async Task<ActionResult> Detail(Guid? blogId = null)
+        {
+            if (blogId != null)
+                return View(await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId.Value)));
+            else
+                return Redirect("Index");
         }
     }
 }

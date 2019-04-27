@@ -1,23 +1,30 @@
 ﻿using System.Collections.Concurrent;
 using Microsoft.Extensions.Configuration;
 using Abp.Extensions;
+using Abp.MiniBlog.Web;
 using Abp.Reflection.Extensions;
+using Microsoft.Extensions.Configuration.Memory;
 
 namespace Abp.MiniBlog.Configuration
 {
     public static class AppConfigurations
     {
-        private static readonly ConcurrentDictionary<string, IConfigurationRoot> _configurationCache;
+        private static readonly ConcurrentDictionary<string, IConfigurationRoot> ConfigurationCache;
 
         static AppConfigurations()
         {
-            _configurationCache = new ConcurrentDictionary<string, IConfigurationRoot>();
+            ConfigurationCache = new ConcurrentDictionary<string, IConfigurationRoot>();
+        }
+
+        public static IConfigurationRoot Get()
+        {
+            return Get(WebContentDirectoryFinder.CalculateContentRootFolder());
         }
 
         public static IConfigurationRoot Get(string path, string environmentName = null, bool addUserSecrets = false)
         {
             var cacheKey = path + "#" + environmentName + "#" + addUserSecrets;
-            return _configurationCache.GetOrAdd(
+            return ConfigurationCache.GetOrAdd(
                 cacheKey,
                 _ => BuildConfiguration(path, environmentName, addUserSecrets)
             );
@@ -27,7 +34,8 @@ namespace Abp.MiniBlog.Configuration
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(path)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .Add(new MemoryConfigurationSource());
 
             if (!environmentName.IsNullOrWhiteSpace())
             {

@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
-using Abp.MiniBlog.Authorization;
 using Abp.MiniBlog.Blog;
 using Abp.MiniBlog.Blog.Dtos;
 using Abp.MiniBlog.Controllers;
 using Abp.MiniBlog.Web.Models.Blogs;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Abp.MiniBlog.Web.Mvc.Controllers
+namespace Abp.MiniBlog.Web.Controllers
 {
-    [AbpMvcAuthorize(PermissionNames.Pages_Blogs)]
+    [AbpMvcAuthorize]
     public class BlogsController : MiniBlogControllerBase
     {
         private readonly IBlogAppService _blogAppService;
@@ -54,16 +52,5 @@ namespace Abp.MiniBlog.Web.Mvc.Controllers
                 });
             return Redirect("Index");
         }
-
-        public async Task<ActionResult> EditBlogModal(Guid blogId)
-        {
-            var blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId));
-
-            return View("_EditBlogModal", new EditBlogModalViewModel
-            {
-                Blog = blog
-            });
-        }
-
     }
 }

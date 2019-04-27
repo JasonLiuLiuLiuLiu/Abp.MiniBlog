@@ -1,35 +1,28 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+trigger:
+- master
+
 pool:
-  vmImage: 'Ubuntu 16.04'
+  vmImage: 'ubuntu-16.04'
 
 variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet restore
-  displayName: 'dotnet restore'
-
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreInstaller@0
+  inputs:
+    version: '2.2.0' # replace this value with the version that you need for your project
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet test $(buildConfiguration)'
   inputs:
-    command: test
-    projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+    command: 'restore'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish $(buildConfiguration)'
   inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
-
-- task: PublishBuildArtifacts@1
-  displayName: 'publish artifacts'
+    command: 'build'

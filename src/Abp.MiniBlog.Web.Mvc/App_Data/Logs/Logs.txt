@@ -19200,3 +19200,837 @@ DEBUG 2019-04-22 21:39:06,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       -
 DEBUG 2019-04-22 21:39:06,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.TenantDto
 DEBUG 2019-04-22 21:39:06,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
 DEBUG 2019-04-22 21:39:06,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Models.Roles.EditRoleModalViewModel
+DEBUG 2019-04-28 13:01:59,083 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-04-28 13:01:59,118 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-04-28 13:01:59,142 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.Web.Startup.MiniBlogWebMvcModule, Abp.MiniBlog.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,145 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogWebCoreModule, Abp.MiniBlog.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,145 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogApplicationModule, Abp.MiniBlog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,146 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.MiniBlogCoreModule, Abp.MiniBlog.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,146 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,146 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,147 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,147 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,148 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.MiniBlog.EntityFrameworkCore.MiniBlogEntityFrameworkModule, Abp.MiniBlog.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,148 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:01:59,155 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-04-28 13:01:59,233 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-28 13:01:59,233 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-28 13:01:59,233 [1    ] o.Configuration.LanguageManagementConfig - Converted MiniBlog (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-28 13:01:59,233 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-04-28 13:01:59,595 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Abp.MiniBlog.EntityFrameworkCore.MiniBlogDbContext, Abp.MiniBlog.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-04-28 13:02:00,099 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-04-28 13:02:00,157 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-04-28 13:02:00,199 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-04-28 13:02:00,221 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: MiniBlog
+DEBUG 2019-04-28 13:02:00,250 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-04-28 13:02:00,283 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-28 13:02:00,340 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2019-04-28 13:02:00,340 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-04-28 13:02:00,347 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Users.Dto.CreateUserDto
+DEBUG 2019-04-28 13:02:00,349 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Users.Dto.UserDto
+DEBUG 2019-04-28 13:02:00,349 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-04-28 13:02:00,349 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-04-28 13:02:00,349 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.CreateRoleDto
+DEBUG 2019-04-28 13:02:00,349 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.PermissionDto
+DEBUG 2019-04-28 13:02:00,349 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Roles.Dto.RoleDto
+DEBUG 2019-04-28 13:02:00,350 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-04-28 13:02:00,350 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.MultiTenancy.Dto.TenantDto
+DEBUG 2019-04-28 13:02:00,350 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-04-28 13:02:00,350 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Abp.MiniBlog.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-04-28 13:02:16,633 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  2019-04-28 13:02:16,753 [9    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:17,911 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:18,378 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:02:19,061 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 680.399ms.
+INFO  2019-04-28 13:02:19,199 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-04-28 13:02:20,040 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 887.4111ms.
+INFO  2019-04-28 13:02:20,051 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) in 2136.6378ms
+INFO  2019-04-28 13:02:20,052 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  2019-04-28 13:02:20,053 [6    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,062 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:20,071 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:02:20,080 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/fonts/material-icons/materialicons.css?v=8pEJ8MWsFzHRDLY0NI5rssf6T6vankxrJDPnnZxOGrg  
+INFO  2019-04-28 13:02:20,086 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/css/bootstrap.css?v=opI27tVP8lfzTdiKv9Wi8UuRkNhIAvZwMVLWtOpRHKk  
+INFO  2019-04-28 13:02:20,087 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap-select/dist/css/bootstrap-select.css?v=DeY2lH0e0tmNnO9XZ-gGVOGk6_YoWlZ49y7CnD3ST00  
+INFO  2019-04-28 13:02:20,092 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3471.1514ms 200 text/html; charset=utf-8
+INFO  2019-04-28 13:02:20,096 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/fonts/roboto/roboto.css?v=53F8z0aw8DRnG9ou9x1tuKMPbNjRZWM-VBHl3B0s9-o  
+INFO  2019-04-28 13:02:20,102 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 30.105ms.
+INFO  2019-04-28 13:02:20,106 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/toastr/toastr.css?v=kKePN_CyxTiMEgsSDu_7z21ru07YOZtR-0UV0JOkt5o  
+INFO  2019-04-28 13:02:20,114 [11   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-04-28 13:02:20,125 [11   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 12.8361ms.
+INFO  2019-04-28 13:02:20,125 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) in 62.7475ms
+INFO  2019-04-28 13:02:20,126 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 74.4089ms 200 text/html; charset=utf-8
+INFO  2019-04-28 13:02:20,140 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/roboto.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\fonts\roboto\roboto.css'
+INFO  2019-04-28 13:02:20,140 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-select/dist/css/bootstrap-select.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\bootstrap-select\dist\css\bootstrap-select.css'
+INFO  2019-04-28 13:02:20,140 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 44.0496ms 200 text/css
+INFO  2019-04-28 13:02:20,140 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\fonts\material-icons\materialicons.css'
+INFO  2019-04-28 13:02:20,140 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 53.452ms 200 text/css
+INFO  2019-04-28 13:02:20,140 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 60.1183ms 200 text/css
+INFO  2019-04-28 13:02:20,141 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\toastr\toastr.css'
+INFO  2019-04-28 13:02:20,141 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 34.9495ms 200 text/css
+INFO  2019-04-28 13:02:20,153 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css?v=JVJiF3s2_kk99xQHfYhfxo_-Dd52ZIruDMOILwPkqv0  
+INFO  2019-04-28 13:02:20,190 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFO  2019-04-28 13:02:20,192 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 106.7334ms 200 text/css
+INFO  2019-04-28 13:02:20,193 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/font-awesome/css/font-awesome.css?v=YIHlqxkiJtENTMuzIHC9EfZaB5RniGr7kF7juUQJUuc  
+INFO  2019-04-28 13:02:20,197 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Waves/dist/waves.css?v=nd3hxjNg6DhkuFIz5IbxLK8Xw2ac0blsDQpF4pkJxUc  
+INFO  2019-04-28 13:02:20,204 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.css'
+INFO  2019-04-28 13:02:20,205 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.3482ms 200 text/css
+INFO  2019-04-28 13:02:20,205 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/animate.css/animate.css?v=IT6GQizZpVcaM1_L_mIiNAYVvZErMgfwewf1GGWXG_I  
+INFO  2019-04-28 13:02:20,206 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/materialize.css?v=ey-J3xahkqficOYUHVX3jexmzvRFrge9bmux4CQr1DQ  
+INFO  2019-04-28 13:02:20,220 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/style.css?v=JooxSti9Gc_IPF4xBKM5KyKbHhlIb2-ps3s4hu1w--c  
+INFO  2019-04-28 13:02:20,270 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/materialize.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\materialize.css'
+INFO  2019-04-28 13:02:20,271 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 64.3154ms 200 text/css
+INFO  2019-04-28 13:02:20,271 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/themes/all-themes.css?v=eGSl5zNTWrXYfUx_EJW9ksC3CUTUUxvxmPiA3aQDtQo  
+INFO  2019-04-28 13:02:20,273 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/animate.css/animate.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\animate.css\animate.css'
+INFO  2019-04-28 13:02:20,273 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 68.1614ms 200 text/css
+INFO  2019-04-28 13:02:20,275 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/themes/all-themes.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\themes\all-themes.css'
+INFO  2019-04-28 13:02:20,275 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.3023ms 200 text/css
+INFO  2019-04-28 13:02:20,276 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Shared/_Layout.css?v=BLxBuNISlF2O5EBHWdsX039NvnIHy-GtcqeI_MbyIc0  
+INFO  2019-04-28 13:02:20,277 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/blog-common.css?v=MPlqDorWnQuBxTsE30ejbV9n29YwOUbGfJS5iIxRg3M  
+INFO  2019-04-28 13:02:20,280 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/blog-common.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\blog-common.css'
+INFO  2019-04-28 13:02:20,280 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.6968ms 200 text/css
+INFO  2019-04-28 13:02:20,280 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/bundle-Custom.css?v=1i8e09Y6pXIzq5rxnEhPp6xBnGpwnytgWH8AsYnNKao  
+INFO  2019-04-28 13:02:20,280 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/font-awesome/css/font-awesome.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\font-awesome\css\font-awesome.css'
+INFO  2019-04-28 13:02:20,281 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 87.2033ms 200 text/css
+INFO  2019-04-28 13:02:20,283 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\style.css'
+INFO  2019-04-28 13:02:20,283 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 63.6738ms 200 text/css
+INFO  2019-04-28 13:02:20,283 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/413735.css?v=HlKCcproLlniWxPdXev9KxvsjSoR4v8dQD1q1U2-ZU8  
+INFO  2019-04-28 13:02:20,288 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Waves\dist\waves.css'
+INFO  2019-04-28 13:02:20,288 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 90.9686ms 200 text/css
+INFO  2019-04-28 13:02:20,289 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/morris.js/morris.css?v=YM2mAT6Z3Bl89X14nBvhOgTo5bZeRXMimN62teEck84  
+INFO  2019-04-28 13:02:20,293 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/jquery-2.2.0.min.js?v=nWIb-MoNnxhYl36KZbBNeAY0N_mk9pJsk9J7OpBgGqs  
+INFO  2019-04-28 13:02:20,293 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/morris.js/morris.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\morris.js\morris.css'
+INFO  2019-04-28 13:02:20,293 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.7972ms 200 text/css
+INFO  2019-04-28 13:02:20,293 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/bundle-Custom.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\bundle-Custom.css'
+INFO  2019-04-28 13:02:20,295 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/blog-common.js?v=aPbKG1f8IBKScH52H18oGF5IFfW78ngawrYtuhen15I  
+INFO  2019-04-28 13:02:20,296 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.1382ms 200 text/css
+INFO  2019-04-28 13:02:20,296 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.css'
+INFO  2019-04-28 13:02:20,296 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 20.6629ms 200 text/css
+INFO  2019-04-28 13:02:20,297 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/silence.min.js?v=FOyuq-kMwH8uFQQagZYyLjdap1RSdqCg38tCleGfptk  
+INFO  2019-04-28 13:02:20,297 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/jquery-2.2.0.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\jquery-2.2.0.min.js'
+INFO  2019-04-28 13:02:20,297 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.5005ms 200 application/javascript
+INFO  2019-04-28 13:02:20,298 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/413735.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\413735.css'
+INFO  2019-04-28 13:02:20,298 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.9128ms 200 text/css
+INFO  2019-04-28 13:02:20,301 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/json2/json2.js?v=w3DjWhUtDqy3bSJKv285C-2kagUtW9F64T9z3xRah8g  
+INFO  2019-04-28 13:02:20,301 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery/dist/jquery.js?v=GcL_g4TBRVIQSi96WoMK71EGaYN9ZfsMIKm-50nlS4s  
+INFO  2019-04-28 13:02:20,302 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/silence.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\silence.min.js'
+INFO  2019-04-28 13:02:20,302 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.2826ms 200 application/javascript
+INFO  2019-04-28 13:02:20,304 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/blog-common.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\blog-common.js'
+INFO  2019-04-28 13:02:20,305 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.6078ms 200 application/javascript
+INFO  2019-04-28 13:02:20,305 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap/dist/js/bootstrap.js?v=1fo3W6qowq4PinpCsKshaVqewExoFmzrRBGKbSdAVEk  
+INFO  2019-04-28 13:02:20,306 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/json2/json2.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\json2\json2.js'
+INFO  2019-04-28 13:02:20,306 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.2494ms 200 application/javascript
+INFO  2019-04-28 13:02:20,306 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/moment/min/moment-with-locales.js?v=5f0RFtuChrGi6osDzegxXWf5yOkmx45i7J9fM1p6P5w  
+INFO  2019-04-28 13:02:20,310 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\bootstrap\dist\js\bootstrap.js'
+INFO  2019-04-28 13:02:20,310 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.1698ms 200 application/javascript
+INFO  2019-04-28 13:02:20,311 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\jquery\dist\jquery.js'
+INFO  2019-04-28 13:02:20,311 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.9946ms 200 application/javascript
+INFO  2019-04-28 13:02:20,318 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/dist/jquery.validate.js?v=ZDzsHzuLAtqQVxXwbgRtfAPXQ7UAoJRXBAUDvc9G9CI  
+INFO  2019-04-28 13:02:20,318 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/blockUI/jquery.blockUI.js?v=KKcUNqwNyTLaXzvuMyFk6JisiQq6Hk7ZtrciXnEf3Z0  
+INFO  2019-04-28 13:02:20,319 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/toastr/toastr.js?v=prO6YeBrp6FzpE6glX7_GlSoPssvH4_OmY6Z3YJ2c6c  
+INFO  2019-04-28 13:02:20,322 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/moment/min/moment-with-locales.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\moment\min\moment-with-locales.js'
+INFO  2019-04-28 13:02:20,322 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.9097ms 200 application/javascript
+INFO  2019-04-28 13:02:20,322 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/sweetalert/dist/sweetalert.min.js?v=aPktydUv1rN3mouQeXoKi3ioFTIQlULuqYeoTAA2ihY  
+INFO  2019-04-28 13:02:20,323 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\toastr\toastr.js'
+INFO  2019-04-28 13:02:20,323 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.9236ms 200 application/javascript
+INFO  2019-04-28 13:02:20,324 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+INFO  2019-04-28 13:02:20,324 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.3096ms 200 application/javascript
+INFO  2019-04-28 13:02:20,325 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/sweetalert/dist/sweetalert.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\sweetalert\dist\sweetalert.min.js'
+INFO  2019-04-28 13:02:20,325 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.5325ms 200 application/javascript
+INFO  2019-04-28 13:02:20,326 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/blockUI/jquery.blockUI.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\blockUI\jquery.blockUI.js'
+INFO  2019-04-28 13:02:20,326 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.2633ms 200 application/javascript
+INFO  2019-04-28 13:02:20,329 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/spin.js/spin.js?v=b1plKpQIB-XuGyjWec42MhmhpPzEPzFI3OC8Ia0XIoc  
+INFO  2019-04-28 13:02:20,334 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/spin.js/spin.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\spin.js\spin.js'
+INFO  2019-04-28 13:02:20,334 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.4572ms 200 application/javascript
+INFO  2019-04-28 13:02:20,338 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/spin.js/jquery.spin.js?v=i7H7HL08ldqUANgfQInE7LlU2uWUdQMCJ-Q7-_zLutY  
+INFO  2019-04-28 13:02:20,338 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap-select/dist/js/bootstrap-select.js?v=tXulJKckrq2j2wo8a9hvmXLDEQwhGviPTIYmEzy1dNI  
+INFO  2019-04-28 13:02:20,339 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-slimscroll/jquery.slimscroll.js?v=ESVSX4dkOxamaRoYfcqPM2FfErhgfxS60fp1Fa8ou1w  
+INFO  2019-04-28 13:02:20,342 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/spin.js/jquery.spin.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\spin.js\jquery.spin.js'
+INFO  2019-04-28 13:02:20,342 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Waves/dist/waves.js?v=ZOMv1vwqpT_ezNZGhvr9jJTr_jqu3lYHB7vmpxD7HmA  
+INFO  2019-04-28 13:02:20,342 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.1086ms 200 application/javascript
+INFO  2019-04-28 13:02:20,343 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-select/dist/js/bootstrap-select.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\bootstrap-select\dist\js\bootstrap-select.js'
+INFO  2019-04-28 13:02:20,343 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-slimscroll/jquery.slimscroll.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\jquery-slimscroll\jquery.slimscroll.js'
+INFO  2019-04-28 13:02:20,343 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.7626ms 200 application/javascript
+INFO  2019-04-28 13:02:20,343 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.0869ms 200 application/javascript
+INFO  2019-04-28 13:02:20,343 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Waves\dist\waves.js'
+INFO  2019-04-28 13:02:20,343 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1ms 200 application/javascript
+INFO  2019-04-28 13:02:20,350 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/push.js/push.js?v=w347yqiscLjM_TxUKpqeUA1LDR3w5vshQpxpTsgkLhE  
+INFO  2019-04-28 13:02:20,352 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/push.js/push.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\push.js\push.js'
+INFO  2019-04-28 13:02:20,353 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.4655ms 200 application/javascript
+INFO  2019-04-28 13:02:20,354 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/abp.js?v=EjNSmvtPSqCVK_xG_aTvOp8hmVM_7vwyd3hg45CAMGk  
+INFO  2019-04-28 13:02:20,356 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=XEXcdRYb4eN3XoQCbnM-BSR6UifHRLsXYDIVFZ7Oc6Q  
+INFO  2019-04-28 13:02:20,359 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=QiSp17ew3zyFmdlcKq4HCIOw7UaqE8MC46Ekv50GzPs  
+INFO  2019-04-28 13:02:20,359 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k  
+INFO  2019-04-28 13:02:20,361 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/abp.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\abp.js'
+INFO  2019-04-28 13:02:20,361 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.634ms 200 application/javascript
+INFO  2019-04-28 13:02:20,362 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI  
+INFO  2019-04-28 13:02:20,364 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js'
+INFO  2019-04-28 13:02:20,364 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.0647ms 200 application/javascript
+INFO  2019-04-28 13:02:20,364 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js'
+INFO  2019-04-28 13:02:20,365 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js'
+INFO  2019-04-28 13:02:20,365 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.6539ms 200 application/javascript
+INFO  2019-04-28 13:02:20,365 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=fPp3O_ILaqD0UHiR721w1i4iBtxo3NH7yfldI5dg0_I  
+INFO  2019-04-28 13:02:20,365 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.6377ms 200 application/javascript
+INFO  2019-04-28 13:02:20,365 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/admin.js?v=ftrgzkTQIBvq5xKPG32uIkEVnB8mIOKtvoVxY7AhS_I  
+INFO  2019-04-28 13:02:20,366 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js'
+INFO  2019-04-28 13:02:20,366 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.0674ms 200 application/javascript
+INFO  2019-04-28 13:02:20,366 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js'
+INFO  2019-04-28 13:02:20,366 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5521ms 200 application/javascript
+INFO  2019-04-28 13:02:20,368 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/admin.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\admin.js'
+INFO  2019-04-28 13:02:20,368 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.959ms 200 application/javascript
+INFO  2019-04-28 13:02:20,368 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/main.js?v=KmiRiq3A7F--IODITRQHH0Jlkr13MC-46iNoLR4_baI  
+INFO  2019-04-28 13:02:20,370 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:20,373 [13   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,373 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Shared/_Layout.js?v=RQruqClWPSu7O6l9-bzesJOrIOxROTb3CPVyIIqP_cw  
+INFO  2019-04-28 13:02:20,373 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\main.js'
+INFO  2019-04-28 13:02:20,374 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.2471ms 200 application/javascript
+INFO  2019-04-28 13:02:20,374 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:02:20,374 [9    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,377 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.js'
+INFO  2019-04-28 13:02:20,377 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.5135ms 200 application/javascript
+INFO  2019-04-28 13:02:20,377 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:02:20,378 [7    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,381 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.1905ms 404 
+INFO  2019-04-28 13:02:20,381 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/signalr-client/signalr.min.js?v=1yGr-J4NjYMQVt6LP6vocjHIWhO-BFQLfdCs8x1Mv-U  
+INFO  2019-04-28 13:02:20,389 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=jTdZBAadu6DXq0iDTFX6vsn4q6bFhKm3XfN8Jz6dSmg  
+INFO  2019-04-28 13:02:20,394 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/Setting.js?v=qlLGofknNYJ9dODXdgn2x0gIZMfPThufQASdJL6FQ-U  
+INFO  2019-04-28 13:02:20,396 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-countTo/jquery.countTo.js?v=CkgjYx6n1TnvjY7LLp6BcdXQVatpxCq2zyfWEskUzfM  
+INFO  2019-04-28 13:02:20,400 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr-client.js'
+INFO  2019-04-28 13:02:20,400 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-countTo/jquery.countTo.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\jquery-countTo\jquery.countTo.js'
+INFO  2019-04-28 13:02:20,400 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.984ms 200 application/javascript
+INFO  2019-04-28 13:02:20,400 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.6973ms 200 application/javascript
+INFO  2019-04-28 13:02:20,400 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/Setting.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\Setting.js'
+INFO  2019-04-28 13:02:20,400 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.0167ms 200 application/javascript
+INFO  2019-04-28 13:02:20,401 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/signalr-client/signalr.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\signalr-client\signalr.min.js'
+INFO  2019-04-28 13:02:20,401 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.7176ms 200 application/javascript
+INFO  2019-04-28 13:02:20,407 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/raphael/raphael.js?v=29sBFLQqLjO75nJ0LYS7Pbb2F-CpSMccw55qO82J2YU  
+INFO  2019-04-28 13:02:20,407 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Flot/jquery.flot.js?v=wslWsV-vfGziuMBzzhupFof-18pfuz4OQgquvDcQbFs  
+INFO  2019-04-28 13:02:20,408 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/morris.js/morris.js?v=O7ZH97JawAgmG1Seh_Y5I3SYWYihlR9ImDKGQvqOngg  
+INFO  2019-04-28 13:02:20,409 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/chart.js/dist/Chart.bundle.js?v=HWknRmQ2zusqaWuzrej93naq1OoycPq7LXRXB54NpN0  
+INFO  2019-04-28 13:02:20,410 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/morris.js/morris.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\morris.js\morris.js'
+INFO  2019-04-28 13:02:20,410 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.0401ms 200 application/javascript
+INFO  2019-04-28 13:02:20,411 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/raphael/raphael.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\raphael\raphael.js'
+INFO  2019-04-28 13:02:20,411 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.4462ms 200 application/javascript
+INFO  2019-04-28 13:02:20,415 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:02:20,415 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Flot/jquery.flot.resize.js?v=frd2m6PMZSVLif63yR1wZLQh51vHKpU2-VClBasvXE0  
+INFO  2019-04-28 13:02:20,418 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Flot\jquery.flot.js'
+INFO  2019-04-28 13:02:20,418 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.1104ms 200 application/javascript
+INFO  2019-04-28 13:02:20,418 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/chart.js/dist/Chart.bundle.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\chart.js\dist\Chart.bundle.js'
+INFO  2019-04-28 13:02:20,418 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.9239ms 200 application/javascript
+INFO  2019-04-28 13:02:20,436 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:02:20,443 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Flot/jquery.flot.pie.js?v=bqatUhcViEOX7SnfTMWPfDOvlLd8aATcUx0PJ8W9Ig8  
+INFO  2019-04-28 13:02:20,448 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Flot/jquery.flot.categories.js?v=_4iveHXfwKkb3inuYFqzqLOwZNGzuOQ9UT8MRGQZygM  
+INFO  2019-04-28 13:02:20,448 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/Flot/jquery.flot.time.js?v=hMx2p_NtbIUcWOmiEdzS204TaDthln32OZp_8bP4DgU  
+INFO  2019-04-28 13:02:20,450 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.categories.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Flot\jquery.flot.categories.js'
+INFO  2019-04-28 13:02:20,450 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.3591ms 200 application/javascript
+INFO  2019-04-28 13:02:20,450 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.resize.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Flot\jquery.flot.resize.js'
+INFO  2019-04-28 13:02:20,451 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.1014ms 200 application/javascript
+INFO  2019-04-28 13:02:20,451 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.pie.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Flot\jquery.flot.pie.js'
+INFO  2019-04-28 13:02:20,451 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6938ms 200 application/javascript
+INFO  2019-04-28 13:02:20,456 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.time.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\Flot\jquery.flot.time.js'
+INFO  2019-04-28 13:02:20,456 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.044ms 200 application/javascript
+INFO  2019-04-28 13:02:20,456 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-sparkline/dist/jquery.sparkline.js?v=9IaxiwEOUe_4hqw9rGjxHR4fkZkw0aWMq5oZphlhlJ8  
+INFO  2019-04-28 13:02:20,457 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Home/Index.js?v=_PvFB17qevgOnfXsuVFBGQhXsfshl8D99Vi77ofdryY  
+INFO  2019-04-28 13:02:20,457 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/themes/all-themes.css?v=eGSl5zNTWrXYfUx_EJW9ksC3CUTUUxvxmPiA3aQDtQo  
+INFO  2019-04-28 13:02:20,462 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-sparkline/dist/jquery.sparkline.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\jquery-sparkline\dist\jquery.sparkline.js'
+INFO  2019-04-28 13:02:20,463 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.5663ms 200 application/javascript
+INFO  2019-04-28 13:02:20,466 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/themes/all-themes.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\themes\all-themes.css'
+INFO  2019-04-28 13:02:20,466 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.7167ms 200 text/css
+INFO  2019-04-28 13:02:20,469 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Home/Index.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Home\Index.js'
+INFO  2019-04-28 13:02:20,470 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.164ms 200 application/javascript
+INFO  2019-04-28 13:02:20,472 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/css/bundle-Custom-mobile.css?v=zFBIwv02FIlZ_HGXUluQH6YutremKqQz9SDw7_BG75A  
+INFO  2019-04-28 13:02:20,473 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/bundle-Custom-mobile.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\css\bundle-Custom-mobile.css'
+INFO  2019-04-28 13:02:20,473 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.1429ms 200 text/css
+INFO  2019-04-28 13:02:20,505 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:02:20,553 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:02:20,690 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 184.0927ms.
+INFO  2019-04-28 13:02:20,696 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:20,696 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 280.8241ms
+INFO  2019-04-28 13:02:20,697 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 319.2161ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:20,807 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 254.1785ms.
+INFO  2019-04-28 13:02:20,809 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:02:20,809 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 373.2272ms
+INFO  2019-04-28 13:02:20,810 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 435.9631ms 200 application/x-javascript
+INFO  2019-04-28 13:02:20,904 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:20,905 [9    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,906 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.2377ms 404 
+INFO  2019-04-28 13:02:20,912 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:02:20,913 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:02:20,913 [9    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,913 [10   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:20,917 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:02:20,917 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:02:20,919 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:02:20,921 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:02:20,926 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 4.5148ms.
+INFO  2019-04-28 13:02:20,926 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:02:20,926 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 8.5796ms
+INFO  2019-04-28 13:02:20,926 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.3781ms 200 application/x-javascript
+INFO  2019-04-28 13:02:20,940 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 20.1182ms.
+INFO  2019-04-28 13:02:20,940 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:20,940 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 22.8961ms
+INFO  2019-04-28 13:02:20,941 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.5736ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:21,029 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:02:21,030 [10   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:21,089 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 60.0647ms 200 application/json
+INFO  2019-04-28 13:02:21,102 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=XH-UA7BYpERJHWMu3J3eKA  
+INFO  2019-04-28 13:02:21,102 [10   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:21,494 [6    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:02:21,537 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"XH-UA7BYpERJHWMu3J3eKA","IpAddress":"::1","TenantId":null,"UserId":null,"ConnectTime":"2019-04-28T13:02:21.5266171+08:00","Properties":{}}
+DEBUG 2019-04-28 13:02:21,586 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: XH-UA7BYpERJHWMu3J3eKA
+INFO  2019-04-28 13:02:25,049 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Blogs  
+INFO  2019-04-28 13:02:25,049 [10   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:25,063 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc)
+WARN  2019-04-28 13:02:25,192 [10   ] Mvc.Authorization.AbpAuthorizationFilter - Abp.Authorization.AbpAuthorizationException: 当前用户没有登录到系统！
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+Abp.Authorization.AbpAuthorizationException: 当前用户没有登录到系统！
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+INFO  2019-04-28 13:02:25,194 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter'.
+INFO  2019-04-28 13:02:25,203 [10   ] Microsoft.AspNetCore.Mvc.ChallengeResult - Executing ChallengeResult with authentication schemes ().
+INFO  2019-04-28 13:02:25,232 [10   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application was challenged.
+INFO  2019-04-28 13:02:25,232 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) in 168.2951ms
+INFO  2019-04-28 13:02:25,233 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 184.5886ms 302 
+INFO  2019-04-28 13:02:25,239 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Account/Login?ReturnUrl=%2FBlogs  
+INFO  2019-04-28 13:02:25,240 [10   ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:25,252 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:26,244 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc) with arguments (, /Blogs, ) - Validation state: Valid
+INFO  2019-04-28 13:02:26,247 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.1119ms.
+INFO  2019-04-28 13:02:26,300 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+INFO  2019-04-28 13:02:26,535 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 239.2273ms.
+INFO  2019-04-28 13:02:26,535 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc) in 1283.2843ms
+INFO  2019-04-28 13:02:26,537 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1298.9311ms 200 text/html; charset=utf-8
+INFO  2019-04-28 13:02:26,605 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Account/_Layout.css?v=xwt8JYbj8Mkb1RNju6XwW_7TfGRHHIDWaSjBggiszMY  
+INFO  2019-04-28 13:02:26,606 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Account/Login.css?v=poK-oXF5FUWfhU9hEaEbjLzGQhIVms6YtQoQ3OEZtec  
+INFO  2019-04-28 13:02:26,607 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh_Hans.js?v=XUuMErmB-_cG9KcjKQpdh_se_7xGkbGzQZFXwFWneJg  
+INFO  2019-04-28 13:02:26,609 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636920533465356177  
+INFO  2019-04-28 13:02:26,617 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Account/Login.js?v=fva4_U7JLc8QKq91dLZyvV5oMz9WxjutKXJ_MOl_Dj8  
+INFO  2019-04-28 13:02:26,618 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Account/Login.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Account\Login.js'
+INFO  2019-04-28 13:02:26,618 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.907ms 200 application/javascript
+INFO  2019-04-28 13:02:26,621 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Account/_Layout.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Account\_Layout.css'
+INFO  2019-04-28 13:02:26,621 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.5234ms 200 text/css
+INFO  2019-04-28 13:02:26,633 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-validation/src/localization/messages_zh_Hans.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\jquery-validation\src\localization\messages_zh_Hans.js'
+INFO  2019-04-28 13:02:26,634 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 26.2037ms 200 application/javascript
+INFO  2019-04-28 13:02:26,634 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Account/Login.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Account\Login.css'
+INFO  2019-04-28 13:02:26,634 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.9649ms 200 text/css
+INFO  2019-04-28 13:02:26,661 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2019-04-28 13:02:26,661 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 52.6061ms 200 application/javascript
+DEBUG 2019-04-28 13:02:26,663 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: XH-UA7BYpERJHWMu3J3eKA
+INFO  2019-04-28 13:02:26,690 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5588.3132ms 101 
+INFO  2019-04-28 13:02:26,714 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/famfamfam-flags/dist/sprite/famfamfam-flags.png  
+INFO  2019-04-28 13:02:26,722 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.png'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.png'
+INFO  2019-04-28 13:02:26,722 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.6264ms 200 image/png
+INFO  2019-04-28 13:02:26,813 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/fonts/roboto/CWB0XYA8bzo0kSThX0UTuA.woff2  
+INFO  2019-04-28 13:02:26,815 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/CWB0XYA8bzo0kSThX0UTuA.woff2'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\fonts\roboto\CWB0XYA8bzo0kSThX0UTuA.woff2'
+INFO  2019-04-28 13:02:26,815 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.867ms 200 font/woff2
+INFO  2019-04-28 13:02:26,826 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/fonts/material-icons/materialicons.woff2  
+INFO  2019-04-28 13:02:26,826 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/fonts/roboto/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2  
+INFO  2019-04-28 13:02:26,844 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.woff2'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\fonts\material-icons\materialicons.woff2'
+INFO  2019-04-28 13:02:26,844 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\fonts\roboto\d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2'
+INFO  2019-04-28 13:02:26,844 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.6294ms 200 font/woff2
+INFO  2019-04-28 13:02:26,844 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.5128ms 200 font/woff2
+INFO  2019-04-28 13:02:28,727 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/Account/Login application/x-www-form-urlencoded 261
+INFO  2019-04-28 13:02:28,727 [7    ] tion.Cookies.CookieAuthenticationHandler - Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+INFO  2019-04-28 13:02:28,739 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:28,796 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc) with arguments (Abp.MiniBlog.Web.Models.Account.LoginViewModel, /Blogs, ) - Validation state: Valid
+INFO  2019-04-28 13:02:29,406 [12   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application signed in.
+INFO  2019-04-28 13:02:29,410 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.JsonResult in 614.0155ms.
+INFO  2019-04-28 13:02:29,436 [12   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-04-28 13:02:29,446 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.AccountController.Login (Abp.MiniBlog.Web.Mvc) in 707.0819ms
+INFO  2019-04-28 13:02:29,447 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 720.2804ms 200 application/json; charset=utf-8
+INFO  2019-04-28 13:02:29,460 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Blogs  
+INFO  2019-04-28 13:02:29,502 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:29,540 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:02:29,543 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:02:29,561 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 17.7913ms.
+INFO  2019-04-28 13:02:29,577 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-28 13:02:29,587 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:29,588 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:29,588 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Is Published' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:29,589 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:29,592 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'BlogDetails' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:29,593 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:29,593 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:29,634 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 60.536ms.
+INFO  2019-04-28 13:02:29,634 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) in 132.71ms
+INFO  2019-04-28 13:02:29,635 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 174.5833ms 200 text/html; charset=utf-8
+INFO  2019-04-28 13:02:29,711 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:29,712 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:02:29,714 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:02:29,718 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.592ms 404 
+INFO  2019-04-28 13:02:29,718 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Blogs/Index.js?v=qQ11xW8hS73EbaaK1C-iD4yLhcMYDYsCIcp0Hhxjdbg  
+INFO  2019-04-28 13:02:29,719 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:02:29,720 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:02:29,729 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:02:29,730 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:02:29,736 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 5.5763ms.
+INFO  2019-04-28 13:02:29,736 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:02:29,736 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 7.1296ms
+INFO  2019-04-28 13:02:29,736 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.873ms 200 application/x-javascript
+INFO  2019-04-28 13:02:29,748 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Blogs/Index.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Blogs\Index.js'
+INFO  2019-04-28 13:02:29,748 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.7108ms 200 application/javascript
+INFO  2019-04-28 13:02:29,914 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:29,920 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.883ms 404 
+WARN  2019-04-28 13:02:29,976 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:30,006 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 285.92ms.
+INFO  2019-04-28 13:02:30,015 [11   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:30,015 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 295.74ms
+INFO  2019-04-28 13:02:30,015 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 303.0342ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:30,025 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:02:30,035 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.4925ms 200 application/json
+INFO  2019-04-28 13:02:30,050 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=7NauzPeiX4ztB0EWRcULfg  
+INFO  2019-04-28 13:02:30,065 [7    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:02:30,071 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"7NauzPeiX4ztB0EWRcULfg","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:02:30.0670194+08:00","Properties":{}}
+DEBUG 2019-04-28 13:02:30,075 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 7NauzPeiX4ztB0EWRcULfg
+INFO  2019-04-28 13:02:33,829 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/blogs/edit?blogid=08d6c722-c8e7-3ccc-c052-939e697573ba  
+INFO  2019-04-28 13:02:33,846 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:33,847 [15   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:02:33,851 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc) with arguments (08d6c722-c8e7-3ccc-c052-939e697573ba) - Validation state: Valid
+INFO  2019-04-28 13:02:34,014 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 162.626ms.
+INFO  2019-04-28 13:02:34,040 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Edit.
+WARN  2019-04-28 13:02:34,049 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:34,116 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Tags' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:34,117 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:34,125 [12   ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+DEBUG 2019-04-28 13:02:34,200 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 7NauzPeiX4ztB0EWRcULfg
+INFO  2019-04-28 13:02:34,225 [15   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Edit executed in 188.5849ms.
+INFO  2019-04-28 13:02:34,227 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4177.1093ms 101 
+INFO  2019-04-28 13:02:34,235 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc) in 388.5237ms
+INFO  2019-04-28 13:02:34,236 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 407.3648ms 200 text/html; charset=utf-8
+INFO  2019-04-28 13:02:34,319 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:34,325 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:02:34,329 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/view-resources/Views/Blogs/Edit.js?v=BO5ijCpmSYp3XvrZeu9Uzw0X9zpgMkJSTIiHsxXwQkw  
+INFO  2019-04-28 13:02:34,330 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:02:34,331 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.4543ms 404 
+INFO  2019-04-28 13:02:34,331 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/tinymce.min.js?v=oq_C6eQ3GibhhG8D5CCdLt3UQUtyev5Af0ZdO-MRB7U  
+INFO  2019-04-28 13:02:34,331 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:02:34,332 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/js/BlogEdit.js?v=ZuUrSQkMqZfMdiysPjRFR0Wki6FEyRq18cM-jd1KBg8  
+INFO  2019-04-28 13:02:34,332 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:02:34,335 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Blogs/Edit.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\view-resources\Views\Blogs\Edit.js'
+INFO  2019-04-28 13:02:34,335 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.7164ms 200 application/javascript
+INFO  2019-04-28 13:02:34,336 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:02:34,338 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:02:34,339 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.css  
+INFO  2019-04-28 13:02:34,342 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 9.3767ms.
+INFO  2019-04-28 13:02:34,342 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/tinymce.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\tinymce.min.js'
+INFO  2019-04-28 13:02:34,342 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:02:34,342 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.722ms 200 application/javascript
+INFO  2019-04-28 13:02:34,342 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 10.5816ms
+INFO  2019-04-28 13:02:34,342 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.8274ms 200 application/x-javascript
+INFO  2019-04-28 13:02:34,344 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.js  
+INFO  2019-04-28 13:02:34,351 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/BlogEdit.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\js\BlogEdit.js'
+INFO  2019-04-28 13:02:34,352 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.4206ms 200 application/javascript
+INFO  2019-04-28 13:02:34,353 [20   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\bootstrap-tagsinput\dist\bootstrap-tagsinput.css'
+INFO  2019-04-28 13:02:34,353 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\bootstrap-tagsinput\dist\bootstrap-tagsinput.js'
+INFO  2019-04-28 13:02:34,353 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.4062ms 200 text/css
+INFO  2019-04-28 13:02:34,353 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.85ms 200 application/javascript
+WARN  2019-04-28 13:02:34,369 [13   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:34,371 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 33.3308ms.
+INFO  2019-04-28 13:02:34,372 [13   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:34,372 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 35.4207ms
+INFO  2019-04-28 13:02:34,373 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.8997ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:34,760 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:34,767 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.432ms 404 
+INFO  2019-04-28 13:02:34,774 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:02:34,782 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.7812ms 200 application/json
+INFO  2019-04-28 13:02:34,786 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=_kcjtOlmuX6F5quio2NNMA  
+INFO  2019-04-28 13:02:34,791 [20   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:02:34,803 [20   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"_kcjtOlmuX6F5quio2NNMA","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:02:34.7915815+08:00","Properties":{}}
+DEBUG 2019-04-28 13:02:34,804 [20   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: _kcjtOlmuX6F5quio2NNMA
+INFO  2019-04-28 13:02:34,866 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/themes/modern/theme.min.js  
+INFO  2019-04-28 13:02:34,870 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/themes/modern/theme.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\themes\modern\theme.min.js'
+INFO  2019-04-28 13:02:34,870 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.5675ms 200 application/javascript
+INFO  2019-04-28 13:02:34,919 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/autosave/plugin.min.js  
+INFO  2019-04-28 13:02:34,924 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/image/plugin.min.js  
+INFO  2019-04-28 13:02:34,927 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/preview/plugin.min.js  
+INFO  2019-04-28 13:02:34,928 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/searchreplace/plugin.min.js  
+INFO  2019-04-28 13:02:34,929 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/visualchars/plugin.min.js  
+INFO  2019-04-28 13:02:34,933 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/link/plugin.min.js  
+INFO  2019-04-28 13:02:34,936 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/image/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\image\plugin.min.js'
+INFO  2019-04-28 13:02:34,936 [18   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/autosave/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\autosave\plugin.min.js'
+INFO  2019-04-28 13:02:34,936 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.9632ms 200 application/javascript
+INFO  2019-04-28 13:02:34,936 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/searchreplace/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\searchreplace\plugin.min.js'
+INFO  2019-04-28 13:02:34,936 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.4442ms 200 application/javascript
+INFO  2019-04-28 13:02:34,936 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.8453ms 200 application/javascript
+INFO  2019-04-28 13:02:34,937 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/preview/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\preview\plugin.min.js'
+INFO  2019-04-28 13:02:34,937 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.2082ms 200 application/javascript
+INFO  2019-04-28 13:02:34,937 [18   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/visualchars/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\visualchars\plugin.min.js'
+INFO  2019-04-28 13:02:34,937 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.4447ms 200 application/javascript
+INFO  2019-04-28 13:02:34,942 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/link/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\link\plugin.min.js'
+INFO  2019-04-28 13:02:34,942 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.2199ms 200 application/javascript
+INFO  2019-04-28 13:02:34,947 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/media/plugin.min.js  
+INFO  2019-04-28 13:02:34,948 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/fullscreen/plugin.min.js  
+INFO  2019-04-28 13:02:34,951 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/table/plugin.min.js  
+INFO  2019-04-28 13:02:34,951 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/code/plugin.min.js  
+INFO  2019-04-28 13:02:34,951 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/codesample/plugin.min.js  
+INFO  2019-04-28 13:02:34,952 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/hr/plugin.min.js  
+INFO  2019-04-28 13:02:34,954 [16   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/media/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\media\plugin.min.js'
+INFO  2019-04-28 13:02:34,954 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.8982ms 200 application/javascript
+INFO  2019-04-28 13:02:34,957 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/pagebreak/plugin.min.js  
+INFO  2019-04-28 13:02:34,957 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\code\plugin.min.js'
+INFO  2019-04-28 13:02:34,957 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.4513ms 200 application/javascript
+INFO  2019-04-28 13:02:34,962 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/table/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\table\plugin.min.js'
+INFO  2019-04-28 13:02:34,962 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.4119ms 200 application/javascript
+INFO  2019-04-28 13:02:34,962 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/fullscreen/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\fullscreen\plugin.min.js'
+INFO  2019-04-28 13:02:34,962 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.3216ms 200 application/javascript
+INFO  2019-04-28 13:02:34,962 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/autoresize/plugin.min.js  
+INFO  2019-04-28 13:02:34,981 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/pagebreak/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\pagebreak\plugin.min.js'
+INFO  2019-04-28 13:02:34,981 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24.4571ms 200 application/javascript
+INFO  2019-04-28 13:02:34,981 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/autoresize/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\autoresize\plugin.min.js'
+INFO  2019-04-28 13:02:34,981 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.9251ms 200 application/javascript
+INFO  2019-04-28 13:02:34,982 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/nonbreaking/plugin.min.js  
+INFO  2019-04-28 13:02:34,984 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/insertdatetime/plugin.min.js  
+INFO  2019-04-28 13:02:34,986 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/anchor/plugin.min.js  
+INFO  2019-04-28 13:02:34,986 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/advlist/plugin.min.js  
+INFO  2019-04-28 13:02:34,987 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/hr/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\hr\plugin.min.js'
+INFO  2019-04-28 13:02:34,987 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.7901ms 200 application/javascript
+INFO  2019-04-28 13:02:34,987 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/codesample/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\codesample\plugin.min.js'
+INFO  2019-04-28 13:02:34,987 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.0434ms 200 application/javascript
+INFO  2019-04-28 13:02:34,988 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/anchor/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\anchor\plugin.min.js'
+INFO  2019-04-28 13:02:34,988 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.8034ms 200 application/javascript
+INFO  2019-04-28 13:02:35,002 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/lists/plugin.min.js  
+INFO  2019-04-28 13:02:35,003 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/wordcount/plugin.min.js  
+INFO  2019-04-28 13:02:35,004 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/textcolor/plugin.min.js  
+INFO  2019-04-28 13:02:35,004 [20   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/lists/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\lists\plugin.min.js'
+INFO  2019-04-28 13:02:35,004 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.0784ms 200 application/javascript
+INFO  2019-04-28 13:02:35,006 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/imagetools/plugin.min.js  
+INFO  2019-04-28 13:02:35,010 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/nonbreaking/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\nonbreaking\plugin.min.js'
+INFO  2019-04-28 13:02:35,010 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.7563ms 200 application/javascript
+INFO  2019-04-28 13:02:35,013 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/colorpicker/plugin.min.js  
+INFO  2019-04-28 13:02:35,013 [20   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/wordcount/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\wordcount\plugin.min.js'
+INFO  2019-04-28 13:02:35,013 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.2852ms 200 application/javascript
+INFO  2019-04-28 13:02:35,017 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/colorpicker/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\colorpicker\plugin.min.js'
+INFO  2019-04-28 13:02:35,017 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.8496ms 200 application/javascript
+INFO  2019-04-28 13:02:35,019 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/insertdatetime/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\insertdatetime\plugin.min.js'
+INFO  2019-04-28 13:02:35,019 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.1454ms 200 application/javascript
+INFO  2019-04-28 13:02:35,021 [20   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/imagetools/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\imagetools\plugin.min.js'
+INFO  2019-04-28 13:02:35,022 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.6615ms 200 application/javascript
+INFO  2019-04-28 13:02:35,024 [21   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/textcolor/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\textcolor\plugin.min.js'
+INFO  2019-04-28 13:02:35,025 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.7336ms 200 application/javascript
+INFO  2019-04-28 13:02:35,028 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/advlist/plugin.min.js'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\advlist\plugin.min.js'
+INFO  2019-04-28 13:02:35,028 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.1421ms 200 application/javascript
+INFO  2019-04-28 13:02:35,118 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/skins/lightgray/skin.min.css  
+INFO  2019-04-28 13:02:35,120 [21   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/skins/lightgray/skin.min.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\skins\lightgray\skin.min.css'
+INFO  2019-04-28 13:02:35,120 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.5503ms 200 text/css
+INFO  2019-04-28 13:02:35,690 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/skins/lightgray/content.min.css  
+INFO  2019-04-28 13:02:35,693 [21   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/skins/lightgray/content.min.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\skins\lightgray\content.min.css'
+INFO  2019-04-28 13:02:35,693 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.9452ms 200 text/css
+INFO  2019-04-28 13:02:35,845 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/skins/lightgray/fonts/tinymce.woff  
+INFO  2019-04-28 13:02:35,848 [21   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/skins/lightgray/fonts/tinymce.woff'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\skins\lightgray\fonts\tinymce.woff'
+INFO  2019-04-28 13:02:35,848 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.6073ms 200 application/font-woff
+INFO  2019-04-28 13:02:35,852 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/tinymce/plugins/codesample/css/prism.css  
+INFO  2019-04-28 13:02:35,854 [21   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/tinymce/plugins/codesample/css/prism.css'. Physical path: 'C:\Users\liuzh\MyBox\GitHub\Abp.MiniBlog\src\Abp.MiniBlog.Web.Mvc\wwwroot\lib\tinymce\plugins\codesample\css\prism.css'
+INFO  2019-04-28 13:02:35,854 [21   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.2063ms 200 text/css
+INFO  2019-04-28 13:02:51,956 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/Blogs/Update application/x-www-form-urlencoded 136335
+INFO  2019-04-28 13:02:51,972 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Update", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:51,973 [15   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:02:52,103 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc) with arguments (Abp.MiniBlog.Blog.Dtos.BlogDetailOutput) - Validation state: Valid
+INFO  2019-04-28 13:02:52,231 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 127.119ms.
+INFO  2019-04-28 13:02:52,290 [22   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Index.
+INFO  2019-04-28 13:02:52,290 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc) in 318.0381ms
+INFO  2019-04-28 13:02:52,291 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 334.9529ms 302 
+INFO  2019-04-28 13:02:52,295 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Blogs/Index  
+INFO  2019-04-28 13:02:52,299 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:52,300 [15   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:02:52,303 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:02:52,318 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 14.6492ms.
+INFO  2019-04-28 13:02:52,334 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-28 13:02:52,335 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:52,335 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:52,335 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Is Published' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:52,337 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:52,337 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'BlogDetails' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:52,338 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:52,338 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:52,344 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 9.9903ms.
+INFO  2019-04-28 13:02:52,344 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) in 44.0255ms
+INFO  2019-04-28 13:02:52,344 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49.3241ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:02:52,359 [17   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: _kcjtOlmuX6F5quio2NNMA
+INFO  2019-04-28 13:02:52,359 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17572.5862ms 101 
+INFO  2019-04-28 13:02:52,417 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:52,418 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:02:52,418 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:02:52,424 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:02:52,425 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:02:52,426 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.2183ms 404 
+INFO  2019-04-28 13:02:52,431 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:02:52,431 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:02:52,437 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 5.5255ms.
+INFO  2019-04-28 13:02:52,437 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:02:52,437 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 6.9201ms
+INFO  2019-04-28 13:02:52,438 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.6124ms 200 application/x-javascript
+WARN  2019-04-28 13:02:52,445 [15   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:52,448 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 22.5687ms.
+INFO  2019-04-28 13:02:52,448 [15   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:52,448 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 24.165ms
+INFO  2019-04-28 13:02:52,449 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.4411ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:52,559 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:52,565 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.1962ms 404 
+INFO  2019-04-28 13:02:52,572 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:02:52,581 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.508ms 200 application/json
+INFO  2019-04-28 13:02:52,605 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=xRZNbNoMtD4JAH3x2Xgtiw  
+INFO  2019-04-28 13:02:52,624 [17   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:02:52,631 [17   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"xRZNbNoMtD4JAH3x2Xgtiw","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:02:52.6252454+08:00","Properties":{}}
+DEBUG 2019-04-28 13:02:52,631 [17   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: xRZNbNoMtD4JAH3x2Xgtiw
+INFO  2019-04-28 13:02:57,172 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/blogs/edit?blogid=08d6c722-c8e7-3ccc-c052-939e697573ba  
+INFO  2019-04-28 13:02:57,180 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:02:57,181 [15   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:02:57,185 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc) with arguments (08d6c722-c8e7-3ccc-c052-939e697573ba) - Validation state: Valid
+INFO  2019-04-28 13:02:57,212 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 26.7425ms.
+INFO  2019-04-28 13:02:57,227 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Edit.
+WARN  2019-04-28 13:02:57,228 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:57,230 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Tags' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:57,231 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:02:57,232 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:57,243 [15   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Edit executed in 16.4224ms.
+INFO  2019-04-28 13:02:57,243 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc) in 62.595ms
+INFO  2019-04-28 13:02:57,243 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 71.0626ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:02:57,254 [19   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: xRZNbNoMtD4JAH3x2Xgtiw
+INFO  2019-04-28 13:02:57,254 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4648.7908ms 101 
+INFO  2019-04-28 13:02:57,364 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:57,370 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:02:57,372 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:02:57,376 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.1055ms 404 
+INFO  2019-04-28 13:02:57,378 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:02:57,380 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:02:57,380 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:02:57,381 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:02:57,389 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.5721ms.
+INFO  2019-04-28 13:02:57,389 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:02:57,389 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 10.7202ms
+INFO  2019-04-28 13:02:57,389 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.0038ms 200 application/x-javascript
+WARN  2019-04-28 13:02:57,405 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:02:57,407 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 26.2215ms.
+INFO  2019-04-28 13:02:57,407 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:57,408 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 27.4699ms
+INFO  2019-04-28 13:02:57,408 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.0735ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:02:57,451 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:02:57,455 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.405ms 404 
+INFO  2019-04-28 13:02:57,703 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:02:57,708 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.6669ms 200 application/json
+INFO  2019-04-28 13:02:57,719 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=taFHXsoJ6EBrQDgQ0DfvZw  
+INFO  2019-04-28 13:02:57,725 [7    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:02:57,730 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"taFHXsoJ6EBrQDgQ0DfvZw","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:02:57.7261421+08:00","Properties":{}}
+DEBUG 2019-04-28 13:02:57,730 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: taFHXsoJ6EBrQDgQ0DfvZw
+INFO  2019-04-28 13:03:15,383 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Blogs  
+INFO  2019-04-28 13:03:15,393 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:03:15,393 [9    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:03:15,396 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:03:15,423 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 27.0119ms.
+INFO  2019-04-28 13:03:15,447 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-28 13:03:15,449 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:15,449 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:15,449 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Is Published' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:15,451 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:15,451 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'BlogDetails' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:15,452 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:15,452 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:15,459 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 11.2381ms.
+INFO  2019-04-28 13:03:15,459 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) in 65.9247ms
+INFO  2019-04-28 13:03:15,459 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 76.6699ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:03:15,474 [19   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: taFHXsoJ6EBrQDgQ0DfvZw
+INFO  2019-04-28 13:03:15,474 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17755.5672ms 101 
+INFO  2019-04-28 13:03:15,530 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:15,530 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:03:15,535 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:03:15,536 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:03:15,537 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.5192ms 404 
+INFO  2019-04-28 13:03:15,537 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:03:15,544 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:03:15,547 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:03:15,554 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 7.2001ms.
+INFO  2019-04-28 13:03:15,554 [18   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+WARN  2019-04-28 13:03:15,554 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:15,554 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 9.6178ms
+INFO  2019-04-28 13:03:15,554 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24.2552ms 200 application/x-javascript
+INFO  2019-04-28 13:03:15,557 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 20.538ms.
+INFO  2019-04-28 13:03:15,557 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:15,557 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 21.8985ms
+INFO  2019-04-28 13:03:15,557 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.5008ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:15,754 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:15,758 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.268ms 404 
+INFO  2019-04-28 13:03:15,782 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:03:15,792 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.8327ms 200 application/json
+INFO  2019-04-28 13:03:15,808 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=KjeCauhUJFjU3_vLX0BEGA  
+INFO  2019-04-28 13:03:15,822 [10   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:03:15,831 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"KjeCauhUJFjU3_vLX0BEGA","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:03:15.8228708+08:00","Properties":{}}
+DEBUG 2019-04-28 13:03:15,831 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: KjeCauhUJFjU3_vLX0BEGA
+INFO  2019-04-28 13:03:18,142 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/blogs/edit  
+INFO  2019-04-28 13:03:18,150 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:03:18,151 [6    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:03:18,155 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc) with arguments () - Validation state: Valid
+INFO  2019-04-28 13:03:18,155 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0328ms.
+INFO  2019-04-28 13:03:18,181 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Edit.
+WARN  2019-04-28 13:03:18,182 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:18,183 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Tags' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:18,183 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:18,184 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:18,192 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Edit executed in 11.7612ms.
+INFO  2019-04-28 13:03:18,193 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Edit (Abp.MiniBlog.Web.Mvc) in 42.2856ms
+INFO  2019-04-28 13:03:18,193 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.9722ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:03:18,203 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: KjeCauhUJFjU3_vLX0BEGA
+INFO  2019-04-28 13:03:18,204 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2395.3812ms 101 
+INFO  2019-04-28 13:03:18,284 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:18,285 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:03:18,285 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:03:18,290 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.1319ms 404 
+INFO  2019-04-28 13:03:18,291 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:03:18,294 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:03:18,296 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:03:18,297 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:03:18,302 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.2048ms.
+INFO  2019-04-28 13:03:18,302 [6    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:03:18,303 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 11.9198ms
+INFO  2019-04-28 13:03:18,303 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.1183ms 200 application/x-javascript
+WARN  2019-04-28 13:03:18,325 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:18,327 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 30.3542ms.
+INFO  2019-04-28 13:03:18,327 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:18,327 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 31.7362ms
+INFO  2019-04-28 13:03:18,327 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.1424ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:18,401 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:18,406 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.92ms 404 
+INFO  2019-04-28 13:03:18,452 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:03:18,459 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.3487ms 200 application/json
+INFO  2019-04-28 13:03:18,477 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=vO7APjv5Q-V081mPS-PBBw  
+INFO  2019-04-28 13:03:18,522 [6    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:03:18,529 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"vO7APjv5Q-V081mPS-PBBw","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:03:18.5229802+08:00","Properties":{}}
+DEBUG 2019-04-28 13:03:18,530 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: vO7APjv5Q-V081mPS-PBBw
+INFO  2019-04-28 13:03:20,694 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/Blogs/Update application/x-www-form-urlencoded 319
+INFO  2019-04-28 13:03:20,700 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Update", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:03:20,701 [10   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:03:20,704 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc) with arguments (Abp.MiniBlog.Blog.Dtos.BlogDetailOutput) - Validation state: Valid
+INFO  2019-04-28 13:03:20,704 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.015ms.
+INFO  2019-04-28 13:03:20,719 [22   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Index.
+INFO  2019-04-28 13:03:20,719 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Update (Abp.MiniBlog.Web.Mvc) in 18.801ms
+INFO  2019-04-28 13:03:20,719 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 25.5931ms 302 
+INFO  2019-04-28 13:03:20,724 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Blogs/Index  
+INFO  2019-04-28 13:03:20,732 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Blogs", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:03:20,732 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-04-28 13:03:20,735 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:03:20,752 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 17.191ms.
+INFO  2019-04-28 13:03:20,766 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2019-04-28 13:03:20,767 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:20,767 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:20,767 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Is Published' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:20,768 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Add new blog' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:20,769 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'BlogDetails' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:20,769 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'Excerpt' in localization source 'MiniBlog'!
+WARN  2019-04-28 13:03:20,769 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'IsPublished' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:20,777 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 10.797ms.
+INFO  2019-04-28 13:03:20,777 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.BlogsController.Index (Abp.MiniBlog.Web.Mvc) in 44.9641ms
+INFO  2019-04-28 13:03:20,777 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 53.0881ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:03:20,788 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: vO7APjv5Q-V081mPS-PBBw
+INFO  2019-04-28 13:03:20,788 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2310.8473ms 101 
+INFO  2019-04-28 13:03:20,838 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:20,841 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:03:20,846 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.6316ms 404 
+INFO  2019-04-28 13:03:20,846 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:03:20,852 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:03:20,853 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:03:20,859 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:03:20,860 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:03:20,862 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.1071ms.
+INFO  2019-04-28 13:03:20,862 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:03:20,862 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 9.904ms
+INFO  2019-04-28 13:03:20,862 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.471ms 200 application/x-javascript
+WARN  2019-04-28 13:03:20,886 [10   ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:20,888 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 27.7357ms.
+INFO  2019-04-28 13:03:20,888 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:20,888 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 29.3456ms
+INFO  2019-04-28 13:03:20,888 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.4379ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:20,952 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:20,956 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.0742ms 404 
+INFO  2019-04-28 13:03:20,992 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:03:21,003 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.8063ms 200 application/json
+INFO  2019-04-28 13:03:21,014 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=QnQgwxicvBvl4L7o5SScBA  
+INFO  2019-04-28 13:03:21,026 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:03:21,036 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"QnQgwxicvBvl4L7o5SScBA","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:03:21.0267694+08:00","Properties":{}}
+DEBUG 2019-04-28 13:03:21,047 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: QnQgwxicvBvl4L7o5SScBA
+INFO  2019-04-28 13:03:22,554 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/  
+INFO  2019-04-28 13:03:22,566 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:03:22,569 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) - Validation state: Valid
+INFO  2019-04-28 13:03:22,597 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 28.3092ms.
+INFO  2019-04-28 13:03:22,611 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-04-28 13:03:22,629 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 17.7482ms.
+INFO  2019-04-28 13:03:22,629 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.HomeController.Index (Abp.MiniBlog.Web.Mvc) in 62.884ms
+INFO  2019-04-28 13:03:22,629 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 75.9212ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:03:22,640 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: QnQgwxicvBvl4L7o5SScBA
+INFO  2019-04-28 13:03:22,640 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1625.6021ms 101 
+INFO  2019-04-28 13:03:22,727 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:22,727 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:03:22,751 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 24.0907ms 404 
+INFO  2019-04-28 13:03:22,752 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:03:22,753 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:03:22,760 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.9612ms.
+INFO  2019-04-28 13:03:22,761 [17   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:03:22,761 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 8.6853ms
+INFO  2019-04-28 13:03:22,761 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 33.6531ms 200 application/x-javascript
+INFO  2019-04-28 13:03:22,766 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:03:22,780 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:03:22,782 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+WARN  2019-04-28 13:03:22,807 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:22,809 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 26.5736ms.
+INFO  2019-04-28 13:03:22,809 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:22,809 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 28.4483ms
+INFO  2019-04-28 13:03:22,809 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.6431ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:22,909 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:22,914 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.2473ms 404 
+INFO  2019-04-28 13:03:22,925 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:03:22,930 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.5031ms 200 application/json
+INFO  2019-04-28 13:03:22,934 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=kIEg2W6AEk_vNGUTTCje7Q  
+INFO  2019-04-28 13:03:22,943 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:03:22,954 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"kIEg2W6AEk_vNGUTTCje7Q","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:03:22.9441354+08:00","Properties":{}}
+DEBUG 2019-04-28 13:03:22,955 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: kIEg2W6AEk_vNGUTTCje7Q
+INFO  2019-04-28 13:03:45,695 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/Home/Detail?blogid=08d6c65c-17b0-84de-ab4e-e038a738ea9c  
+INFO  2019-04-28 13:03:45,708 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Detail", controller = "Home", area = ""}. Executing action Abp.MiniBlog.Web.Controllers.HomeController.Detail (Abp.MiniBlog.Web.Mvc)
+INFO  2019-04-28 13:03:45,710 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.MiniBlog.Web.Controllers.HomeController.Detail (Abp.MiniBlog.Web.Mvc) with arguments (08d6c65c-17b0-84de-ab4e-e038a738ea9c) - Validation state: Valid
+INFO  2019-04-28 13:03:45,905 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.MiniBlog.Web.Controllers.HomeController.Detail (Abp.MiniBlog.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 194.7212ms.
+INFO  2019-04-28 13:03:46,045 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Detail.
+INFO  2019-04-28 13:03:46,069 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Detail executed in 34.2528ms.
+INFO  2019-04-28 13:03:46,069 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.MiniBlog.Web.Controllers.HomeController.Detail (Abp.MiniBlog.Web.Mvc) in 361.4873ms
+INFO  2019-04-28 13:03:46,069 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 374.1111ms 200 text/html; charset=utf-8
+DEBUG 2019-04-28 13:03:46,079 [18   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: kIEg2W6AEk_vNGUTTCje7Q
+INFO  2019-04-28 13:03:46,079 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 23144.7807ms 101 
+INFO  2019-04-28 13:03:46,225 [29   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:46,238 [30   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpServiceProxies/GetAll?v=636920533202851136  
+INFO  2019-04-28 13:03:46,239 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/AbpScripts/GetScripts?v=636920533202851136  
+INFO  2019-04-28 13:03:46,240 [29   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.5096ms 404 
+INFO  2019-04-28 13:03:46,249 [30   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-04-28 13:03:46,249 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-04-28 13:03:46,250 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-04-28 13:03:46,250 [30   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-04-28 13:03:46,257 [30   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.6577ms.
+INFO  2019-04-28 13:03:46,257 [30   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-04-28 13:03:46,257 [30   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 8.4101ms
+INFO  2019-04-28 13:03:46,257 [30   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.2187ms 200 application/x-javascript
+WARN  2019-04-28 13:03:46,276 [6    ] naries.DictionaryBasedLocalizationSource - Can not find 'Blogs' in localization source 'MiniBlog'!
+INFO  2019-04-28 13:03:46,279 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 29.2234ms.
+INFO  2019-04-28 13:03:46,280 [6    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:46,280 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 30.6762ms
+INFO  2019-04-28 13:03:46,280 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 40.8458ms 200 application/x-javascript; charset=utf-8
+INFO  2019-04-28 13:03:46,378 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/images/icoMsg.gif  
+INFO  2019-04-28 13:03:46,387 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8.9247ms 404 
+INFO  2019-04-28 13:03:46,479 [29   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/lib/jquery-validation/src/localization/messages_zh-Hans.js  
+INFO  2019-04-28 13:03:46,485 [29   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.5694ms 404 
+INFO  2019-04-28 13:03:46,533 [29   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:5000/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-04-28 13:03:46,544 [29   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.4069ms 200 application/json
+INFO  2019-04-28 13:03:46,572 [30   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:5000/signalr?id=jb1XsxrtouuXDTPBghtwzQ  
+INFO  2019-04-28 13:03:46,586 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-04-28 13:03:46,593 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"jb1XsxrtouuXDTPBghtwzQ","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-04-28T13:03:46.5867654+08:00","Properties":{}}
+DEBUG 2019-04-28 13:03:46,594 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: jb1XsxrtouuXDTPBghtwzQ
+DEBUG 2019-04-28 13:04:15,324 [30   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: jb1XsxrtouuXDTPBghtwzQ
+INFO  2019-04-28 13:04:15,325 [30   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28752.744ms 101 
+DEBUG 2019-04-28 15:13:49,994 [49   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-04-28 15:13:49,998 [49   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-28 15:13:49,999 [49   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-04-28 15:13:49,999 [49   ] Abp.Modules.AbpModuleManager             - Shutting down completed.

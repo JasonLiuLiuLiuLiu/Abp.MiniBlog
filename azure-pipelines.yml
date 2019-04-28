@@ -17,12 +17,14 @@ variables:
 steps:
 - task: DotNetCoreInstaller@0
   inputs:
-    version: '2.2.0' # replace this value with the version that you need for your project
+    version: '2.2.203' # replace this value with the version that you need for your project
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'restore'
+    command: restore
+    projects: '**/**/*.csproj'
 
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
+    command: test
+    projects: '**/*Tests/*.csproj'

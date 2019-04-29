@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
@@ -83,6 +84,15 @@ namespace Abp.MiniBlog.Blog
 
         public async Task<BlogDto> Update(BlogDto input)
         {
+            if (string.IsNullOrEmpty(input.Excerpt))
+            {
+                var subLength = input.Content.Length <= 5000 ? input.Content.Length : 5000;
+                var result = GetPlainTextFromHtml(input.Content.Substring(0, subLength));
+                if (result.LastIndexOf('<') > 0)
+                    result = result.Substring(0, result.LastIndexOf('<'));
+                input.Excerpt = result.Substring(0, result.Length > 120 ? 120 : result.Length);
+            }
+
             if (input.Id == Guid.Empty)
                 input.Id = await CreateAsync(new CreateBlogInput()
                 {
@@ -147,6 +157,17 @@ namespace Abp.MiniBlog.Blog
             {
                 await _relationRepository.DeleteAsync(tag.Id);
             }
+        }
+        private string GetPlainTextFromHtml(string htmlString)
+        {
+            string htmlTagPattern = "<.*?>";
+            var regexCss = new Regex("(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            htmlString = regexCss.Replace(htmlString, string.Empty);
+            htmlString = Regex.Replace(htmlString, htmlTagPattern, string.Empty);
+            htmlString = Regex.Replace(htmlString, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
+            htmlString = htmlString.Replace("&nbsp;", string.Empty);
+
+            return htmlString;
         }
     }
 }

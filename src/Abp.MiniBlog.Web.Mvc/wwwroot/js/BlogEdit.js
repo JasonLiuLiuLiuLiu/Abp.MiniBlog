@@ -45,8 +45,7 @@
         }
     }
 
-    // edit form
-    var edit = document.getElementById("edit");
+
     // Setup editor
     var editPost = document.getElementById("Content");
 

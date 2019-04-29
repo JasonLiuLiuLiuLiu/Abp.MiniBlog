@@ -16,9 +16,7 @@
         <script src="~/view-resources/Views/Blogs/Edit.js" asp-append-version="true"></script>
     </environment>
     <script src="~/lib/tinymce/tinymce.min.js" asp-append-version="true"></script>
-    <script src="~/js/BlogEdit.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
-    <link href="~/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+    <script src="~/view-resources/Views/Home/Details.js" asp-append-version="true"></script>
 }
 <!--done-->
 <div id="mainContent">
@@ -211,13 +209,14 @@
                             <textarea id="Content" rows="20" aria-label="Content"></textarea>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">退出</button>
+                        <button type="button" class="btn btn-primary waves-effect">提交评论</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">退出</button>
-                <button type="button" class="btn btn-primary waves-effect">提交评论</button>
-            </div>
+           
         </form>
     </div>
 

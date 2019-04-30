@@ -199,26 +199,51 @@
         </div>
         <script type="text/javascript">var commentManager = new blogCommentManager(); commentManager.renderComments(0);</script>
 
-    <div id="comment_form" class="commentform">
-        <form name="userCreateForm" role="form" id="form" novalidate class="form-validation" asp-controller="Blogs" asp-action="Update">
-            <div role="tabpanel" class="tab-pane animated fadeIn active" id="create-blog-details">
-                <div class="row clearfix">
-                    <div class="col-sm-12">
-                        <div class="form-group form-float">
-                            <label class="form-label">发表评论</label>
-                            <textarea id="Content" rows="20" aria-label="Content"></textarea>
+        <div id="comment_form" class="commentform">
+            <div class="feedbackItem">
+                <div class="feedbackListSubtitle">
+                    <span class="comment_date">发表评论</span>
+                </div>
+                <div class="feedbackCon">
+                    <form name="userCreateForm" role="form" id="form" novalidate class="form-validation" asp-controller="Blogs" asp-action="Update">
+                        <div role="tabpanel" class="tab-pane animated fadeIn active" id="create-blog-details">
+                            <div class="row clearfix" style="margin-top: 10px;">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input class="form-control" type="text" name="Title" required minlength="2">
+                                            <label class="form-label">昵称</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix" style="margin-top: 10px;">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input class="form-control" type="email" name="Title" required minlength="2">
+                                            <label class="form-label">邮箱(便于回复通知)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <textarea id="Content" rows="20" aria-label="Content"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">退出</button>
+                                    <button type="button" class="btn btn-primary waves-effect">提交评论</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">退出</button>
-                        <button type="button" class="btn btn-primary waves-effect">提交评论</button>
-                    </div>
+                    </form>
                 </div>
             </div>
 
-           
-        </form>
-    </div>
+        </div>
 
 
     </div><!--end: forFlow -->

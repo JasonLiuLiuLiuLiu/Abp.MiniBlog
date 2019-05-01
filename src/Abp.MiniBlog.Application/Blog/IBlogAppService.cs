@@ -8,7 +8,8 @@ namespace Abp.MiniBlog.Blog
 {
     public interface IBlogAppService
     {
-        Task<List<BlogDto>> GetListAsync(GetBlogListInput input);
+        Task<List<BlogListOutput>> GetListAsync(GetBlogListInput input);
+        Task<BlogEditOutput> GetEditAsync(Guid id);
         Task<BlogDetailOutput> GetDetailAsync(EntityDto<Guid> input);
         Task<Guid> CreateAsync(CreateBlogInput input);
         Task<BlogDto> Update(BlogDto input);

@@ -8,6 +8,6 @@ namespace Abp.MiniBlog.Web.Models.Blogs
 {
     public class BlogsListViewModel
     {
-        public IReadOnlyList<BlogDto> Blogs { get; set; }
+        public IReadOnlyList<BlogListOutput> Blogs { get; set; }
     }
 }

@@ -32,9 +32,9 @@ namespace Abp.MiniBlog.Web.Controllers
 
         public async Task<ActionResult> Edit(Guid? blogId = null)
         {
-            BlogDetailOutput blog = new BlogDetailOutput();
+            BlogEditOutput blog = new BlogEditOutput();
             if (blogId != null)
-                blog = await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId.Value));
+                blog = await _blogAppService.GetEditAsync(blogId.Value);
 
             return View("Edit", blog);
         }

@@ -23,11 +23,6 @@ namespace Abp.MiniBlog.Web.Controllers
         public ActionResult Index()
         {
             var allBlogs = _blogAppService.GetListAsync(new GetBlogListInput()).Result;
-            allBlogs.ForEach(u =>
-            {
-                if (u.Excerpt.Length > 50)
-                    u.Excerpt = u.Excerpt.Substring(0, 50);
-            });
             return View(new BlogsListViewModel
             {
                 Blogs = allBlogs

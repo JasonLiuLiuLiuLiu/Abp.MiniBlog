@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.MiniBlog.Blog.Dtos;
 using Abp.UI;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Abp.MiniBlog.Blog
@@ -17,26 +20,60 @@ namespace Abp.MiniBlog.Blog
         private readonly IRepository<Categories, int> _cateRepository;
         private readonly IRepository<BlogAndCategoriesRelation, int> _relationRepository;
         private readonly IBlogManager _blogManager;
+        private readonly ICommentManager _commentManager;
+        private readonly IMapper _mapper;
 
-        public BlogAppService(IRepository<Blog, Guid> blogRepository, IBlogManager blogManager, IRepository<Categories, int> cateRepository, IRepository<BlogAndCategoriesRelation, int> relationRepository)
+
+        public BlogAppService(IRepository<Blog, Guid> blogRepository, IBlogManager blogManager, IRepository<Categories, int> cateRepository, IRepository<BlogAndCategoriesRelation, int> relationRepository, ICommentManager commentManager)
         {
             _blogRepository = blogRepository;
             _blogManager = blogManager;
             _cateRepository = cateRepository;
             _relationRepository = relationRepository;
+            _commentManager = commentManager;
+            _mapper = CreateMapper();
         }
 
-        public async Task<List<BlogDto>> GetListAsync(GetBlogListInput input)
+        private IMapper CreateMapper()
         {
-            var blogs = await _blogRepository.GetAll().Include(e => e.Comments).OrderByDescending(e => e.CreationTime)
-                .Take(64).ToListAsync();
-            return blogs.Select(u => new BlogDto
+            var configuration = new MapperConfiguration(cfg =>
             {
-                Id = u.Id,
-                Title = u.Title,
-                Excerpt = u.Excerpt,
-                Content = u.Content
-            }).ToList();
+                cfg.CreateMap<Blog, BlogEditOutput>().ForMember(b=>b.Categories,opt=>opt.Ignore());
+            });
+            // only during development, validate your mappings; remove it before release
+            configuration.AssertConfigurationIsValid();
+            // use DI (http://docs.automapper.org/en/latest/Dependency-injection.html) or create the mapper yourself
+            return configuration.CreateMapper();
+        }
+
+        public async Task<List<BlogListOutput>> GetListAsync(GetBlogListInput input)
+        {
+            return await _blogRepository.GetAll().Select(b => new BlogListOutput
+            {
+                CreationTime = b.CreationTime,
+                LastModifierUserId = b.LastModifierUserId,
+                Id = b.Id,
+                Excerpt = b.Excerpt,
+                Title = b.Title
+            }).OrderByDescending(b => b.CreationTime).ToListAsync();
+        }
+
+        public async Task<BlogEditOutput> GetEditAsync(Guid id)
+        {
+            var entity = await _blogRepository.FirstOrDefaultAsync(id);
+
+            if (entity == null)
+                return new BlogEditOutput();
+
+            StringBuilder sb = new StringBuilder();
+            await _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == id).ForEachAsync(u => sb.Append(u.Categories.Tag + ','));
+
+            if (sb.Length > 0)
+                sb.Remove(sb.Length - 1, 1);
+
+            var editDto= _mapper.Map<BlogEditOutput>(entity);
+            editDto.Categories = sb.ToString();
+            return editDto;
         }
 
         public async Task<BlogDetailOutput> GetDetailAsync(EntityDto<Guid> input)
@@ -53,7 +90,7 @@ namespace Abp.MiniBlog.Blog
             }
 
             StringBuilder sb = new StringBuilder();
-            await _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == input.Id).ForEachAsync(u => sb.Append(u.Categories.Tag+','));
+            await _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == input.Id).ForEachAsync(u => sb.Append(u.Categories.Tag + ','));
 
             if (sb.Length > 0)
                 sb.Remove(sb.Length - 1, 1);
@@ -64,7 +101,8 @@ namespace Abp.MiniBlog.Blog
                 Title = blog.Title,
                 Excerpt = blog.Excerpt,
                 Content = blog.Content,
-                Categories = sb.ToString()
+                Categories = sb.ToString(),
+                Comments = blog.Comments
             };
         }
 
@@ -83,6 +121,15 @@ namespace Abp.MiniBlog.Blog
 
         public async Task<BlogDto> Update(BlogDto input)
         {
+            if (string.IsNullOrEmpty(input.Excerpt))
+            {
+                var subLength = input.Content.Length <= 5000 ? input.Content.Length : 5000;
+                var result = GetPlainTextFromHtml(input.Content.Substring(0, subLength));
+                if (result.LastIndexOf('<') > 0)
+                    result = result.Substring(0, result.LastIndexOf('<'));
+                input.Excerpt = result.Substring(0, result.Length > 120 ? 120 : result.Length);
+            }
+
             if (input.Id == Guid.Empty)
                 input.Id = await CreateAsync(new CreateBlogInput()
                 {
@@ -147,6 +194,17 @@ namespace Abp.MiniBlog.Blog
             {
                 await _relationRepository.DeleteAsync(tag.Id);
             }
+        }
+        private string GetPlainTextFromHtml(string htmlString)
+        {
+            string htmlTagPattern = "<.*?>";
+            var regexCss = new Regex("(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            htmlString = regexCss.Replace(htmlString, string.Empty);
+            htmlString = Regex.Replace(htmlString, htmlTagPattern, string.Empty);
+            htmlString = Regex.Replace(htmlString, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
+            htmlString = htmlString.Replace("&nbsp;", string.Empty);
+
+            return htmlString;
         }
     }
 }

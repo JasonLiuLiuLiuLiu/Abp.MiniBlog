@@ -33,7 +33,7 @@
                         <tr>
                             <th>@L("Title")</th>
                             <th>@L("Excerpt")</th>
-                            <th>@L("Is Published")</th>
+                            @*<th>@L("Is Published")</th>*@
                         </tr>
                     </thead>
                     <tbody>
@@ -42,7 +42,7 @@
                         <tr>
                             <td>@blog.Title</td>
                             <td>@blog.Excerpt</td>
-                            <td><i class="material-icons" style="color:@(blog.IsPublished ? "green":"red");">@(blog.IsPublished ? "check_box" : "indeterminate_check_box")</i></td>
+                            @*<td><i class="material-icons" style="color:@(blog.IsPublished ? "green":"red");">@(blog.IsPublished ? "check_box" : "indeterminate_check_box")</i></td>*@
                             <td class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">menu</i>

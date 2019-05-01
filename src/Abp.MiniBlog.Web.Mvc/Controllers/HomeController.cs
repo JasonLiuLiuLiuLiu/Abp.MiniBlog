@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Microsoft.AspNetCore.Mvc;
-using Abp.AspNetCore.Mvc.Authorization;
 using Abp.MiniBlog.Blog;
 using Abp.MiniBlog.Blog.Dtos;
 using Abp.MiniBlog.Controllers;
@@ -35,6 +34,12 @@ namespace Abp.MiniBlog.Web.Controllers
                 return View(await _blogAppService.GetDetailAsync(new EntityDto<Guid>(blogId.Value)));
             else
                 return Redirect("Index");
+        }
+
+        public async Task<ActionResult> Comment(CommentInput input)
+        {
+            await _blogAppService.CreateComment(input);
+            return Redirect("Detail?blogId=" + input.BlogId);
         }
     }
 }

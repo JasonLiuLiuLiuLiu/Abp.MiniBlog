@@ -90,111 +90,22 @@
             <br>
             <div class="feedback_area_title">评论列表</div>
             <div class="feedbackNoItems"></div>
-
+        @foreach (var comment in Model.Comments)
+        {
             <div class="feedbackItem">
                 <div class="feedbackListSubtitle">
                     <div class="feedbackManage">
                         &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226866,'yyc48r0/YP8e4TUiJTWfF+YWxi2113GqgSUb+D2YuUwyRNJPnbuGZA==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226866,'yyc48r0/YP8e4TUiJTWfF+YWxi2113GqgSUb+D2YuUwyRNJPnbuGZA==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226866,this, 10680805)">删除</a></span>
                     </div>
-                    <a href="#4226866" class="layer">#1楼</a><a name="4226866" id="comment_anchor_4226866"></a>  <span class="comment_date">2019-04-10 03:00</span> <a id="a_comment_author_4226866" href="https://www.cnblogs.com/Moen/" target="_blank">神樹桜乃</a> <a href="http://msg.cnblogs.com/send/%E7%A5%9E%E6%A8%B9%E6%A1%9C%E4%B9%83" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+                    <a href="#4226866" class="layer">#1楼</a><a name="4226866" id="comment_anchor_4226866"></a>  <span class="comment_date">@comment.CreateTime</span> <a id="a_comment_author_4226866" href="https://www.cnblogs.com/Moen/" target="_blank">@comment.Author</a> <a href="http://msg.cnblogs.com/send/%E7%A5%9E%E6%A8%B9%E6%A1%9C%E4%B9%83" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
                 </div>
                 <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/Moen/"><img src="//pic.cnblogs.com/face/238163/20130205160500.png"></a></div><div id="comment_body_4226866" class="blog_comment_body">无法选择 .Net Core 3.0 是因为正式版默认没有开启使用预览版 SDK 的选项。去设置开启一下就行</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226866,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226866,'Bury',this)">反对(0)</a></div><span id="comment_4226866_avatar" style="display:none;">http://pic.cnblogs.com/face/238163/20130205160500.png</span>
+                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/Moen/"><img src="@comment.Gravatar"></a></div><div id="comment_body_4226866" class="blog_comment_body">@Html.Raw(comment.Content)</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226866,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226866,'Bury',this)">反对(0)</a></div><span id="comment_4226866_avatar" style="display:none;">@comment.Gravatar</span>
                 </div>
-            </div>
+            </div>  
+        }
 
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return GetCommentBody(4226874)">修改</a><a href="javascript:void(0);" onclick="return DelComment(4226874,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4226874" class="layer">#2楼</a><a name="4226874" id="comment_anchor_4226874"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2019-04-10 08:07</span> <a id="a_comment_author_4226874" href="https://www.cnblogs.com/CoderAyu/" target="_blank">码农阿宇</a> <a href="http://msg.cnblogs.com/send/%E7%A0%81%E5%86%9C%E9%98%BF%E5%AE%87" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/CoderAyu/"><img src="//pic.cnblogs.com/face/1293736/20181223224228.png"></a></div><div id="comment_body_4226874" class="blog_comment_body">
-                        <a href="#4226866" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4226866);">@@</a>
-                        神樹桜乃<br>嗯，我也听说了是要开启什么，但是不知道在哪里开启，方便告知吗？
-                    </div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226874,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226874,'Bury',this)">反对(0)</a></div><span id="comment_4226874_avatar" style="display:none;">http://pic.cnblogs.com/face/1293736/20181223224228.png</span>
-                </div>
-            </div>
 
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226948,'3ByZyZPqdtTefn0Qz8+bZ9vvZI2BI0wgkEi48/LFS1W6HZegyXzKpQ==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226948,'3ByZyZPqdtTefn0Qz8+bZ9vvZI2BI0wgkEi48/LFS1W6HZegyXzKpQ==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226948,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4226948" class="layer">#3楼</a><a name="4226948" id="comment_anchor_4226948"></a>  <span class="comment_date">2019-04-10 09:20</span> <a id="a_comment_author_4226948" href="https://www.cnblogs.com/zengande/" target="_blank">zengande</a> <a href="http://msg.cnblogs.com/send/zengande" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/zengande/"><img src="//pic.cnblogs.com/face/1032272/20161022194719.png"></a></div><div id="comment_body_4226948" class="blog_comment_body">工具 &gt; 选项 &gt; 项目和解决方案 &gt; .Net Core &gt; 使用 .Net core SDK 预览版</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226948,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226948,'Bury',this)">反对(0)</a></div><span id="comment_4226948_avatar" style="display:none;">http://pic.cnblogs.com/face/1032272/20161022194719.png</span>
-                </div>
-            </div>
-
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226949,'mpri5HwusoWZHcKkd1bsCBfGA3UYRbWyiqnVxxQDQNRnOtmi+9FemA==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226949,'mpri5HwusoWZHcKkd1bsCBfGA3UYRbWyiqnVxxQDQNRnOtmi+9FemA==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226949,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4226949" class="layer">#4楼</a><a name="4226949" id="comment_anchor_4226949"></a>  <span class="comment_date">2019-04-10 09:21</span> <a id="a_comment_author_4226949" href="https://www.cnblogs.com/laosandegudai/" target="_blank">老三的古代</a> <a href="http://msg.cnblogs.com/send/%E8%80%81%E4%B8%89%E7%9A%84%E5%8F%A4%E4%BB%A3" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/laosandegudai/"><img src="//pic.cnblogs.com/face/627017/20160517173538.png"></a></div><div id="comment_body_4226949" class="blog_comment_body">
-                        <a href="#4226874" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4226874);">@@</a>
-                        码农阿宇<br>vs设置里面。
-                    </div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226949,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226949,'Bury',this)">反对(0)</a></div><span id="comment_4226949_avatar" style="display:none;">http://pic.cnblogs.com/face/627017/20160517173538.png</span>
-                </div>
-            </div>
-
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4226950,'Ec9LijazHPJmRa/85zpC0qumGP9GpNaGiZc5nZJarcbszKWgLSerXw==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4226950,'Ec9LijazHPJmRa/85zpC0qumGP9GpNaGiZc5nZJarcbszKWgLSerXw==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4226950,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4226950" class="layer">#5楼</a><a name="4226950" id="comment_anchor_4226950"></a>  <span class="comment_date">2019-04-10 09:21</span> <a id="a_comment_author_4226950" href="https://www.cnblogs.com/sundayisblue/" target="_blank">Sunday*</a> <a href="http://msg.cnblogs.com/send/Sunday%2A" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/sundayisblue/"><img src="//pic.cnblogs.com/face/65429/20170703102044.png"></a></div><div id="comment_body_4226950" class="blog_comment_body">
-                        <a href="#4226874" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4226874);">@@</a>
-                        码农阿宇<br>参考：<br><a href="https://www.cnblogs.com/yilezhu/p/10649327.html" target="_blank">https://www.cnblogs.com/yilezhu/p/10649327.html</a><br><a href="https://www.cnblogs.com/yilezhu/p/10661161.html" target="_blank">https://www.cnblogs.com/yilezhu/p/10661161.html</a>
-                    </div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4226950,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4226950,'Bury',this)">反对(0)</a></div><span id="comment_4226950_avatar" style="display:none;">http://pic.cnblogs.com/face/65429/20170703102044.png</span>
-                </div>
-            </div>
-
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4227035,'LHs137F6eyoe65rgz3RzwDsj7NxSVQlGdFW7jU3WCnJvHXVf2PDK5w==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4227035,'LHs137F6eyoe65rgz3RzwDsj7NxSVQlGdFW7jU3WCnJvHXVf2PDK5w==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4227035,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4227035" class="layer">#6楼</a><a name="4227035" id="comment_anchor_4227035"></a>  <span class="comment_date">2019-04-10 10:27</span> <a id="a_comment_author_4227035" href="http://home.cnblogs.com/u/1634983/" target="_blank">cr编辑</a> <a href="http://msg.cnblogs.com/send/cr%E7%BC%96%E8%BE%91" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="http://home.cnblogs.com/u/1634983/"><img src="https://pic.cnblogs.com/face/sample_face.gif"></a></div><div id="comment_body_4227035" class="blog_comment_body">您好，想邀您写书，关于计算机技能方面，不知道您有这方面的想法吗？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4227035,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4227035,'Bury',this)">反对(0)</a></div>
-                </div>
-            </div>
-
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4227093,'BxxllDOu0qZlGhgXPZD2S912iSzBrarHuxDJNSkU9SWZcOPoMPLMdw==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4227093,'BxxllDOu0qZlGhgXPZD2S912iSzBrarHuxDJNSkU9SWZcOPoMPLMdw==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4227093,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4227093" class="layer">#7楼</a><a name="4227093" id="comment_anchor_4227093"></a>  <span class="comment_date">2019-04-10 11:13</span> <a id="a_comment_author_4227093" href="https://www.cnblogs.com/lwqlun/" target="_blank">LamondLu</a> <a href="http://msg.cnblogs.com/send/LamondLu" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/lwqlun/"><img src="//pic.cnblogs.com/face/65831/20180909170519.png"></a></div><div id="comment_body_4227093" class="blog_comment_body">帅哥，我把这篇文章转载到了我的公众号了，标明了出处。<br><br><img src="//img2018.cnblogs.com/blog/65831/201904/65831-20190410111345188-1575109106.png" alt="" border="0" "\=" "></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4227093,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4227093,'Bury',this)">反对(0)</a></div><span id="comment_4227093_avatar" style="display:none;">http://pic.cnblogs.com/face/65831/20180909170519.png</span>
-                </div>
-            </div>
-
-            <div class="feedbackItem">
-                <div class="feedbackListSubtitle">
-                    <div class="feedbackManage">
-                        &nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(4227146,'8L498g0Y5mSo/v+sDw8yeQQmPInhrA3ftj1iiJ9YFg004zj6kONQAw==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(4227146,'8L498g0Y5mSo/v+sDw8yeQQmPInhrA3ftj1iiJ9YFg004zj6kONQAw==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(4227146,this, 10680805)">删除</a></span>
-                    </div>
-                    <a href="#4227146" class="layer">#8楼</a><a name="4227146" id="comment_anchor_4227146"></a>  <span class="comment_date">2019-04-10 11:50</span> <a id="a_comment_author_4227146" href="https://www.cnblogs.com/LCHL/" target="_blank">疯狂的懒羊羊</a> <a href="http://msg.cnblogs.com/send/%E7%96%AF%E7%8B%82%E7%9A%84%E6%87%92%E7%BE%8A%E7%BE%8A" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
-                </div>
-                <div class="feedbackCon">
-                    <div class="esa-comment-avatar"><a target="_blank" href="https://www.cnblogs.com/LCHL/"><img src="//pic.cnblogs.com/face/399698/20160526093606.png"></a></div><div id="comment_body_4227146" class="blog_comment_body">看了2遍，大概看明白了，但还是搞不懂这玩意儿能做啥？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4227146,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(4227146,'Bury',this)">反对(0)</a></div><span id="comment_4227146_avatar" style="display:none;">http://pic.cnblogs.com/face/399698/20160526093606.png</span>
-                </div>
-            </div>
             <div id="comments_pager_bottom"></div>
         </div>
         <script type="text/javascript">var commentManager = new blogCommentManager(); commentManager.renderComments(0);</script>
@@ -205,13 +116,13 @@
                     <span class="comment_date">发表评论</span>
                 </div>
                 <div class="feedbackCon">
-                    <form name="userCreateForm" role="form" id="form" novalidate class="form-validation" asp-controller="Blogs" asp-action="Update">
+                    <form name="userCreateForm" role="form" id="form" novalidate class="form-validation" asp-controller="Home" asp-action="Comment">
                         <div role="tabpanel" class="tab-pane animated fadeIn active" id="create-blog-details">
                             <div class="row clearfix" style="margin-top: 10px;">
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input class="form-control" type="text" name="Title" required minlength="2">
+                                            <input class="form-control Author" id="Author" type="text" name="Author" required minlength="2">
                                             <label class="form-label">昵称</label>
                                         </div>
                                     </div>
@@ -221,7 +132,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input class="form-control" type="email" name="Title" required minlength="2">
+                                            <input class="form-control Email" type="email" name="Email" id="Email" required minlength="2">
                                             <label class="form-label">邮箱(便于回复通知)</label>
                                         </div>
                                     </div>
@@ -230,12 +141,12 @@
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
-                                        <textarea id="Content" rows="20" aria-label="Content"></textarea>
+                                        <textarea id="Content" class="Content" name="Content" rows="20" aria-label="Content"></textarea>
                                     </div>
                                 </div>
+                                <input type="hidden" asp-for="@Model.Id" name="BlogId" />
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">退出</button>
-                                    <button type="button" class="btn btn-primary waves-effect">提交评论</button>
+                                    <button type="submit" class="btn btn-primary waves-effect">提交评论</button>
                                 </div>
                             </div>
                         </div>

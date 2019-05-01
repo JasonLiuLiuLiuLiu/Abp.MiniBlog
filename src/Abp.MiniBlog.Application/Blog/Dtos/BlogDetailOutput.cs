@@ -18,6 +18,6 @@ namespace Abp.MiniBlog.Blog.Dtos
 
         public bool IsPublished { get; set; } = true;
 
-        public IList<Comment> Comments { get; set; }
+        public IList<CommentOutput> Comments { get; set; }
     }
 }

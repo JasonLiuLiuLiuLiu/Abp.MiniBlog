@@ -14,5 +14,6 @@ namespace Abp.MiniBlog.Blog
         Task<Guid> CreateAsync(CreateBlogInput input);
         Task<BlogDto> Update(BlogDto input);
         Task DeleteAsync(EntityDto<Guid> input);
+        Task CreateComment(CommentInput input);
     }
 }

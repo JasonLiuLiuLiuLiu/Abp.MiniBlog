@@ -5,7 +5,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.MiniBlog.Blog.Dtos;
 using Abp.UI;
@@ -38,7 +37,7 @@ namespace Abp.MiniBlog.Blog
         {
             var configuration = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Blog, BlogEditOutput>().ForMember(b=>b.Categories,opt=>opt.Ignore());
+                cfg.CreateMap<Blog, BlogEditOutput>().ForMember(b => b.Categories, opt => opt.Ignore());
             });
             // only during development, validate your mappings; remove it before release
             configuration.AssertConfigurationIsValid();
@@ -71,7 +70,7 @@ namespace Abp.MiniBlog.Blog
             if (sb.Length > 0)
                 sb.Remove(sb.Length - 1, 1);
 
-            var editDto= _mapper.Map<BlogEditOutput>(entity);
+            var editDto = _mapper.Map<BlogEditOutput>(entity);
             editDto.Categories = sb.ToString();
             return editDto;
         }
@@ -95,15 +94,25 @@ namespace Abp.MiniBlog.Blog
             if (sb.Length > 0)
                 sb.Remove(sb.Length - 1, 1);
 
-            return new BlogDetailOutput
+
+            var output = new BlogDetailOutput
             {
                 Id = blog.Id,
                 Title = blog.Title,
                 Excerpt = blog.Excerpt,
                 Content = blog.Content,
-                Categories = sb.ToString(),
-                Comments = blog.Comments
+                Categories = sb.ToString()
             };
+            if (blog.Comments != null)
+                output.Comments = blog.Comments.Select(c => new CommentOutput
+                {
+                    Author = c.Author,
+                    Content = c.Content,
+                    CreateTime = c.CreationTime,
+                    Gravatar = c.GetGravatar()
+                }).ToList();
+
+            return output;
         }
 
         public async Task<Guid> CreateAsync(CreateBlogInput input)
@@ -168,6 +177,17 @@ namespace Abp.MiniBlog.Blog
                 await UpdateTagRelation(input.Id, allTags);
             }
             return input;
+        }
+
+        public async Task CreateComment(CommentInput input)
+        {
+            await _commentManager.CreateAsync(new Comment
+            {
+                Author = input.Author,
+                BlogId = input.BlogId,
+                Email = string.IsNullOrEmpty(input.Email)?"default@demo.com":input.Email,
+                Content = input.Content
+            });
         }
 
         public async Task DeleteAsync(EntityDto<Guid> input)

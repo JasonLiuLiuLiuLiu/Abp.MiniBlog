@@ -22,7 +22,7 @@ namespace Abp.MiniBlog.Blog
 
         public virtual Blog Blog { get; protected set; }
 
-        public virtual Guid BlogId { get; protected set; }
+        public virtual Guid BlogId { get; set; }
 
         public string GetGravatar()
         {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Abp.Application.Services.Dto;
 
 namespace Abp.MiniBlog.Blog.Dtos
@@ -8,16 +7,8 @@ namespace Abp.MiniBlog.Blog.Dtos
     {
         public string Title { get; set; }
 
-        public string Slug { get; set; }
-
         public string Excerpt { get; set; }
 
-        public string Content { get; set; }
-
         public string Categories { get; set; }
-
-        public bool IsPublished { get; set; } = true;
-
-        public IList<Comment> Comments { get; } = new List<Comment>();
     }
 }

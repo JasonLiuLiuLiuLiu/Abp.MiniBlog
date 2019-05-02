@@ -251,3 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 /src/Abp.MiniBlog.Web.Mvc/App_Data/Logs
+/src/Abp.MiniBlog.Web.Mvc/App_Data/Logs/*.txt
+/src/Abp.MiniBlog.Web.Mvc/App_Data/Logs

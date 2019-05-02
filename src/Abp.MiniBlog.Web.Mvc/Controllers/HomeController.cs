@@ -22,9 +22,11 @@ namespace Abp.MiniBlog.Web.Controllers
         public ActionResult Index()
         {
             var allBlogs = _blogAppService.GetListAsync(new GetBlogListInput()).Result;
+            var tags = _blogAppService.GetTopTags().Result;
             return View(new BlogsListViewModel
             {
-                Blogs = allBlogs
+                Blogs = allBlogs,
+                Tags = tags
             });
         }
 

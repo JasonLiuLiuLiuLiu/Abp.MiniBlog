@@ -196,6 +196,20 @@ namespace Abp.MiniBlog.Blog
             await _blogRepository.DeleteAsync(blog);
         }
 
+        public async Task<List<TopTagLOutput>> GetTopTags()
+        {
+           return await _relationRepository.GetAll()
+                .Include(u => u.Categories)
+                .GroupBy(u => u.CategoriesId)
+                .OrderByDescending(u => u.Count())
+                .Take(10).Select(g => new TopTagLOutput
+                {
+                    Id = g.Key,
+                    Name = g.First().Categories.Tag,
+                    Count = g.Count()
+                }).ToListAsync();
+        }
+
         private async Task UpdateTagRelation(Guid blogId, List<Categories> tags)
         {
             var allRelation = _relationRepository.GetAllIncluding(u => u.Categories).Where(u => u.BlogId == blogId);
